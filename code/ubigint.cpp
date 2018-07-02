@@ -11,7 +11,7 @@ using namespace std;
 #include "debug.h"
 
 ubigint::ubigint (unsigned long that): uvalue (that) {
-   DEBUGF ('~', this << " -> " << ubig_value)
+   DEBUGF ('~', this << " -> " << ubig_value[0])
 }
 
 ubigint::ubigint (const string& that): uvalue(0) {
@@ -20,29 +20,29 @@ ubigint::ubigint (const string& that): uvalue(0) {
       if (not isdigit (digit)) {
          throw invalid_argument ("ubigint::ubigint(" + that + ")");
       }
-      ubig_value = ubig_value * 10 + digit - '0';
+      ubig_value = ubig_value[0] * 10 + digit - '0';
    }
 }
 
 ubigint ubigint::operator+ (const ubigint& that) const {
-   return ubigint (ubig_value + that.ubig_value);
+   return ubigint (ubig_value[0] + that.ubig_value[0]);
 }
 
 ubigint ubigint::operator- (const ubigint& that) const {
    if (*this < that) throw domain_error ("ubigint::operator-(a<b)");
-   return ubigint (ubig_value - that.ubig_value);
+   return ubigint (ubig_value[0] - that.ubig_value[0]);
 }
 
 ubigint ubigint::operator* (const ubigint& that) const {
-   return ubigint (ubig_value * that.ubig_value);
+   return ubigint (ubig_value[0] * that.ubig_value[0]);
 }
 
 void ubigint::multiply_by_2() {
-   ubig_value *= 2;
+   ubig_value[0] *= 2;
 }
 
 void ubigint::divide_by_2() {
-   ubig_value /= 2;
+   ubig_value[0] /= 2;
 }
 
 
@@ -78,11 +78,11 @@ ubigint ubigint::operator% (const ubigint& that) const {
 }
 
 bool ubigint::operator== (const ubigint& that) const {
-   return ubig_value == that.ubig_value;
+   return ubig_value[0] == that.ubig_value[0];
 }
 
 bool ubigint::operator< (const ubigint& that) const {
-   return ubig_value < that.ubig_value;
+   return ubig_value[0] < that.ubig_value[0];
 }
 
 ostream& operator<< (ostream& out, const ubigint& that) { 
