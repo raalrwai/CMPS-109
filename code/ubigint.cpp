@@ -82,7 +82,7 @@ bool ubigint::operator== (const ubigint& that) const {
 }
 
 bool ubigint::operator< (const ubigint& that) const {
-   return uvalue < that.ubig_value;
+   return ubig_value < that.ubig_value;
 }
 
 ostream& operator<< (ostream& out, const ubigint& that) { 
