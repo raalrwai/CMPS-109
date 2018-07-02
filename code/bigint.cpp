@@ -9,7 +9,7 @@ using namespace std;
 #include "bigint.h"
 #include "debug.h"
 #include "relops.h"
-
+//cpp
 bigint::bigint (long that): uvalue (that), is_negative (that < 0) {
    DEBUGF ('~', this << " -> " << uvalue)
 }
