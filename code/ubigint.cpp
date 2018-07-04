@@ -32,7 +32,8 @@ ubigint::ubigint (const string& that)  {
 }
 
 ubigint ubigint::operator+ (const ubigint& that) const {
-  return ubigint (ubig_value[0] + that.ubig_value[0]);
+	cout << "Called ubigint operater+";
+ 	return ubigint (ubig_value[0] + that.ubig_value[0]);
 }
 
 ubigint ubigint::operator- (const ubigint& that) const {
