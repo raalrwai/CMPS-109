@@ -32,13 +32,14 @@ ubigint::ubigint (const string& that)  {
 }
 
 ubigint ubigint::operator+ (const ubigint& that) const {
-	cout << "Called ubigint operater+";
- 	return ubigint (ubig_value[0] + that.ubig_value[0]);
+    cout << "Called ubigint operater+";
+    return ubigint (ubig_value[0] + that.ubig_value[0]);
 }
 
 ubigint ubigint::operator- (const ubigint& that) const {
-  if (*this < that) throw domain_error ("ubigint::operator-(a<b)");
-  return ubigint (ubig_value[0] - that.ubig_value[0]);
+    cout << "Called ubigint operater-";
+    if (*this < that) throw domain_error ("ubigint::operator-(a<b)");
+    return ubigint (ubig_value[0] - that.ubig_value[0]);
 }
 
 ubigint ubigint::operator* (const ubigint& that) const {
