@@ -35,7 +35,7 @@ bigint bigint::operator- () const {
 
 bigint bigint::operator+ (const bigint& that) const {
    ubigint result = uvalue + that.uvalue;
-   cout << "Binary +";
+   cout << "that.uvalue: " << that.uvalue;
    return result;
 }
 
