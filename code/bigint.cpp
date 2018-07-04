@@ -25,6 +25,7 @@ bigint::bigint (const string& that) {
 }
 
 bigint bigint::operator+ () const {
+   cout << "Unary +"; 
    return *this;
 }
 
@@ -34,6 +35,7 @@ bigint bigint::operator- () const {
 
 bigint bigint::operator+ (const bigint& that) const {
    ubigint result = uvalue + that.uvalue;
+   cout << "Binary +";
    return result;
 }
 

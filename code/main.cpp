@@ -126,7 +126,6 @@ int main (int argc, char** argv) {
       for (;;) {
          try {
             token lexeme = input.scan();
-            cout << "Lexeme: " << lexeme;
             switch (lexeme.symbol) {
                case tsymbol::SCANEOF:
                   throw ydc_quit();
