@@ -38,8 +38,13 @@ bigint bigint::operator+ (const bigint& that) const {
     if (that.is_negative == is_negative) {
         ubigint result = uvalue + that.uvalue;
     } else {
-        ubigint result = 0;
+        if (that.uvalue > uvalue) {
+            ubigint result = that.uvalue - uvalue;
+        } else {
+            ubigint result = uvalue - that.uvalue;
+        }
     }
+    cout << "Result: " << result;
     return result;
 }
 
