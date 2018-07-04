@@ -35,10 +35,10 @@ bigint bigint::operator- () const {
 
 bigint bigint::operator+ (const bigint& that) const {
    ubigint result = uvalue + that.uvalue;
-   if (that.is_negative) {
-    cout << "Negative";
+   if (that.is_negative == is_negative) {
+    cout << "Same sign";
    } else {
-    cout << "Positive";
+    cout << "Different sign";
    }
    return result;
 }
