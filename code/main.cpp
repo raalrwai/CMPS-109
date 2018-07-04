@@ -131,6 +131,7 @@ int main (int argc, char** argv) {
                   throw ydc_quit();
                   break;
                case tsymbol::NUMBER:
+               	  cout << "We got this far.";
                   operand_stack.push (bigint (lexeme.lexinfo));
                   break;
                case tsymbol::OPERATOR: {
