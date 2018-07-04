@@ -24,7 +24,7 @@ ubigint::ubigint (unsigned long that)  {
   }
 }
 
-ubigint::ubigint (const string& that): uvalue(0) {
+ubigint::ubigint (const string& that)  {
   for (auto it = that.end(); it != that.begin(); i++){
     ubig_value.push_back(*it):
       DEBUGF('~', *it);
