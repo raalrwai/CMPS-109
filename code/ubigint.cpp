@@ -5,6 +5,7 @@
 #include <exception>
 #include <stack>
 #include <stdexcept>
+#include <sstream>
 using namespace std;
 
 #include "ubigint.h"
@@ -17,7 +18,7 @@ ubigint::ubigint (unsigned long that)  {
 
   ss << that;
   ss >> uvalue;
-  for(auto it = uvalue.begin(; it != uvalue.begin(); it++)){
+  for(auto it = uvalue.end(); it != uvalue.begin(); it++)){
     ubig_value.push_back(*it);
     DEBUGF('-', *it);
   }
