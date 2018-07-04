@@ -123,7 +123,7 @@ int main (int argc, char** argv) {
    bigint_stack operand_stack;
    scanner input;
    try {
-    cout << "Got here."
+    cout << "Got here.";
       for (;;) {
          try {
             token lexeme = input.scan();
