@@ -35,8 +35,11 @@ bigint bigint::operator- () const {
 
 bigint bigint::operator+ (const bigint& that) const {
    ubigint result = uvalue + that.uvalue;
-   cout << "that.uvalue: " << that.uvalue;
-   cout << "sign: " << that.is_negative;
+   if (that.is_negative == uvalue.is_negative) {
+    cout << "Same sign";
+   } else {
+    cout << "Different sign";
+   }
    return result;
 }
 
