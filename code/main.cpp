@@ -123,9 +123,9 @@ int main (int argc, char** argv) {
    bigint_stack operand_stack;
    scanner input;
    try {
-    cout << "Got here.";
       for (;;) {
          try {
+            cout << "Got here.";
             token lexeme = input.scan();
             switch (lexeme.symbol) {
                case tsymbol::SCANEOF:
