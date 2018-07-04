@@ -18,14 +18,14 @@ ubigint::ubigint (unsigned long that)  {
 
   ss << that;
   ss >> uvalue;
-  for(auto it = uvalue.end(); it != uvalue.begin(); it++){
+  for(auto it = uvalue.rend(); it != uvalue.rbegin(); it++){
     ubig_value.push_back(*it);
     DEBUGF('-', *it);
   }
 }
 
 ubigint::ubigint (const string& that)  {
-  for (auto it = that.end(); it != that.begin(); it++){
+  for (auto it = that.rend(); it != that.rbegin(); it++){
     ubig_value.push_back(*it);
     DEBUGF('~', *it);
   }
