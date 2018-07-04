@@ -36,9 +36,9 @@ bigint bigint::operator- () const {
 bigint bigint::operator+ (const bigint& that) const {
     ubigint result = uvalue + that.uvalue;
     if (that.is_negative == is_negative) {
-        ubigint result == uvalue + that.uvalue;
+        ubigint result = uvalue + that.uvalue;
     } else {
-        ubigint result == "0";
+        ubigint result = "0";
     }
     return result;
 }
@@ -46,9 +46,9 @@ bigint bigint::operator+ (const bigint& that) const {
 bigint bigint::operator- (const bigint& that) const {
     ubigint result = uvalue - that.uvalue;
     if (that.is_negative == is_negative) {
-        ubigint result == "0";
+        ubigint result = "0";
     } else {
-        ubigint result == uvalue + that.uvalue;
+        ubigint result = uvalue + that.uvalue;
     }
     return result;
 }
