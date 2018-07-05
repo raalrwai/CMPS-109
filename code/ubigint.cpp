@@ -33,39 +33,20 @@ ubigint::ubigint (const string& that)  {
 }
 
 ubigint ubigint::operator+ (const ubigint& that) const {
-    cout << "Called ubigint operater+";
     ubigint result;
+    int iter_size = ubig_value.size();
     //int digit;
     //char digit2;
     //int carry = 0;
     //cout << "that.ubig_value: " << that.ubig_value << endl;
     //cout << "ubig_value: " << ubig_value << endl;
-    if (ubig_value.size() > that.ubig_value.size()) {
-        cout << "The first number is bigger.";
-    } else {
-        cout << "The second number is bigger.";
-    }
+    if (ubig_value.size() < that.ubig_value.size()) {
+        iter_size = that.ubig_value.size();
+    } 
 
-    for (auto it2 = ubig_value.begin(); it2 != ubig_value.end(); it2++) {
-        cout << "Digit: " << *it2 << endl;
+    for (int i = 0; i < iter_size; i++) {
+        cout << that.ubig_value[i] << " + " << ubig_value[i] << endl;
     }
-
-    int size = 0;
-    for (auto it2_size = ubig_value.begin(); it2_size != ubig_value.end(); it2_size++) {
-        size++;
-    }
-    cout << "The size of the first number is: " << size;
-
-
-    for (auto it = that.ubig_value.begin(); it != that.ubig_value.end(); it++) {
-        cout << "Digit: " << *it << endl;
-    }
-
-    int size2 = 0;
-    for (auto it_size = that.ubig_value.begin(); it_size != that.ubig_value.end(); it_size++) {
-        size2++;
-    }
-    cout << "The size of the second number is: " << size2;
 
     return ubigint (ubig_value[0] + that.ubig_value[0]);
 }
