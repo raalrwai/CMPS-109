@@ -37,7 +37,7 @@ ubigint ubigint::operator+ (const ubigint& that) const {
     //int digit;
     //char digit2;
     //int carry = 0;
-    cout << "that.ubig_value: " << that.ubig_value << endl;
+    //cout << "that.ubig_value: " << that.ubig_value << endl;
     //cout << "ubig_value: " << ubig_value << endl;
     for (auto it = that.ubig_value.rbegin(); it != that.ubig_value.rend(); it++) {
         cout << "Digit: " << *it;
