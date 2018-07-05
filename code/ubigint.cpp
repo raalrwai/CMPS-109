@@ -61,7 +61,7 @@ ubigint ubigint::operator+ (const ubigint& that) const {
             digit2 = ubig_value[i];
         }
         partial_result = static_cast<int>(digit1) + static_cast<int>(digit2);
-        cout << digit1 << " + " << digit2 << " = " << partial_result + endl;
+        cout << digit1 << " + " << digit2 << " = " << partial_result << endl;
         digit1 = 0;
         digit2 = 0;
     }
