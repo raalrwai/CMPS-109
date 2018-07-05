@@ -34,8 +34,8 @@ ubigint::ubigint (const string& that)  {
 ubigint ubigint::operator+ (const ubigint& that) const {
     cout << "Called ubigint operater+";
     ubigint result;
-    char digit;
-    char digit2;
+    char* digit;
+    char* digit2;
     //int carry = 0;
     for (auto it = that.ubig_value.rbegin(); it != that.ubig_value.rend(); it++) {
         digit2 = 0;
