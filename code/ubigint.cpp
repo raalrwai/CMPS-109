@@ -35,8 +35,8 @@ ubigint::ubigint (const string& that)  {
 ubigint ubigint::operator+ (const ubigint& that) const {
     ubigint result;
     int iter_size = ubig_value.size();
-    char digit1 = 0;
-    char digit2 = 0;
+    char digit1 = "0";
+    char digit2 = "0";
     int small_size = that.ubig_value.size();
     //int carry = 0;
     if (ubig_value.size() < that.ubig_value.size()) {
@@ -61,8 +61,8 @@ ubigint ubigint::operator+ (const ubigint& that) const {
             digit2 = ubig_value[i];
         }
         cout << digit1 << " + " << digit2 << endl;
-        digit1 = 0;
-        digit2 = 0;
+        digit1 = "0";
+        digit2 = "0";
     }
 
     return ubigint (ubig_value[0] + that.ubig_value[0]);
