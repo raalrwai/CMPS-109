@@ -38,13 +38,8 @@ ubigint ubigint::operator+ (const ubigint& that) const {
     char digit2;
     //int carry = 0;
     for (auto it = that.ubig_value.rbegin(); it != that.ubig_value.rend(); it++) {
-        digit2 = 0;
-        digit = *it;
-        for (auto it2 = ubig_value.rbegin(); it != ubig_value.rend(); it2++) {
-            digit2 = *it2;
-        }
-        cout << "digit: " << digit;
-        cout << "digit2: " << digit2;
+        cout << "Digit: " << *it;
+
     }
     return ubigint (ubig_value[0] + that.ubig_value[0]);
 }
