@@ -40,7 +40,7 @@ ubigint ubigint::operator+ (const ubigint& that) const {
     //cout << "that.ubig_value: " << that.ubig_value << endl;
     //cout << "ubig_value: " << ubig_value << endl;
     for (auto it = that.ubig_value.rbegin(); it != that.ubig_value.rend(); it++) {
-        cout << "Digit: " << *it;
+        cout << "Digit: " << *it << endl;
     }
 
     return ubigint (ubig_value[0] + that.ubig_value[0]);
