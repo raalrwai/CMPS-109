@@ -61,6 +61,8 @@ ubigint ubigint::operator+ (const ubigint& that) const {
             digit2 = ubig_value[i];
         }
         cout << digit1 << " + " << digit2 << endl;
+        digit1 = 0;
+        digit2 = 0;
     }
 
     return ubigint (ubig_value[0] + that.ubig_value[0]);
