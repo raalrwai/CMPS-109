@@ -36,8 +36,8 @@ ubigint ubigint::operator+ (const ubigint& that) const {
     ubigint result;
     int digit;
     int digit2;
-    carry = 0;
-    for (auto it = that.rbegin(); it != that.rend(); it++) {
+    int carry = 0;
+    for (auto it = that.ubig_value.rbegin(); it != that.ubig_value.rend(); it++) {
     	digit2 = 0;
     	digit = it;
     	for (auto it2 = ubig_value.rbegin(); it != ubig_value.rend(); it2++) {
