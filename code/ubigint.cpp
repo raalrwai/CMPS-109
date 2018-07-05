@@ -54,12 +54,12 @@ ubigint ubigint::operator+ (const ubigint& that) const {
     // }
     int partial_result = 0;
     for (int i = 0; i < iter_size; i++) {
-        if (i > that.ubig_value.size()) {
+        if (i > (that.ubig_value.size() - 1)) {
             digit1 = 0;
         } else {
             digit1 = static_cast<int>(that.ubig_value[i]) - 48;
         }
-        if (i > ubig_value.size()) {
+        if (i > (ubig_value.size() - 1)) {
             digit2 = 0;
         } else {
             digit2 = static_cast<int>(ubig_value[i]) - 48;
