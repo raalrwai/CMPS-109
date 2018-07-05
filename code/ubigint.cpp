@@ -57,12 +57,12 @@ ubigint ubigint::operator+ (const ubigint& that) const {
         if (i > that.ubig_value.size()) {
             digit1 = 0;
         } else {
-            digit1 = static_cast<int>(that.ubig_value[i]);
+            digit1 = static_cast<int>(that.ubig_value[i]) - 48;
         }
         if (i > ubig_value.size()) {
             digit2 = 0;
         } else {
-            digit2 = static_cast<int>(ubig_value[i]);
+            digit2 = static_cast<int>(ubig_value[i]) - 48;
         }
         partial_result = digit1 + digit2;
         cout << digit1 << " + " << digit2 << " = " << partial_result << endl;
