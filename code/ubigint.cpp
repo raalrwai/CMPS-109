@@ -35,14 +35,13 @@ ubigint::ubigint (const string& that)  {
 ubigint ubigint::operator+ (const ubigint& that) const {
     ubigint result;
     int iter_size = ubig_value.size();
-    int digit1 = 0;
-    int digit2 = 0;
-    //int small_size = that.ubig_value.size();
+    udigit_t digit1 = 0;
+    udigit_t digit2 = 0;
     if (ubig_value.size() < that.ubig_value.size()) {
         iter_size = that.ubig_value.size();
     } 
  
-    int partial_result = 0;
+    udigit_t partial_result = 0;
     for (int i = 0; i < iter_size; i++) {
         if (i > (that.ubig_value.size() - 1)) {
             digit1 = 0;
