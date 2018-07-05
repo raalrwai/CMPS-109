@@ -43,10 +43,10 @@ ubigint ubigint::operator+ (const ubigint& that) const {
     } 
 
     for (int i = 0; i < iter_size; i++) {
-        if (that.ubig_value[i] != null) {
+        if (that.ubig_value[i] != nanl) {
             digit1 = that.ubig_value[i];
         }
-        if (ubig_value[i] != null) {
+        if (ubig_value[i] != nanl) {
             digit2 = ubig_value[i];
         }
         cout << digit1 << " + " << digit2 << endl;
