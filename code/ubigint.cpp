@@ -34,14 +34,14 @@ ubigint::ubigint (const string& that)  {
 ubigint ubigint::operator+ (const ubigint& that) const {
     cout << "Called ubigint operater+";
     ubigint result;
-    int digit;
-    int digit2;
+    char digit;
+    char digit2;
     //int carry = 0;
     for (auto it = that.ubig_value.rbegin(); it != that.ubig_value.rend(); it++) {
         digit2 = 0;
-        digit = static_cast<int> (it);
+        digit = it;
         for (auto it2 = ubig_value.rbegin(); it != ubig_value.rend(); it2++) {
-            digit2 = static_cast<int> (it2);
+            digit2 = it2;
         }
         cout << "digit: " << digit;
         cout << "digit2: " << digit2;
