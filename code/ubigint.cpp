@@ -70,7 +70,6 @@ ubigint ubigint::operator+ (const ubigint& that) const {
         result.ubig_value.push_back(partial_result);
         //cout << "Result: " << result;
     }
-    cout << "Result: " << result;
     return result;
 }
 
