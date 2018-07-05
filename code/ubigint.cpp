@@ -43,6 +43,13 @@ ubigint ubigint::operator+ (const ubigint& that) const {
         cout << "Digit: " << *it2 << endl;
     }
 
+    int size = 0;
+    for (auto it2_size = ubig_value.begin(); it2_size != ubig_value.end(); it2_size++) {
+        size++;
+    }
+    cout << "The size is: " << size;
+
+
     for (auto it = that.ubig_value.begin(); it != that.ubig_value.end(); it++) {
         cout << "Digit: " << *it << endl;
     }
