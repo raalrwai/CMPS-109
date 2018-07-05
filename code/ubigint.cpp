@@ -54,13 +54,15 @@ ubigint ubigint::operator+ (const ubigint& that) const {
     // }
 
     for (int i = 0; i < iter_size; i++) {
-        if (that.ubig_value[i]) {
-            digit1 = that.ubig_value[i];
-        }
-        if (ubig_value[i]) {
-            digit2 = ubig_value[i];
-        }
-        cout << digit1 << " + " << digit2 << endl;
+        // if (that.ubig_value[i]) {
+        //     digit1 = that.ubig_value[i];
+        // }
+        // if (ubig_value[i]) {
+        //     digit2 = ubig_value[i];
+        // }
+        // cout << digit1 << " + " << digit2 << endl;
+        cout << that.ubig_value[i] << endl;
+        cout << ubig_value[i] << endl;
     }
 
     return ubigint (ubig_value[0] + that.ubig_value[0]);
