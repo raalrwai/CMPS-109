@@ -62,7 +62,7 @@ ubigint ubigint::operator+ (const ubigint& that) const {
         if (i > ubig_value.size()) {
             digit2 = 0;
         } else {
-            digit2 = static_cast<int>(ubig_value.size());
+            digit2 = static_cast<int>(ubig_value[i]);
         }
         partial_result = digit1 + digit2;
         cout << digit1 << " + " << digit2 << " = " << partial_result << endl;
