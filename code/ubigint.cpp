@@ -38,7 +38,7 @@ ubigint ubigint::operator+ (const ubigint& that) const {
     for (auto it = that.rbegin(); it != that.rend(); it++) {
     	digit2 = 0;
     	digit = it;
-    	for (auto it2 = uvalue.rbegin(); it != uvalue.rend(); it2++) {
+    	for (auto it2 = ubig_value.rbegin(); it != ubig_value.rend(); it2++) {
     		digit2 = it2;
     	}
     	cout << "digit: " << digit;
