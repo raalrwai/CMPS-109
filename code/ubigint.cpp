@@ -35,28 +35,28 @@ ubigint::ubigint (const string& that)  {
 ubigint ubigint::operator+ (const ubigint& that) const {
     ubigint result;
     int iter_size = ubig_value.size();
-    udigit_t digit1 = 0;
-    udigit_t digit2 = 0;
+    int digit1 = 0;
+    int digit2 = 0;
     if (ubig_value.size() < that.ubig_value.size()) {
         iter_size = that.ubig_value.size();
     } 
  
-    udigit_t partial_result = 0;
+    int partial_result = 0;
     for (int i = 0; i < iter_size; i++) {
         if (i > (that.ubig_value.size() - 1)) {
             digit1 = 0;
         } else {
-            digit1 = that.ubig_value[i] - 48;
+            digit1 = static_cast<int>(that.ubig_value[i]) - 48;
         }
         if (i > (ubig_value.size() - 1)) {
             digit2 = 0;
         } else {
-            digit2 = ubig_value[i] - 48;
+            digit2 = static_cast<int>(ubig_value[i]) - 48;
         }
         partial_result = digit1 + digit2;
         cout << digit1 << " + " << digit2 << " = " << partial_result << endl;
         //cout << "Result: " << result;
-        result.ubig_value.push_back(partial_result);
+        result.ubig_value.push_back(static_cast<udigit_t>(partial_result));
         //cout << "Result: " << result;
     }
     return result;
