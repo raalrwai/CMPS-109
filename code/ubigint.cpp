@@ -68,7 +68,7 @@ ubigint ubigint::operator+ (const ubigint& that) const {
         cout << digit1 << " + " << digit2 << " = " << partial_result << endl;
         cout << "Result: " << result.ubig_value;
         result.ubig_value.push_back(partial_result);
-        cout << "Result: " << result.ubig_value;
+        cout << "Result: " << result;
     }
     cout << "Result: " << result;
     return result;
