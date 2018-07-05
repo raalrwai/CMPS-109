@@ -49,7 +49,7 @@ ubigint ubigint::operator+ (const ubigint& that) const {
         iter_size = ubig_value.size();
         small_size = that.ubig_value.size();
         for (i = 0; i < iter_size - small_size; i++) {
-            that.ubig_value.push_back(0);
+            that.ubig_value.push_back("0");
         }
     }
 
