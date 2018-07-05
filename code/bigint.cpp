@@ -36,7 +36,7 @@ bigint bigint::operator- () const {
 bigint bigint::operator+ (const bigint& that) const {
     ubigint result = 0;
     if (that.is_negative == is_negative) {
-        cout << "Same signs";
+        cout << "Same signs" << endl;
         ubigint result = uvalue + that.uvalue;
     } else {
         if (that.uvalue > uvalue) {
