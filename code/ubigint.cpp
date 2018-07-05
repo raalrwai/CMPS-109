@@ -39,6 +39,10 @@ ubigint ubigint::operator+ (const ubigint& that) const {
     //int carry = 0;
     //cout << "that.ubig_value: " << that.ubig_value << endl;
     //cout << "ubig_value: " << ubig_value << endl;
+    for (auto it2 = ubig_value.begin(); it2 != ubig_value.end(); it2++) {
+        cout << "Digit: " << *it2 << endl;
+    }
+
     for (auto it = that.ubig_value.begin(); it != that.ubig_value.end(); it++) {
         cout << "Digit: " << *it << endl;
     }
