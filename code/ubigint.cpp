@@ -54,11 +54,15 @@ ubigint ubigint::operator+ (const ubigint& that) const {
     // }
     int partial_result = 0;
     for (int i = 0; i < iter_size; i++) {
-        if (that.ubig_value[i]) {
+        if (i > that.ubig_value.size()) {
+            digit1 = 0;
+        } else {
             digit1 = that.ubig_value[i];
         }
-        if (ubig_value[i]) {
-            digit2 = ubig_value[i];
+        if (i > ubig_value.size()) {
+            digit2 = 0;
+        } else {
+            digit2 = ubig_value.size();
         }
         partial_result = static_cast<int>(digit1) + static_cast<int>(digit2);
         cout << digit1 << " + " << digit2 << " = " << partial_result << endl;
