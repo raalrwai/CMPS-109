@@ -54,7 +54,8 @@ ubigint ubigint::operator+ (const ubigint& that) const {
         } else {
             digit2 = static_cast<int>(ubig_value[i]) - 48;
         }
-        partial_result = static_cast<int>(digit1) + static_cast<int>(digit2);
+        //partial_result = static_cast<int>(digit1) + static_cast<int>(digit2);
+        partial_result = digit1 + digit2;
         unsigned char partial_char = '0' + partial_result; 
         cout << digit1 << " + " << digit2 << " = " << partial_result << endl;
         //cout << "Partial Char: " << partial_char << endl;
