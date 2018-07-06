@@ -34,14 +34,14 @@ bigint bigint::operator- () const {
 }
 
 bigint bigint::operator+ (const bigint& that) const {
-    ubigint result = 0;
+    bigint result;
     if (that.is_negative == is_negative) {
-        ubigint result = uvalue + that.uvalue;
+        result = bigint(uvalue + that.uvalue, is_negative);
     } else {
         if (that.uvalue > uvalue) {
-            ubigint result = that.uvalue - uvalue;
+            result = bigint(that.uvalue - uvalue, that.is_negative);
         } else {
-            ubigint result = uvalue - that.uvalue;
+            result = bigint(uvalue - that.uvalue, is_negative);
         }
     }
     cout << "Result: " << result << endl;
@@ -89,7 +89,8 @@ bool bigint::operator< (const bigint& that) const {
 }
 
 ostream& operator<< (ostream& out, const bigint& that) {
-   return out << "bigint(" << (that.is_negative ? "-" : "+")
-              << "," << that.uvalue << ")";
+   out << "bigint(" << (that.is_negative ? "-" : "+");
+   out << "," << that.uvalue << ")";
+   return out;
 }
 

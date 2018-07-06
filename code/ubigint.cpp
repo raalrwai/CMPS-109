@@ -1,4 +1,5 @@
 // $Id: ubigint.cpp,v 1.14 2016-06-23 17:21:26-07 - - $
+//#define DEBUG
 
 #include <cctype>
 #include <cstdlib>
@@ -35,34 +36,41 @@ ubigint::ubigint (const string& that)  {
 ubigint ubigint::operator+ (const ubigint& that) const {
     ubigint result;
     int iter_size = ubig_value.size();
-    int digit1 = 0;
-    int digit2 = 0;
+    unsigned char digit1 = 0;
+    unsigned char digit2 = 0;
     cout << "Called ubigint operator+" << endl;
     if (ubig_value.size() < that.ubig_value.size()) {
         iter_size = that.ubig_value.size();
     } 
  
-    int partial_result;
+    unsigned char partial_result;
     for (int i = 0; i < iter_size; i++) {
         if (i > (that.ubig_value.size() - 1)) {
             digit1 = 0;
         } else {
-            digit1 = static_cast<int>(that.ubig_value[i]) - 48;
+            //digit1 = that.ubig_value[i] - 48;
+            digit1 = that.ubig_value[i];
         }
         if (i > (ubig_value.size() - 1)) {
             digit2 = 0;
         } else {
-            digit2 = static_cast<int>(ubig_value[i]) - 48;
+            //digit2 = ubig_value[i] - 48;
+            digit2 = ubig_value[i];
         }
         //partial_result = static_cast<int>(digit1) + static_cast<int>(digit2);
-        partial_result = digit1 + digit2;
-        unsigned char partial_char = '0' + partial_result; 
-        cout << digit1 << " + " << digit2 << " = " << partial_result << endl;
+        //
+        partial_result = (digit1-'0') + (digit2-'0');
+
+        //unsigned char partial_char = (unsigned char) (partial_result); 
+
+        //cout << (char) (digit1+'0') << " + " << (char) ('0' + digit2) << " = " << (char) ('0'+ partial_result) << endl;
+        cout << (char) (digit1) << " + " << (char) (digit2) << " = " << (char) (partial_result + '0') << endl;
+
         //cout << "Partial Char: " << partial_char << endl;
-        result.ubig_value.push_back(partial_char);
+        
+        result.ubig_value.push_back(partial_result + '0');
         
     }
-    cout << "Addition function finished." << endl;
     return result;
 }
 
@@ -76,17 +84,17 @@ ubigint ubigint::operator- (const ubigint& that) const {
         iter_size = that.ubig_value.size();
     } 
 
-    ubigint test;
+/*    ubigint test;
     for (int i = 0; i < 10; i++) {
         //test.ubig_value.push_back('A');
         unsigned char push_elem = '0' + i;
         test.ubig_value.push_back(push_elem);
-    }
+        } */  
 
-    for (int i = 0; i < 10; i++) {
+ /*   for (int i = 0; i < 10; i++) {
         cout << "Ubig_value: " << test.ubig_value[i] << endl;
     }
- 
+ */
     int partial_result = 0;
     for (int i = 0; i < iter_size; i++) {
         if (i > (ubig_value.size() - 1)) {
@@ -161,6 +169,14 @@ bool ubigint::operator< (const ubigint& that) const {
 }
 
 ostream& operator<< (ostream& out, const ubigint& that) { 
-  return out << "ubigint(" << that.ubig_value[0] << ")";
+  if(that.ubig_value.size() > 0){
+    for(int i = 0; i <= that.ubig_value.size()-1; i++){
+      if (i%69 == 0 and i != 0){
+        out << "\\" << endl;
+      }
+      out << (static_cast<char>(that.ubig_value.at(i)));
+    }
+  }
+  return out; 
 }
 
