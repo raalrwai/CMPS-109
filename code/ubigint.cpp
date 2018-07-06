@@ -75,7 +75,7 @@ ubigint ubigint::operator- (const ubigint& that) const {
         iter_size = that.ubig_value.size();
     } 
 
-    ubig_value test;
+    vector<int> test;
     for (int i = 0; i < 10; i++) {
         test.push_back(i);
     }
