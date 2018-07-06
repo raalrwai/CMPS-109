@@ -68,7 +68,7 @@ ubigint ubigint::operator- (const ubigint& that) const {
 	int iter_size = ubig_value.size();
 	int digit1 = 0;
 	int digit2 = 0;
-    cout << "Called ubigint operater-" << endl;
+    cout << "Called ubigint operator-" << endl;
     if (ubig_value.size() < that.ubig_value.size()) {
         iter_size = that.ubig_value.size();
     } 
