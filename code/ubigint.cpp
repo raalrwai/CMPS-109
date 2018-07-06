@@ -57,7 +57,8 @@ ubigint ubigint::operator+ (const ubigint& that) const {
         partial_result = static_cast<int>(digit1) + static_cast<int>(digit2);
         unsigned char partial_char = partial_result + '0'; 
         cout << digit1 << " + " << digit2 << " = " << partial_result << endl;
-        result.ubig_value.push_back(partial_result);
+        cout << "Partial Char: " << partial_char << endl;
+        result.ubig_value.push_back(partial_char);
         
     }
     cout << "Addition function finished." << endl;
