@@ -75,14 +75,18 @@ ubigint ubigint::operator- (const ubigint& that) const {
         iter_size = that.ubig_value.size();
     } 
 
-    vector<unsigned char> test;
-    for (unsigned char i = 0; i < 10; i++) {
-        test.push_back(i);
-    }
+  //   vector<unsigned char> test;
+  //   for (unsigned char i = 0; i < 10; i++) {
+  //       test.push_back(i);
+  //   }
+  //   for (auto it = test.rbegin(); it != that.rend(); it++){
+  //   ubig_value.push_back(*it);
+  //   DEBUGF('~', *it);
+  // }
 
-    for (int i = 0; i < 10; i++) {
-        cout << "Ubig_value: " << test[i] << endl;
-    }
+  //   for (int i = 0; i < 10; i++) {
+  //       cout << "Ubig_value: " << test[i] << endl;
+  //   }
  
     int partial_result = 0;
     for (int i = 0; i < iter_size; i++) {
