@@ -55,6 +55,7 @@ ubigint ubigint::operator+ (const ubigint& that) const {
             digit2 = static_cast<int>(ubig_value[i]) - 48;
         }
         partial_result = static_cast<int>(digit1) + static_cast<int>(digit2);
+        unsigned char partial_char = partial_result + '0'; 
         cout << digit1 << " + " << digit2 << " = " << partial_result << endl;
         result.ubig_value.push_back(partial_result);
         
@@ -73,8 +74,12 @@ ubigint ubigint::operator- (const ubigint& that) const {
         iter_size = that.ubig_value.size();
     } 
 
-    cout << "ubig_value: " << ubig_value[0] << endl;
-    cout << "that.ubig_value: " << that.ubig_value[0] << endl;
+    // ubigint test;
+    // for (int i = 0; i < 10; i++) {
+    // 	test.push_back(i);
+    // }
+
+    // for (int)
  
     int partial_result = 0;
     for (int i = 0; i < iter_size; i++) {
