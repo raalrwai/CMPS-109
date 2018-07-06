@@ -75,13 +75,13 @@ ubigint ubigint::operator- (const ubigint& that) const {
         iter_size = that.ubig_value.size();
     } 
 
-    vector<unsigned char> test;
+    ubigint test;
     for (int i = 0; i < 10; i++) {
-        test.push_back('A');
+        test.ubig_value.push_back('A');
     }
 
     for (int i = 0; i < 10; i++) {
-        cout << "Ubig_value: " << test[i] << endl;
+        cout << "Ubig_value: " << test.ubig_value[i] << endl;
     }
  
     int partial_result = 0;
