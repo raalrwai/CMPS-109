@@ -33,10 +33,11 @@ ubigint::ubigint (const string& that)  {
 }
 
 ubigint ubigint::operator+ (const ubigint& that) const {
-    ubigint result = ubigint(0);
+    ubigint result;
     int iter_size = ubig_value.size();
     int digit1 = 0;
     int digit2 = 0;
+    cout << "In addition function.";
     if (ubig_value.size() < that.ubig_value.size()) {
         iter_size = that.ubig_value.size();
     } 
@@ -55,9 +56,10 @@ ubigint ubigint::operator+ (const ubigint& that) const {
         }
         partial_result = static_cast<int>(digit1) + static_cast<int>(digit2);
         cout << digit1 << " + " << digit2 << " = " << partial_result << endl;
-        result.ubig_value.push_back(static_cast<udigit_t>(partial_result));
-        result.ubig_value.push_back(16);
+        result.ubig_value.push_back(partial_result);
+        
     }
+    cout << "Addition function finished.";
     return result;
 }
 
