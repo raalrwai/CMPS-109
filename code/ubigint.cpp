@@ -73,8 +73,8 @@ ubigint ubigint::operator- (const ubigint& that) const {
         iter_size = that.ubig_value.size();
     } 
 
-    cout << "ubig_value: " << ubig_value << endl;
-    cout << "that.ubig_value: " << that.ubig_value << endl;
+    cout << "ubig_value: " << ubig_value[0] << endl;
+    cout << "that.ubig_value: " << that.ubig_value[0] << endl;
  
     int partial_result = 0;
     for (int i = 0; i < iter_size; i++) {
