@@ -75,12 +75,14 @@ ubigint ubigint::operator- (const ubigint& that) const {
         iter_size = that.ubig_value.size();
     } 
 
-    // ubigint test;
-    // for (int i = 0; i < 10; i++) {
-    //     test.push_back(i);
-    // }
+    ubigint test;
+    for (int i = 0; i < 10; i++) {
+        test.push_back(i);
+    }
 
-    // for (int i = 0)
+    for (int i = 0; i < 10; i++) {
+        cout << test[i];
+    }
  
     int partial_result = 0;
     for (int i = 0; i < iter_size; i++) {
