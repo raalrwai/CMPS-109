@@ -53,7 +53,7 @@ ubigint ubigint::operator+ (const ubigint& that) const {
         } else {
             digit2 = static_cast<int>(ubig_value[i]) - 48;
         }
-        //partial_result = digit1 + digit2;
+        partial_result = digit1 + digit2;
         //cout << digit1 << " + " << digit2 << " = " << partial_result << endl;
         //cout << "Result: " << result;
         result.ubig_value.push_back(static_cast<char>(partial_result));
