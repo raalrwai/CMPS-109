@@ -77,7 +77,7 @@ ubigint ubigint::operator- (const ubigint& that) const {
 
     ubig_value test;
     for (int i = 0; i < 10; i++) {
-        test.ubig_value.push_back(i);
+        test.push_back(i);
     }
 
     for (int i = 0; i < 10; i++) {
