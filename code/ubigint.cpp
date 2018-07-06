@@ -90,7 +90,7 @@ ubigint ubigint::operator- (const ubigint& that) const {
         }
         partial_result = static_cast<int>(digit1) - static_cast<int>(digit2);
         cout << digit1 << " - " << digit2 << " = " << partial_result << endl;
-        result.ubig_value.push_back(ubig_value.partial_result);
+        result.ubig_value.push_back(partial_result);
         
     }
     cout << "Subtraction function finished." << endl;
