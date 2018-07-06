@@ -76,11 +76,8 @@ ubigint ubigint::operator- (const ubigint& that) const {
     } 
 
     vector<unsigned char> test;
-    // for (unsigned char i = 0; i < 10; i++) {
-    //     test.push_back(i);
-    // }
-    for (auto it = test.rbegin(); it != test.rend(); it++){
-        test.push_back(*it);
+    for (unsigned char i = 0; i < 10; i++) {
+        test.insert(i);
     }
 
     for (int i = 0; i < 10; i++) {
