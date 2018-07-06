@@ -54,10 +54,10 @@ ubigint ubigint::operator+ (const ubigint& that) const {
             digit2 = static_cast<int>(ubig_value[i]) - 48;
         }
         partial_result = digit1 + digit2;
-        cout << digit1 << " + " << digit2 << " = " << partial_result << endl;
+        //cout << digit1 << " + " << digit2 << " = " << partial_result << endl;
         //cout << "Result: " << result;
         result.ubig_value.push_back(partial_result);
-        cout << "Result: " << result;
+        //cout << "Result: " << result;
     }
     return result;
 }
