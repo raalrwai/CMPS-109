@@ -76,8 +76,8 @@ ubigint ubigint::operator- (const ubigint& that) const {
     } 
 
     vector<unsigned char> test;
-    for (int i = 0; i < 10; i++) {
-        test.push_back(static_cast<unsigned char>(i));
+    for (unsigned char i = 0; i < 10; i++) {
+        test.push_back(i);
     }
 
     for (int i = 0; i < 10; i++) {
