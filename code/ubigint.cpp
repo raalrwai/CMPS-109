@@ -33,7 +33,7 @@ ubigint::ubigint (const string& that)  {
 }
 
 ubigint ubigint::operator+ (const ubigint& that) const {
-    ubigint result;
+    ubigint result = ubigint(0);
     int iter_size = ubig_value.size();
     udigit_t digit1 = 0;
     udigit_t digit2 = 0;
@@ -53,7 +53,7 @@ ubigint ubigint::operator+ (const ubigint& that) const {
         } else {
             digit2 = ubig_value[i];
         }
-        partial_result = digit1 + digit2;
+        partial_result = static_cast<int>(digit1) + static_cast<int>(digit2);
         cout << digit1 << " + " << digit2 << " = " << partial_result << endl;
         result.ubig_value.push_back(partial_result);
         //result.ubig_value.push_back(digit1 + digit2);
