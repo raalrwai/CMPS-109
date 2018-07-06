@@ -37,7 +37,7 @@ ubigint ubigint::operator+ (const ubigint& that) const {
     int iter_size = ubig_value.size();
     int digit1 = 0;
     int digit2 = 0;
-    cout << "In addition function.";
+    cout << "Called ubigint operator+" << endl;
     if (ubig_value.size() < that.ubig_value.size()) {
         iter_size = that.ubig_value.size();
     } 
@@ -59,14 +59,39 @@ ubigint ubigint::operator+ (const ubigint& that) const {
         result.ubig_value.push_back(partial_result);
         
     }
-    cout << "Addition function finished.";
+    cout << "Addition function finished." << endl;
     return result;
 }
 
 ubigint ubigint::operator- (const ubigint& that) const {
-    cout << "Called ubigint operater-";
-    if (*this < that) throw domain_error ("ubigint::operator-(a<b)");
-    return ubigint (ubig_value[0] - that.ubig_value[0]);
+	ubigint result;
+	int iter_size = ubig_value.size();
+	int digit1 = 0;
+	int digit2 = 0;
+    cout << "Called ubigint operater-" << endl;
+    if (ubig_value.size() < that.ubig_value.size()) {
+        iter_size = that.ubig_value.size();
+    } 
+ 
+    int partial_result = 0;
+    for (int i = 0; i < iter_size; i++) {
+        if (i > (that.ubig_value.size() - 1)) {
+            digit1 = 0;
+        } else {
+            digit1 = static_cast<int>(that.ubig_value[i]) - 48;
+        }
+        if (i > (ubig_value.size() - 1)) {
+            digit2 = 0;
+        } else {
+            digit2 = static_cast<int>(ubig_value[i]) - 48;
+        }
+        partial_result = static_cast<int>(digit1) - static_cast<int>(digit2);
+        cout << digit1 << " - " << digit2 << " = " << partial_result << endl;
+        result.ubig_value.push_back(partial_result);
+        
+    }
+    cout << "Subtraction function finished." << endl;
+    return result;
 }
 
 ubigint ubigint::operator* (const ubigint& that) const {
