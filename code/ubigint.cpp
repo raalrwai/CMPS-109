@@ -81,12 +81,12 @@ ubigint ubigint::operator- (const ubigint& that) const {
         if (i > (ubig_value.size() - 1)) {
             digit1 = 0;
         } else {
-            digit1 = static_cast<int>(that.ubig_value[i]) - 48;
+            digit1 = static_cast<int>(ubig_value[i]) - 48;
         }
         if (i > (that.ubig_value.size() - 1)) {
             digit2 = 0;
         } else {
-            digit2 = static_cast<int>(ubig_value[i]) - 48;
+            digit2 = static_cast<int>(that.ubig_value[i]) - 48;
         }
         partial_result = static_cast<int>(digit1) - static_cast<int>(digit2);
         cout << digit1 << " - " << digit2 << " = " << partial_result << endl;
