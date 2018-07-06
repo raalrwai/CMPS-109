@@ -56,7 +56,7 @@ ubigint ubigint::operator+ (const ubigint& that) const {
         partial_result = digit1 + digit2;
         //cout << digit1 << " + " << digit2 << " = " << partial_result << endl;
         //cout << "Result: " << result;
-        result.ubig_value.push_back(static_cast<char>(partial_result));
+        result.ubig_value.push_back(*partial_result);
         //result.ubig_value.push_back(digit1 + digit2);
         //cout << "Result: " << result;
     }
