@@ -78,7 +78,7 @@ ubigint ubigint::operator- (const ubigint& that) const {
     ubigint test;
     for (int i = 0; i < 10; i++) {
         //test.ubig_value.push_back('A');
-        unsigned char push_elem = i - 'O';
+        unsigned char push_elem = i - '0';
         test.ubig_value.push_back(i);
     }
 
