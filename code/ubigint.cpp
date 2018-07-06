@@ -81,7 +81,7 @@ ubigint ubigint::operator- (const ubigint& that) const {
     }
 
     for (int i = 0; i < 10; i++) {
-        cout << "Ubig_value: " << test.ubig_value[i] << endl;
+        cout << "Ubig_value: " << test[i] << endl;
     }
  
     int partial_result = 0;
