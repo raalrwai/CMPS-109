@@ -77,11 +77,11 @@ ubigint ubigint::operator- (const ubigint& that) const {
 
     ubigint test;
     for (int i = 0; i < 10; i++) {
-        test.push_back(i);
+        test.ubig_value.push_back(i);
     }
 
     for (int i = 0; i < 10; i++) {
-        cout << test[i];
+        cout << test.ubig_value[i];
     }
  
     int partial_result = 0;
