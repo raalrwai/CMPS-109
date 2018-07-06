@@ -42,7 +42,7 @@ ubigint ubigint::operator+ (const ubigint& that) const {
         iter_size = that.ubig_value.size();
     } 
  
-    int partial_result = 0;
+    int partial_result;
     for (int i = 0; i < iter_size; i++) {
         if (i > (that.ubig_value.size() - 1)) {
             digit1 = 0;
@@ -66,10 +66,10 @@ ubigint ubigint::operator+ (const ubigint& that) const {
 }
 
 ubigint ubigint::operator- (const ubigint& that) const {
-	ubigint result;
-	int iter_size = ubig_value.size();
-	int digit1 = 0;
-	int digit2 = 0;
+    ubigint result;
+    int iter_size = ubig_value.size();
+    int digit1 = 0;
+    int digit2 = 0;
     cout << "Called ubigint operator-" << endl;
     if (ubig_value.size() < that.ubig_value.size()) {
         iter_size = that.ubig_value.size();
@@ -77,10 +77,10 @@ ubigint ubigint::operator- (const ubigint& that) const {
 
     // ubigint test;
     // for (int i = 0; i < 10; i++) {
-    // 	test.push_back(i);
+    //     test.push_back(i);
     // }
 
-    // for (int)
+    // for (int i = 0)
  
     int partial_result = 0;
     for (int i = 0; i < iter_size; i++) {
