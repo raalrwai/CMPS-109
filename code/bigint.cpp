@@ -44,7 +44,6 @@ bigint bigint::operator+ (const bigint& that) const {
             result = bigint(uvalue - that.uvalue, is_negative);
         }
     }
-    cout << "Result: " << result << endl;
     return result;
 }
 
