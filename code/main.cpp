@@ -64,9 +64,9 @@ void do_print (bigint_stack& stack, const char) {
     if (to_print.is_negative) {
         cout << "-"
     }
-    for(i = 0; i < (iter_size - 1); i++){
-        cout << to_print.uvalue[i];
-  }
+    // for(i = 0; i < (iter_size - 1); i++){
+    //     cout << to_print.uvalue[i];
+    // }
 }
 
 void do_debug (bigint_stack& stack, const char) {
