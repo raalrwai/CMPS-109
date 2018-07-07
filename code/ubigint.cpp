@@ -60,6 +60,8 @@ ubigint ubigint::operator+ (const ubigint& that) const {
         //partial_result = static_cast<int>(digit1) + static_cast<int>(digit2);
         //
         partial_result = (digit1-'0') + (digit2-'0');
+        unsigned char second_partial = digit1 + digit2;
+        cout << second_partial;
 
         //unsigned char partial_char = (unsigned char) (partial_result); 
 
