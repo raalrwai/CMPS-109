@@ -92,7 +92,7 @@ ostream& operator<< (ostream& out, const bigint& that) {
    	//out << "," << that.uvalue << ")";
    	out << (that.is_negative ? "-" : "");
    	for (int i = 0; i < (that.uvalue.size() - 1); i++) {
-   		out << that.uvalue.ubigvalue[i];
+   		out << that.uvalue.ubig_value[i];
    	}
    	return out;
 }
