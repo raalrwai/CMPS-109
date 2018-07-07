@@ -20,45 +20,52 @@ using namespace std;
 using bigint_stack = iterstack<bigint>;
 
 void do_arith (bigint_stack& stack, const char oper) {
-   if (stack.size() < 2) throw ydc_exn ("stack empty");
-   bigint right = stack.top();
-   stack.pop();
-   DEBUGF ('d', "right = " << right);
-   bigint left = stack.top();
-   stack.pop();
-   DEBUGF ('d', "left = " << left);
-   bigint result;
-   switch (oper) {
-      case '+': result = left + right; break;
-      case '-': result = left - right; break;
-      case '*': result = left * right; break;
-      case '/': result = left / right; break;
-      case '%': result = left % right; break;
-      case '^': result = pow (left, right); break;
-      default: throw invalid_argument ("do_arith operator "s + oper);
-   }
-   DEBUGF ('d', "result = " << result);
-   stack.push (result);
+    if (stack.size() < 2) throw ydc_exn ("stack empty");
+    bigint right = stack.top();
+    stack.pop();
+    DEBUGF ('d', "right = " << right);
+    bigint left = stack.top();
+    stack.pop();
+    DEBUGF ('d', "left = " << left);
+    bigint result;
+    switch (oper) {
+        case '+': result = left + right; break;
+        case '-': result = left - right; break;
+        case '*': result = left * right; break;
+        case '/': result = left / right; break;
+        case '%': result = left % right; break;
+        case '^': result = pow (left, right); break;
+        default: throw invalid_argument ("do_arith operator "s + oper);
+    }
+    DEBUGF ('d', "result = " << result);
+    stack.push (result);
 }
 
 void do_clear (bigint_stack& stack, const char) {
-   DEBUGF ('d', "");
-   stack.clear();
+    DEBUGF ('d', "");
+    stack.clear();
 }
 
 
 void do_dup (bigint_stack& stack, const char) {
-   bigint top = stack.top();
-   DEBUGF ('d', top);
-   stack.push (top);
+    bigint top = stack.top();
+    DEBUGF ('d', top);
+    stack.push (top);
 }
 
 void do_printall (bigint_stack& stack, const char) {
-   for (const auto& elem: stack) cout << elem << endl;
+    for (const auto& elem: stack) cout << elem << endl;
 }
 
 void do_print (bigint_stack& stack, const char) {
-   cout << stack.top() << endl;
+    cout << stack.top() << endl;
+    bigint to_print = stack.top();
+    if to_print.is_negative {
+        cout << "-"
+    }
+    for(auto it = to_print.uvalue.rbegin(); it != to_print.uvalue.rend(); it++){
+        cout << it;
+  }
 }
 
 void do_debug (bigint_stack& stack, const char) {
