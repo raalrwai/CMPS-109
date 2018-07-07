@@ -64,7 +64,7 @@ void do_print (bigint_stack& stack, const char) {
         cout << "-"
     }
     for(auto it = to_print.uvalue.rbegin(); it != to_print.uvalue.rend(); it++){
-        cout << it;
+        cout << *it;
   }
 }
 
