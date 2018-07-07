@@ -61,7 +61,7 @@ ubigint ubigint::operator+ (const ubigint& that) const {
         //
         partial_result = (digit1-'0') + (digit2-'0');
         unsigned char second_partial = digit1 + digit2;
-        cout << second_partial;
+        cout << digit1 << " + " << digit2 << " = " << second_partial << endl;
 
         //unsigned char partial_char = (unsigned char) (partial_result); 
 
