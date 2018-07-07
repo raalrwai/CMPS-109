@@ -58,16 +58,7 @@ void do_printall (bigint_stack& stack, const char) {
 }
 
 void do_print (bigint_stack& stack, const char) {
-    //cout << stack.top().is_negative << endl;
     cout << stack.top() << endl;
-    //bigint to_print = stack.top();
-    //int iter_size = to_print.uvalue.size();
-    // if (to_print.is_negative) {
-    //     cout << "-"
-    // }
-    // for(i = 0; i < (iter_size - 1); i++){
-    //     cout << to_print.uvalue[i];
-    // }
 }
 
 void do_debug (bigint_stack& stack, const char) {
