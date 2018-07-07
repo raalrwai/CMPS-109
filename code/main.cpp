@@ -60,11 +60,12 @@ void do_printall (bigint_stack& stack, const char) {
 void do_print (bigint_stack& stack, const char) {
     cout << stack.top() << endl;
     bigint to_print = stack.top();
+    int iter_size = to_print.uvalue.size();
     if to_print.is_negative {
         cout << "-"
     }
-    for(auto it = to_print.uvalue.rbegin(); it != to_print.uvalue.rend(); it++){
-        cout << *it;
+    for(i = 0; i < (iter_size - 1); i++){
+        cout << to_print.uvalue[i];
   }
 }
 
