@@ -60,7 +60,7 @@ void do_printall (bigint_stack& stack, const char) {
 void do_print (bigint_stack& stack, const char) {
     cout << stack.top() << endl;
     bigint to_print = stack.top();
-    int iter_size = to_print.uvalue.size();
+    //int iter_size = to_print.uvalue.size();
     if (to_print.is_negative) {
         cout << "-"
     }
