@@ -48,30 +48,16 @@ ubigint ubigint::operator+ (const ubigint& that) const {
         if (i > (that.ubig_value.size() - 1)) {
             digit1 = 0;
         } else {
-            //digit1 = that.ubig_value[i] - 48;
             digit1 = that.ubig_value[i];
         }
         if (i > (ubig_value.size() - 1)) {
             digit2 = 0;
         } else {
-            //digit2 = ubig_value[i] - 48;
             digit2 = ubig_value[i];
         }
-        //partial_result = static_cast<int>(digit1) + static_cast<int>(digit2);
-        //
         partial_result = (digit1-'0') + (digit2-'0');
-        unsigned char second_partial = digit1 + digit2;
-        cout << digit1 << " + " << digit2 << " = " << second_partial << endl;
-
-        //unsigned char partial_char = (unsigned char) (partial_result); 
-
-        //cout << (char) (digit1+'0') << " + " << (char) ('0' + digit2) << " = " << (char) ('0'+ partial_result) << endl;
-        cout << (char) (digit1) << " + " << (char) (digit2) << " = " << (char) (partial_result + '0') << endl;
-
-        //cout << "Partial Char: " << partial_char << endl;
-        
-        result.ubig_value.push_back(partial_result + '0');
-        
+        //cout << (char) (digit1) << " + " << (char) (digit2) << " = " << (char) (partial_result + '0') << endl;
+        result.ubig_value.push_back(partial_result + '0');  
     }
     return result;
 }
