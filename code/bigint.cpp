@@ -35,9 +35,6 @@ bigint bigint::operator- () const {
 
 bigint bigint::operator+ (const bigint& that) const {
     bigint result;
-    if (uvalue == that.uvalue) {
-        cout << "They are equal." << endl;
-    }
     if (that.is_negative == is_negative) {
         result = bigint(uvalue + that.uvalue, is_negative);
     } else {
@@ -73,12 +70,15 @@ bigint bigint::operator- (const bigint& that) const {
         }
     } else {
         if (uvalue < that.uvalue) { // that.uvalue > uvalue
-            cout << that.uvalue << " is the bigger number." << endl;
+            //cout << that.uvalue << " is the bigger number." << endl;
             result = bigint(that.uvalue - uvalue, !that.is_negative);
         } else {
             result = bigint(uvalue - that.uvalue, that.is_negative);
-            cout << uvalue << " is the bigger number." << endl;
+            //cout << uvalue << " is the bigger number." << endl;
         }
+    }
+    if (result.uvalue == '0') {
+        cout << "Got a zero here folks." << endl;
     }
     return result;
 }
