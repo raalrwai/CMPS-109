@@ -73,7 +73,7 @@ ubigint ubigint::operator+ (const ubigint& that) const {
             result.ubig_value.push_back(carry);
         } 
     }
-    while (result.ubig_value.size() > 0 and ((static_cast<int>(result.ubig_value.back()) - 48) == 0)) {
+    while (result.ubig_value.size() > 1 and ((static_cast<int>(result.ubig_value.back()) - 48) == 0)) {
         result.ubig_value.pop_back();
     } 
     return result;
@@ -131,7 +131,7 @@ ubigint ubigint::operator- (const ubigint& that) const {
         //<< (char) (partial_result + '0') << endl;
         //result.ubig_value.push_back(int_partial + '0');   
     }
-    while (result.ubig_value.size() > 0 and ((static_cast<int>(result.ubig_value.back()) - 48) == 0)) {
+    while (result.ubig_value.size() > 1 and ((static_cast<int>(result.ubig_value.back()) - 48) == 0)) {
         result.ubig_value.pop_back();
     } 
     return result;
