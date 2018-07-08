@@ -165,7 +165,7 @@ ostream& operator<< (ostream& out, const ubigint& that) {
   //   }
   // }
 	if(that.ubig_value.size() > 0){
-    for(int i = that.ubig_value.size()-1; i >= 0; i++){
+    for(int i = that.ubig_value.size()-1; i > 0; i++){
       if (i%69 == 0 and i != 0){
         out << "\\" << endl;
       }
