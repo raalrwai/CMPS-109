@@ -38,7 +38,7 @@ ubigint ubigint::operator+ (const ubigint& that) const {
     int iter_size = ubig_value.size();
     unsigned char digit1 = 0;
     unsigned char digit2 = 0;
-    unsigned char carry = 0;
+    unsigned char carry = 1;
     if (ubig_value.size() < that.ubig_value.size()) {
         iter_size = that.ubig_value.size();
     } 
