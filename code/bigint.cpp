@@ -72,6 +72,8 @@ bigint bigint::operator- (const bigint& that) const {
         result = bigint(that.uvalue - uvalue, is_negative);
     }
 
+    cout << "Left number: " << uvalue << endl;
+
     return result;
 }
 
