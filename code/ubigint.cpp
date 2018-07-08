@@ -106,6 +106,7 @@ ubigint ubigint::operator- (const ubigint& that) const {
         if (digit1 < digit2) {
             borrow = -1;
             corrected_result = int_partial + 10;
+            cout << "Corrected Result: " << corrected_result;
             result.ubig_value.push_back(corrected_result + '0');
         } else {
             result.ubig_value.push_back(int_partial + '0');
