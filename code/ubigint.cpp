@@ -92,7 +92,7 @@ ubigint ubigint::operator- (const ubigint& that) const {
     //unsigned char partial_result;
     int int_partial;
     int corrected_result;
-    int negative_one = -1;
+    //int negative_one = -1;
     for (int i = 0; i < iter_size; i++) {
         if (i > static_cast<int>(ubig_value.size() - 1)) {
             digit1 = '0';
@@ -110,7 +110,7 @@ ubigint ubigint::operator- (const ubigint& that) const {
         cout << digit1 << " - " << digit2 << " - " << borrow << " = " << int_partial << endl;
         if (digit1 < digit2) {
             //int_partial = (static_cast<int>(digit1) - 38) - (static_cast<int>(digit2) - 48) - (static_cast<int>(borrow) - 48);
-            borrow = static_cast<unsigned char>(negative_one);
+            borrow = '-1';
             cout << "Borrow: " << borrow << endl;
             //cout << "int partial " << int_partial << endl;
             corrected_result = int_partial + 10;
