@@ -107,19 +107,19 @@ ubigint ubigint::operator- (const ubigint& that) const {
         //cout << "Digit1: " << digit1 << endl;
         //cout << "Digit2: " << digit2 << endl;
         int_partial = (static_cast<int>(digit1) - 48) - (static_cast<int>(digit2) - 48) - (static_cast<int>(borrow) - 48);
-        cout << digit1 << " - " << digit2 << " - " << borrow << " = " << int_partial << endl;
+        //cout << digit1 << " - " << digit2 << " - " << borrow << " = " << int_partial << endl;
         if (digit1 < digit2) {
             //int_partial = (static_cast<int>(digit1) - 38) - (static_cast<int>(digit2) - 48) - (static_cast<int>(borrow) - 48);
             //borrow = '1';
             //cout << "Borrow: " << borrow << endl;
             //cout << "int partial " << int_partial << endl;
             corrected_result = int_partial + 10;
-            cout << "Corrected Result: " << corrected_result << endl;
-            cout << "Pushing " << corrected_result << endl;
+            //cout << "Corrected Result: " << corrected_result << endl;
+            //cout << "Pushing " << corrected_result << endl;
             result.ubig_value.push_back(corrected_result + '0');
         } else {
             //int_partial = (static_cast<int>(digit1) - 48) - (static_cast<int>(digit2) - 48) - (static_cast<int>(borrow) - 48);
-            cout << "Pushing " << int_partial << endl;
+            //cout << "Pushing " << int_partial << endl;
             result.ubig_value.push_back(int_partial + '0');
             borrow = '0';
         }
@@ -202,7 +202,7 @@ bool ubigint::operator< (const ubigint& that) const {
     } else if (ubig_value.size() == that.ubig_value.size()){
         for (int i = 0; i < static_cast<int>(ubig_value.size() - 1); i++) {
             if (ubig_value[i] > that.ubig_value[i]) {
-                cout << "First non matching numbers " << ubig_value[i] << that.ubig_value[i] << endl; 
+                //cout << "First non matching numbers " << ubig_value[i] << that.ubig_value[i] << endl; 
                 return false;
             }
         }
