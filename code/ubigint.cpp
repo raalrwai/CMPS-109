@@ -64,8 +64,8 @@ ubigint ubigint::operator+ (const ubigint& that) const {
 ubigint ubigint::operator- (const ubigint& that) const {
     ubigint result;
     int iter_size = ubig_value.size();
-    unsigned digit1 = 0;
-    unsigned digit2 = 0;
+    unsigned char digit1 = 0;
+    unsigned char digit2 = 0;
     if (ubig_value.size() < that.ubig_value.size()) {
         iter_size = that.ubig_value.size();
     } 
