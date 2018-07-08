@@ -57,7 +57,7 @@ ubigint ubigint::operator+ (const ubigint& that) const {
         } else {
             digit2 = ubig_value[i];
         }
-        int_partial = (static_cast<int>(digit1) - 48) + (static_cast<int>(digit2) - 48) + (static_cast<int>(carry) - 48);
+        int_partial = (static_cast<int>(digit1) - 48) + (static_cast<int>(digit2) - 48) + (static_cast<int>(carry));
         cout << "Int partial: " << int_partial << endl;
         if (int_partial > 9) {
             carry = 1;
