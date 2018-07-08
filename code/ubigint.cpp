@@ -66,8 +66,8 @@ ubigint ubigint::operator+ (const ubigint& that) const {
             result.ubig_value.push_back(partial_result + '0');
             carry = 0;
         }
-        cout << (char) (digit1) << " + " << (char) (digit2) << " = " 
-        << (char) (partial_result + '0') << endl;
+        //cout << (char) (digit1) << " + " << (char) (digit2) << " = " 
+        //<< (char) (partial_result + '0') << endl;
         result.ubig_value.push_back(partial_result + '0');  
     }
     return result;
