@@ -72,7 +72,7 @@ ubigint ubigint::operator+ (const ubigint& that) const {
             result.ubig_value.push_back(carry + '0');
         } 
     }
-    while (result.size() > 0 and result.back() == 0) result.pop_back();
+    while (result.ubig_value.size() > 0 and result.ubig_value.back() == 0) result.ubig_value.pop_back();
     return result;
 }
 
@@ -117,7 +117,7 @@ ubigint ubigint::operator- (const ubigint& that) const {
         //<< (char) (partial_result + '0') << endl;
         //result.ubig_value.push_back(int_partial + '0');   
     }
-    while (result.size() > 0 and result.back() == 0) result.pop_back();
+    while (result.ubig_value.size() > 0 and result.ubig_value.back() == 0) result.ubig_value.pop_back();
     return result;
 }
 
