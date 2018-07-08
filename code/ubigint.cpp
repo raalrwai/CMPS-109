@@ -121,6 +121,9 @@ ubigint ubigint::operator- (const ubigint& that) const {
         cout << result.ubig_value[i];
     }
     cout << "here " << result.ubig_value.back() << endl;
+    if (result.ubig_value.back() == 0) {
+        cout << "Back is a 0." << endl;
+    }
     while (result.ubig_value.size() > 0 and result.ubig_value.back() == 0) {
         cout << "Removing a 0" << endl;
         result.ubig_value.pop_back();
