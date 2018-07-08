@@ -59,7 +59,7 @@ ubigint ubigint::operator+ (const ubigint& that) const {
         partial_result = (digit1-'0') + (digit2-'0') + (carry-'0');
         if (partial_result > 9) {
             cout << "Need a carry" << endl;
-            cout << "Corrected Result: " << (char) (corrected_result + '0') << endl; 
+            cout << "Corrected Result: " << (char) (partial_result + '0') << endl; 
             result.ubig_value.push_back(corrected_result + '0');
             carry = 1;
         } else {
