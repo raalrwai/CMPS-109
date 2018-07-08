@@ -38,35 +38,27 @@ ubigint ubigint::operator+ (const ubigint& that) const {
     int iter_size = ubig_value.size();
     unsigned char digit1 = 0;
     unsigned char digit2 = 0;
-    int int_digit1 = 0;
-    int int_digit2 = 0;
+    unsigned char carry = 0;
     if (ubig_value.size() < that.ubig_value.size()) {
         iter_size = that.ubig_value.size();
     } 
  
     unsigned char partial_result;
-    int int_partial_result;
     //unsigned char carry_result;
     //unsigned char corrected_result;
-    unsigned char carry = 1;
     for (int i = 0; i < iter_size; i++) {
         if (i > static_cast<int>(that.ubig_value.size() - 1)) {
             digit1 = 0;
-            int_digit1 = 0;
         } else {
             digit1 = that.ubig_value[i];
-            int_digit1 = static_cast<int>(that.ubig_value[i]);
         }
         if (i > static_cast<int>(ubig_value.size() - 1)) {
             digit2 = 0;
-            int_digit2 = 0;
         } else {
             digit2 = ubig_value[i];
-            int_digit2 = static_cast<int>(ubig_value[i]);
         }
         partial_result = (digit1-'0') + (digit2-'0');
-        int_partial_result = digit1 + digit2;
-        //carry_result = (partial_result-'0') + (carry-'0');
+        carry_result = (partial_result-'0') + (carry-'0');
         // if (partial_result > 9) {
         //     //cout << "Partial Result: " << 
         //     //(char) (partial_result + '0') << endl; 
@@ -85,8 +77,10 @@ ubigint ubigint::operator+ (const ubigint& that) const {
         //     result.ubig_value.push_back(partial_result + '0');
         //     carry = 0;
         // }
-        cout << (char) (digit1) << " + " << (char) (digit2) << " = " 
-        << (char) (partial_result + '0') << endl;
+        cout << "Partial Result: " >> (partial_result + '0') << endl;
+        cout << "Carry Result: " >> (carry_result + '0') << endl;
+        //cout << (char) (digit1) << " + " << (char) (digit2) << " = " 
+        //<< (char) (partial_result + '0') << endl;
         result.ubig_value.push_back(static_cast<unsigned char>(int_partial_result));
         //result.ubig_value.push_back(partial_result + '0');  
     }
