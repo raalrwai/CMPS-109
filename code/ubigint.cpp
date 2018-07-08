@@ -61,7 +61,7 @@ ubigint ubigint::operator+ (const ubigint& that) const {
         cout << "(Digit1: " << digit1 << ") + (Digit2: "  << digit2 << ") + (Carry: " << carry << ") = " << int_partial << endl; 
         cout << "Int partial: " << int_partial << endl;
         if (int_partial > 9) {
-            carry = 1;
+            carry = '1';
             corrected_result = int_partial % 10;
             //cout << "Corrected Result: " << corrected_result << endl;
             result.ubig_value.push_back(corrected_result + '0');
