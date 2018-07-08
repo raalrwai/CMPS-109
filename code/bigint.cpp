@@ -90,14 +90,9 @@ bool bigint::operator< (const bigint& that) const {
 ostream& operator<< (ostream& out, const bigint& that) {
    	//out << "bigint(" << (that.is_negative ? "-" : "+");
    	//out << "," << that.uvalue << ")";
-   	vector<int> to_print;
+   	//vector<int> to_print;
    	out << (that.is_negative ? "-" : "");
-   	for (auto it = that.uvalue.rbegin(); it != that.uvalue.rend(); it++) {
-   		to_print.push_back(*it);
-   	}
-   	for (int i = 0; i < (to_print.size() - 1); i++) {
-   		out << to_print[i];
-   	}
+   	cout << that.uvalue.type();
    	return out;
 }
 
