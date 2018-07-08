@@ -39,6 +39,8 @@ ubigint ubigint::operator+ (const ubigint& that) const {
     unsigned char digit1 = '0';
     unsigned char digit2 = '0';
     unsigned char carry = '0';
+    cout << "Comparing " << that.ubig_value << "to " << ubig_value << endl;
+    cout << "It is " << (that.ubig_value == ubig_value) << " are the same." << endl; 
     if (ubig_value.size() < that.ubig_value.size()) {
         iter_size = that.ubig_value.size();
     } 
@@ -182,17 +184,17 @@ ubigint ubigint::operator% (const ubigint& that) const {
 }
 
 bool ubigint::operator== (const ubigint& that) const {
-  //return ubig_value[0] == that.ubig_value[0];
-    if (ubig_value.size() != that.ubig_value.size()) {
-        return false;
-    } else {
-        for (int i = 0; i < static_cast<int>(ubig_value.size() - 1); i++) {
-            if (ubig_value[i] != that.ubig_value[i]) {
-                return false;
-            }
-        }
-    }
-    return true;
+    return ubig_value[0] == that.ubig_value[0];
+    // if (ubig_value.size() != that.ubig_value.size()) {
+    //     return false;
+    // } else {
+    //     for (int i = 0; i < static_cast<int>(ubig_value.size() - 1); i++) {
+    //         if (ubig_value[i] != that.ubig_value[i]) {
+    //             return false;
+    //         }
+    //     }
+    // }
+    // return true;
 }
 
 bool ubigint::operator< (const ubigint& that) const {
