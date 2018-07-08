@@ -105,8 +105,9 @@ ubigint ubigint::operator- (const ubigint& that) const {
         int_partial = (static_cast<int>(digit1) - 48) - (static_cast<int>(digit2) - 48) - (static_cast<int>(borrow));
         if (digit1 < digit2) {
             borrow = -1;
+            cout << "int partial " << int_partial << endl;
             corrected_result = int_partial + 10;
-            cout << "Corrected Result: " << corrected_result;
+            cout << "Corrected Result: " << corrected_result << endl;
             result.ubig_value.push_back(corrected_result + '0');
         } else {
             result.ubig_value.push_back(int_partial + '0');
