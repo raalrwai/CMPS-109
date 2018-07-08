@@ -83,7 +83,7 @@ ubigint ubigint::operator- (const ubigint& that) const {
             digit2 = that.ubig_value[i];
         }
         partial_result = (digit1-'0') - (digit2-'0');
-        if (partial_result > 9) {
+        if ((partial_result-'0') > 9) {
         	cout << "Need a carry." << endl;
         }
         //cout << (char) (digit1) << " - " << (char) (digit2) << " = " << (char) (partial_result + '0') << endl;
