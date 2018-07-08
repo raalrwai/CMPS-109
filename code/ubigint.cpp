@@ -70,17 +70,6 @@ ubigint ubigint::operator- (const ubigint& that) const {
         iter_size = that.ubig_value.size();
     } 
 
-/*    ubigint test;
-    for (int i = 0; i < 10; i++) {
-        //test.ubig_value.push_back('A');
-        unsigned char push_elem = '0' + i;
-        test.ubig_value.push_back(push_elem);
-        } */  
-
- /*   for (int i = 0; i < 10; i++) {
-        cout << "Ubig_value: " << test.ubig_value[i] << endl;
-    }
- */
     unsigned char partial_result;
     for (int i = 0; i < iter_size; i++) {
         if (i > (ubig_value.size() - 1)) {
@@ -94,7 +83,7 @@ ubigint ubigint::operator- (const ubigint& that) const {
             digit2 = that.ubig_value[i];
         }
         partial_result = (digit1-'0') - (digit2-'0');
-        cout << (char) (digit1) << " - " << (char) (digit2) << " = " << (char) (partial_result + '0') << endl;
+        //cout << (char) (digit1) << " - " << (char) (digit2) << " = " << (char) (partial_result + '0') << endl;
         result.ubig_value.push_back(partial_result + '0');   
     }
     return result;
