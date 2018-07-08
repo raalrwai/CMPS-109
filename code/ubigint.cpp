@@ -120,7 +120,7 @@ ubigint ubigint::operator- (const ubigint& that) const {
     for (int i = 0; i < result.ubig_value.size(); i ++) {
         cout << result.ubig_value[i];
     }
-    cout << "here " << result.ubig_value.back() << endl;
+    cout << "here " << static_cast<int>(result.ubig_value.back()) << endl;
     if (static_cast<int>(result.ubig_value.back()) == 0) {
         cout << "Back is a 0." << endl;
     }
