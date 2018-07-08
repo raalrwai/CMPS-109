@@ -200,7 +200,7 @@ ostream& operator<< (ostream& out, const ubigint& that) {
   // }
     if(that.ubig_value.size() > 0){
         for(int i = that.ubig_value.size()-1; i >= 0; i--){
-            if ((that.ubig_value.size() - i)%69 == 0 and i != 0){
+            if ((that.ubig_value.size() - i)%70 == 0 and i != 0){ // was 69
                 out << "\\" << endl;
             }
             out << (static_cast<char>(that.ubig_value.at(i)));
