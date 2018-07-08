@@ -63,13 +63,13 @@ bigint bigint::operator- (const bigint& that) const {
 
     bigint result;
     if (that.is_negative != is_negative) {
-        if (that.uvalue > uvalue) {
+        if (uvalue < that.uvalue) { // that.uvalue > uvalue
             result = bigint(that.uvalue + uvalue, that.is_negative);
         } else {
             result = bigint(that.uvalue + uvalue, is_negative);
         }
     } else {
-        if (that.uvalue > uvalue) {
+        if (uvalue < that.uvalue) { // that.uvalue > uvalue
             cout << that.uvalue << " is the bigger number." << endl;
             result = bigint(that.uvalue - uvalue, !that.is_negative);
         } else {
