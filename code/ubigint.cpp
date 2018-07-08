@@ -60,7 +60,7 @@ ubigint ubigint::operator+ (const ubigint& that) const {
         }
         partial_result = (digit1-'0') + (digit2-'0');
         int_partial = static_cast<int>(digit1) + static_cast<int>(digit2);
-        cout << "int_partial: " << int_partial << endl;
+        cout << "int_partial: " << (char) int_partial << endl;
         //carry_result = (partial_result-'0') + (carry-'0');
         // if (partial_result > 9) {
         //     //cout << "Partial Result: " << 
