@@ -108,7 +108,7 @@ ubigint ubigint::operator- (const ubigint& that) const {
             borrow = -1;
             cout << "int partial " << (static_cast<int>(int_partial) + 48) << endl;
             corrected_result = int_partial + 10;
-            cout << "Corrected Result: " << (char) corrected_result << endl;
+            cout << "Corrected Result: " << (static_cast<int>(corrected_result) + 48) << endl;
             result.ubig_value.push_back(corrected_result + '0');
         } else {
             result.ubig_value.push_back(int_partial + '0');
