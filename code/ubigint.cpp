@@ -52,7 +52,7 @@ ubigint ubigint::operator+ (const ubigint& that) const {
         } else {
             digit1 = that.ubig_value[i];
         }
-        if (i > (ubig_value.size() - 1)) {
+        if (i > static_cast<int>(ubig_value.size() - 1)) {
             digit2 = 0;
         } else {
             digit2 = ubig_value[i];
@@ -90,12 +90,12 @@ ubigint ubigint::operator- (const ubigint& that) const {
 
     unsigned char partial_result;
     for (int i = 0; i < iter_size; i++) {
-        if (i > (ubig_value.size() - 1)) {
+        if (i > static_cast<int>(ubig_value.size() - 1)) {
             digit1 = 0;
         } else {
             digit1 = ubig_value[i];
         }
-        if (i > (that.ubig_value.size() - 1)) {
+        if (i > static_cast<int>(that.ubig_value.size() - 1)) {
             digit2 = 0;
         } else {
             digit2 = that.ubig_value[i];
