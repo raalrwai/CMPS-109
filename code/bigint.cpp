@@ -69,10 +69,14 @@ bigint bigint::operator- (const bigint& that) const {
             result = bigint(that.uvalue + uvalue, is_negative);
         }
     } else {
-        result = bigint(that.uvalue - uvalue, is_negative);
+        if (that.uvalue > uvalue) {
+            result = bigint(that.uvalue - uvalue, that.is_negative);
+        } else {
+            result = bigint(uvalue - that.uvalue, is_negative);
+        }
     }
 
-    cout << "Left number: " << uvalue << endl;
+    //cout << "Left number: " << uvalue << endl;
 
     return result;
 }
