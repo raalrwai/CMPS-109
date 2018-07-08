@@ -45,6 +45,7 @@ ubigint ubigint::operator+ (const ubigint& that) const {
  
     unsigned char partial_result;
     unsigned char carry_result;
+    int int_partial;
     //unsigned char corrected_result;
     for (int i = 0; i < iter_size; i++) {
         if (i > static_cast<int>(that.ubig_value.size() - 1)) {
@@ -58,6 +59,8 @@ ubigint ubigint::operator+ (const ubigint& that) const {
             digit2 = ubig_value[i];
         }
         partial_result = (digit1-'0') + (digit2-'0');
+        int_partial = static_cast<int>(digit1) + static_cast<int>(digit2);
+        cout << "int_partial: " << int_partial << endl;
         //carry_result = (partial_result-'0') + (carry-'0');
         // if (partial_result > 9) {
         //     //cout << "Partial Result: " << 
