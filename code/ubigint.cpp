@@ -39,7 +39,6 @@ ubigint ubigint::operator+ (const ubigint& that) const {
     unsigned char digit1 = '0';
     unsigned char digit2 = '0';
     unsigned char carry = '0';
-    cout << "It is " << (that.ubig_value == ubig_value) << " that they are the same." << endl; 
     if (ubig_value.size() < that.ubig_value.size()) {
         iter_size = that.ubig_value.size();
     } 

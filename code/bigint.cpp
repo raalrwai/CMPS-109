@@ -35,6 +35,9 @@ bigint bigint::operator- () const {
 
 bigint bigint::operator+ (const bigint& that) const {
     bigint result;
+    if (uvalue == that.uvalue) {
+        cout << "They are equal." << endl;
+    }
     if (that.is_negative == is_negative) {
         result = bigint(uvalue + that.uvalue, is_negative);
     } else {
