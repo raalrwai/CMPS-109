@@ -44,7 +44,7 @@ ubigint ubigint::operator+ (const ubigint& that) const {
     } 
  
     unsigned char partial_result;
-    //unsigned char carry_result;
+    unsigned char carry_result;
     //unsigned char corrected_result;
     for (int i = 0; i < iter_size; i++) {
         if (i > static_cast<int>(that.ubig_value.size() - 1)) {
