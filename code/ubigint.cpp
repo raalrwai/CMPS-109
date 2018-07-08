@@ -58,12 +58,12 @@ ubigint ubigint::operator+ (const ubigint& that) const {
         }
         partial_result = (digit1-'0') + (digit2-'0') + carry;
         if (partial_result > 9) {
-        	corrected_result = partial_result % 10
-        	result.ubig_value.push_back(corrected_result + '0');
-        	carry = 1;
+            corrected_result = partial_result % 10
+            result.ubig_value.push_back(corrected_result + '0');
+            carry = 1;
         } else {
-        	result.ubig_value.push_back(partial_result + '0');
-        	carry = 0;
+            result.ubig_value.push_back(partial_result + '0');
+            carry = 0;
         }
         cout << (char) (digit1) << " + " << (char) (digit2) << " = " << (char) (partial_result + '0') << endl;
         result.ubig_value.push_back(partial_result + '0');  
@@ -160,14 +160,14 @@ ostream& operator<< (ostream& out, const ubigint& that) {
   //     out << (static_cast<char>(that.ubig_value.at(i)));
   //   }
   // }
-	if(that.ubig_value.size() > 0){
-    	for(int i = that.ubig_value.size()-1; i >= 0; i--){
-      		if ((that.ubig_value.size() - i)%69 == 0 and i != 0){
-        		out << "\\" << endl;
-      		}
-      		out << (static_cast<char>(that.ubig_value.at(i)));
-    	}
-  	}
-  	return out; 
+    if(that.ubig_value.size() > 0){
+        for(int i = that.ubig_value.size()-1; i >= 0; i--){
+            if ((that.ubig_value.size() - i)%69 == 0 and i != 0){
+                out << "\\" << endl;
+            }
+            out << (static_cast<char>(that.ubig_value.at(i)));
+        }
+    }
+    return out; 
 }
 
