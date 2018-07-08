@@ -114,7 +114,7 @@ ubigint ubigint::operator- (const ubigint& that) const {
             //cout << "int partial " << int_partial << endl;
             corrected_result = int_partial + 10;
             //cout << "Corrected Result: " << corrected_result << endl;
-            result.ubig_value.push_back(corrected_result + '0');
+            result.ubig_value.push_back((corrected_result - 48) + '0');
         } else {
             int_partial = (static_cast<int>(digit1) - 48) - (static_cast<int>(digit2) - 48) - (static_cast<int>(borrow) - 48);
             result.ubig_value.push_back(int_partial + '0');
