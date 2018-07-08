@@ -59,7 +59,7 @@ ubigint ubigint::operator+ (const ubigint& that) const {
             digit2 = ubig_value[i];
         }
         int_partial = digit1 + digit2;
-        cout << int_partial << endl;
+        cout << char (int_partial) << endl;
         cout << "digit2: " << digit2 << endl;
         cout << "char digit2: " << char (digit2) << endl;
         //carry_result = (partial_result-'0') + (carry-'0');
