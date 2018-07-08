@@ -60,8 +60,8 @@ ubigint ubigint::operator+ (const ubigint& that) const {
         partial_result = (digit1-'0') + (digit2-'0');
         //carry_result = (partial_result-'0') + (carry-'0');
         if (partial_result > 9) {
-            //cout << "Partial Result: " << (char) (partial_result + '0') 
-            //<< endl; 
+            //cout << "Partial Result: " << 
+            //(char) (partial_result + '0') << endl; 
             //cout << "Carry Result: " << (char) (carry_result + '0') 
             //<< endl;
             //corrected_result = (carry_result-'0') % 10;
