@@ -48,17 +48,17 @@ bigint bigint::operator+ (const bigint& that) const {
 }
 
 bigint bigint::operator- (const bigint& that) const {
-    ubigint result = 0;
+    bigint result;
     if (that.is_negative == is_negative) {
         if (that.uvalue > uvalue) {
-            ubigint result = that.uvalue - uvalue;
+            result = bigint(that.uvalue - uvalue, that.is_negative);
         } else {
-            ubigint result = uvalue - that.uvalue;
+            result = bigint(uvalue - that.uvalue, is_negative);
         }
     } else {
-        ubigint result = uvalue + that.uvalue;
+        result = bigint(uvalue + that.uvalue, is_negative);
     }
-    cout << "Result: " << result << endl;
+    //cout << "Result: " << result << endl;
     return result;
 }
 
