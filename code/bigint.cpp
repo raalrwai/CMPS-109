@@ -70,9 +70,11 @@ bigint bigint::operator- (const bigint& that) const {
         }
     } else {
         if (that.uvalue > uvalue) {
+            cout << that.uvalue << " is the bigger number." << endl;
             result = bigint(that.uvalue - uvalue, !that.is_negative);
         } else {
             result = bigint(uvalue - that.uvalue, that.is_negative);
+            cout << uvalue << " is the bigger number." << endl;
         }
     }
     return result;
