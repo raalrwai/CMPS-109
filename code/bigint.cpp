@@ -92,7 +92,7 @@ ostream& operator<< (ostream& out, const bigint& that) {
    	//out << "," << that.uvalue << ")";
    	//vector<int> to_print;
    	out << (that.is_negative ? "-" : "");
-   	cout << that.uvalue.ubigint;
+   	cout << that.uvalue.ubig_value;
    	return out;
 }
 
