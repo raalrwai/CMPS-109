@@ -103,6 +103,7 @@ ubigint ubigint::operator- (const ubigint& that) const {
         if ((static_cast<int>(digit1) - 48) < (static_cast<int>(digit2) - 48)) {
             borrow = -1;
             corrected_result = int_partial + 10;
+            cout << "Corrected Result: " << (char) (corrected_result) << endl;
             result.ubig_value.push_back(corrected_result + '0');
         } else {
             result.ubig_value.push_back(int_partial + '0');
