@@ -70,7 +70,7 @@ ubigint ubigint::operator+ (const ubigint& that) const {
             carry = '0';
         }
         if (i == (iter_size - 1) and (carry == '1')) {
-            result.ubig_value.push_back(carry + '0');
+            result.ubig_value.push_back(carry);
         } 
     }
     while (result.ubig_value.size() > 0 and ((static_cast<int>(result.ubig_value.back()) - 48) == 0)) {
