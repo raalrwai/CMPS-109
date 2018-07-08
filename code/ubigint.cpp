@@ -38,7 +38,7 @@ ubigint ubigint::operator+ (const ubigint& that) const {
     int iter_size = ubig_value.size();
     unsigned char digit1 = 0;
     unsigned char digit2 = 0;
-    unsigned char carry = 1;
+    unsigned char carry = 0;
     if (ubig_value.size() < that.ubig_value.size()) {
         iter_size = that.ubig_value.size();
     } 
@@ -67,6 +67,9 @@ ubigint ubigint::operator+ (const ubigint& that) const {
         } else {
             result.ubig_value.push_back(int_partial + '0');
             carry = 0;
+        }
+        if (i == (iter_size - 1) and (carry == 1)) {
+            result.ubig_value.push_back(carry + '0');
         }
         //cout << "Partial Result: " << (char) (partial_result + '0') << endl;
         //cout << "Carry Result: " << (char) (carry_result + '0') << endl;
