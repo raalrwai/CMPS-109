@@ -41,7 +41,11 @@ bigint bigint::operator+ (const bigint& that) const {
         if (that.uvalue > uvalue) {
             result = bigint(that.uvalue - uvalue, that.is_negative);
         } else {
-            result = bigint(uvalue - that.uvalue, is_negative);
+            if (uvalue == that.uvalue) {
+                result = bigint(uvalue - that.uvalue, false);
+            } else {
+                result = bigint(uvalue - that.uvalue, that.is_negative);
+            }
         }
     }
     return result;
@@ -74,10 +78,8 @@ bigint bigint::operator- (const bigint& that) const {
             result = bigint(that.uvalue - uvalue, !that.is_negative);
         } else {
             if (uvalue == that.uvalue) {
-                cout << "Not else thing" << endl;
                 result = bigint(uvalue - that.uvalue, false);
             } else {
-                cout << "Else thing" << endl;
                 result = bigint(uvalue - that.uvalue, that.is_negative);
             }
             //result = bigint(uvalue - that.uvalue, that.is_negative);
