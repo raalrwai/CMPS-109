@@ -62,6 +62,8 @@ ubigint ubigint::operator+ (const ubigint& that) const {
         if (partial_result > 9) {
             cout << "Partial Result: " << (char) (partial_result + '0') << endl; 
             cout << "Carry Result: " << (char) (carry_result + '0') << endl;
+            corrected_result = (carry_result-'0') % 10;
+            cout << "Corrected Result: " << (char) (corrected_result + '0') << endl;
             result.ubig_value.push_back(corrected_result + '0');
             carry = 1;
         } else {
