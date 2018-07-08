@@ -81,7 +81,7 @@ ubigint ubigint::operator+ (const ubigint& that) const {
         cout << "Carry Result: " >> (carry_result + '0') << endl;
         //cout << (char) (digit1) << " + " << (char) (digit2) << " = " 
         //<< (char) (partial_result + '0') << endl;
-        result.ubig_value.push_back(static_cast<unsigned char>(int_partial_result));
+        result.ubig_value.push_back(partial_result);
         //result.ubig_value.push_back(partial_result + '0');  
     }
     return result;
