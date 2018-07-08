@@ -72,7 +72,7 @@ bigint bigint::operator- (const bigint& that) const {
         if (that.uvalue > uvalue) {
             result = bigint(that.uvalue - uvalue, that.is_negative);
         } else {
-            result = bigint(uvalue - that.uvalue, is_negative);
+            result = bigint(uvalue - that.uvalue, !that.is_negative);
         }
     }
 
