@@ -88,7 +88,7 @@ ubigint ubigint::operator- (const ubigint& that) const {
         iter_size = that.ubig_value.size();
     } 
 
-    //unsigned char partial_result;
+    unsigned char partial_result;
     int int_partial;
     int corrected_result;
     for (int i = 0; i < iter_size; i++) {
@@ -102,8 +102,12 @@ ubigint ubigint::operator- (const ubigint& that) const {
         } else {
             digit2 = that.ubig_value[i];
         }
-        int_partial = (static_cast<int>(digit1) - 48) - (static_cast<int>(digit2) - 48) - (static_cast<int>(borrow) - 48);
-        cout << digit1 << " - " << digit2 << " = " << int_partial << endl;
+        cout << "Digit1: " << digit1 << endl;
+        cout << "Digit2: " << digit2 << endl;
+        partial_result = digit1 - digit2;
+        cout << "Partial Result: " << partial_result << endl;
+        //int_partial = (static_cast<int>(digit1) - 48) - (static_cast<int>(digit2) - 48) - (static_cast<int>(borrow) - 48);
+        //cout << digit1 << " - " << digit2 << " = " << int_partial << endl;
         if (digit1 < digit2) {
             borrow = -1;
             cout << "int partial " << int_partial << endl;
