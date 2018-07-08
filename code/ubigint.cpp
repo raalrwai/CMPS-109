@@ -58,9 +58,8 @@ ubigint ubigint::operator+ (const ubigint& that) const {
         } else {
             digit2 = ubig_value[i];
         }
-        partial_result = (digit1-'0') + (digit2-'0');
-        int_partial = static_cast<int>(digit1) + static_cast<int>(digit2);
-        cout << "int_partial: " << (char) int_partial << endl;
+        cout << "digit2: " << digit2 << endl;
+        cout << "char digit2: " << char (digit2) << endl;
         //carry_result = (partial_result-'0') + (carry-'0');
         // if (partial_result > 9) {
         //     //cout << "Partial Result: " << 
