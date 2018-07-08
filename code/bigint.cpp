@@ -95,7 +95,9 @@ ostream& operator<< (ostream& out, const bigint& that) {
    	for (auto it = uvalue.rbegin(); it != uvalue.rend(); it++) {
    		to_print.push_back(*it);
    	}
-   	out << to_print;
+   	for (int i = 0; i < (to_print.size() - 1); i++) {
+   		out << to_print[i];
+   	}
    	return out;
 }
 
