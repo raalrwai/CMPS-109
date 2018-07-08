@@ -43,6 +43,7 @@ ubigint ubigint::operator+ (const ubigint& that) const {
     } 
  
     unsigned char partial_result;
+    unsigned char carry_result;
     unsigned char corrected_result;
     unsigned char carry = 0;
     for (int i = 0; i < iter_size; i++) {
@@ -57,9 +58,10 @@ ubigint ubigint::operator+ (const ubigint& that) const {
             digit2 = ubig_value[i];
         }
         partial_result = (digit1-'0') + (digit2-'0');
+        carry_result = (partial_result-'0') + (carry-'0');
         if (partial_result > 9) {
-            cout << "Need a carry" << endl;
-            cout << "Corrected Result: " << (char) (partial_result + '0') << endl; 
+            cout << "Partial Result: " << (char) (partial_result + '0') << endl; 
+            cout << "Carry Result: " << (char) (carry_result + '0') << endl;
             result.ubig_value.push_back(corrected_result + '0');
             carry = 1;
         } else {
