@@ -58,7 +58,6 @@ bigint bigint::operator- (const bigint& that) const {
     } else {
         ubigint result = uvalue + that.uvalue;
     }
-    cout << "Result: " << result << endl;
     return result;
 }
 
