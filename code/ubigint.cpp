@@ -66,10 +66,11 @@ ubigint ubigint::operator+ (const ubigint& that) const {
             //<< endl;
             //corrected_result = (carry_result-'0') % 10;
             //corrected_result = 18 % 10;
-            //cout << "Corrected Result: " << (char) (corrected_result + '0') 
+            //cout << "Corrected Result: " << 
+            //(char) (corrected_result + '0') 
             //<< endl;
-            //cout << "Corrected Result: " << static_cast<char>(corrected_result + '0')
-            // << endl;
+            //cout << "Corrected Result: " << 
+            //static_cast<char>(corrected_result + '0') << endl;
             //result.ubig_value.push_back(corrected_result + '0');
             carry = 1;
         } else {
