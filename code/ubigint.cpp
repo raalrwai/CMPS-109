@@ -183,6 +183,7 @@ ubigint ubigint::operator% (const ubigint& that) const {
 
 bool ubigint::operator== (const ubigint& that) const {
     //return ubig_value[0] == that.ubig_value[0];
+    cout << "In ubigint operator ==" << endl;
     if (ubig_value.size() != that.ubig_value.size()) {
         return false;
     } else {
