@@ -196,7 +196,18 @@ bool ubigint::operator== (const ubigint& that) const {
 }
 
 bool ubigint::operator< (const ubigint& that) const {
-  return ubig_value[0] < that.ubig_value[0];
+  //return ubig_value[0] < that.ubig_value[0];
+    if (ubig_value.size() > that.ubig_value.size()) {
+        return false;
+    } else if (ubig_value.size() == that.ubig_value.size()){
+        for (int i = 0; i < static_cast<int>(ubig_value.size() - 1); i++) {
+            if (ubig_value[i] > that.ubig_value[i]) {
+                cout << "First non matching numbers " << ubig_value[i] << that.ubig_value[i] << endl; 
+                return false;
+            }
+        }
+    }
+    return true;
 }
 
 ostream& operator<< (ostream& out, const ubigint& that) { 
