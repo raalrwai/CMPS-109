@@ -87,8 +87,7 @@ ubigint ubigint::operator- (const ubigint& that) const {
 
     //unsigned char partial_result;
     int int_partial;
-    int corrected_result;
-    cout << "Left digit: " << ubig_value << endl;
+    //int corrected_result;
     for (int i = 0; i < iter_size; i++) {
         if (i > static_cast<int>(ubig_value.size() - 1)) {
             digit1 = 0;
@@ -100,6 +99,7 @@ ubigint ubigint::operator- (const ubigint& that) const {
         } else {
             digit2 = that.ubig_value[i];
         }
+        cout << "Digit 1/Left: " << (char) digit1 << "Digit 2/Right: " << char (digit2) << endl;
         int_partial = (static_cast<int>(digit1) - 48) + (static_cast<int>(digit2) - 48) + (static_cast<int>(carry));
         //partial_result = (digit1-'0') - (digit2-'0');
         //cout << (char) (digit1) << " - " << (char) (digit2) << " = " 
