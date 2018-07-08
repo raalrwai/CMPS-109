@@ -111,15 +111,15 @@ ubigint ubigint::operator- (const ubigint& that) const {
         if (digit1 < digit2) {
             //int_partial = (static_cast<int>(digit1) - 38) - (static_cast<int>(digit2) - 48) - (static_cast<int>(borrow) - 48);
             borrow = '1';
-            cout << "Borrow: " << borrow << endl;
+            //cout << "Borrow: " << borrow << endl;
             //cout << "int partial " << int_partial << endl;
             corrected_result = int_partial + 10;
-            cout << "Corrected Result: " << corrected_result << endl;
-            cout << "Pushing " << corrected_result << endl;
+            //cout << "Corrected Result: " << corrected_result << endl;
+            //cout << "Pushing " << corrected_result << endl;
             result.ubig_value.push_back(corrected_result + '0');
         } else {
             //int_partial = (static_cast<int>(digit1) - 48) - (static_cast<int>(digit2) - 48) - (static_cast<int>(borrow) - 48);
-            cout << "Pushing " << int_partial << endl;
+            //cout << "Pushing " << int_partial << endl;
             result.ubig_value.push_back(int_partial + '0');
             borrow = '0';
         }
