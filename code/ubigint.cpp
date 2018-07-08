@@ -104,19 +104,17 @@ ubigint ubigint::operator- (const ubigint& that) const {
         }
         cout << "Digit1: " << digit1 << endl;
         cout << "Digit2: " << digit2 << endl;
-        partial_result = (digit1-'0') - (digit2-'0');
-        cout << "Partial Result: " << (char) partial_result << endl;
-        //int_partial = (static_cast<int>(digit1) - 48) - (static_cast<int>(digit2) - 48) - (static_cast<int>(borrow) - 48);
+        int_partial = (static_cast<int>(digit1) - 48) - (static_cast<int>(digit2) - 48) - (static_cast<int>(borrow) - 48);
         //cout << digit1 << " - " << digit2 << " = " << int_partial << endl;
         if (digit1 < digit2) {
-            borrow = -1;
+            borrow = '-1';
             cout << "int partial " << int_partial << endl;
             corrected_result = int_partial + 10;
             cout << "Corrected Result: " << corrected_result << endl;
             result.ubig_value.push_back(corrected_result + '0');
         } else {
             result.ubig_value.push_back(int_partial + '0');
-            borrow = 0;
+            borrow = '0';
         }
 
         //cout << "Digit 1/Left: " << (char) digit1 << "Digit 2/Right: " << char (digit2) << endl;
