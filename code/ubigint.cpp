@@ -45,7 +45,7 @@ ubigint ubigint::operator+ (const ubigint& that) const {
     unsigned char partial_result;
     unsigned char carry_result;
     unsigned char corrected_result;
-    unsigned char carry = 0;
+    unsigned char carry = 1;
     for (int i = 0; i < iter_size; i++) {
         if (i > (that.ubig_value.size() - 1)) {
             digit1 = 0;
