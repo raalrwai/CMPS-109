@@ -117,7 +117,7 @@ ubigint ubigint::operator- (const ubigint& that) const {
         //<< (char) (partial_result + '0') << endl;
         //result.ubig_value.push_back(int_partial + '0');   
     }
-    for (int i = 0; i < result.ubig_value.size() - 1; i ++) {
+    for (int i = 0; i < result.ubig_value.size(); i ++) {
         cout << result.ubig_value[i];
     }
     while (result.ubig_value.size() > 0 and result.ubig_value.back() == 0) result.ubig_value.pop_back();
