@@ -186,7 +186,7 @@ bool ubigint::operator== (const ubigint& that) const {
     if (ubig_value.size() != that.ubig_value.size()) {
         return false;
     } else {
-        for (int i = 0; i < ubig_value.size() - 1; i++) {
+        for (int i = 0; i < static_cast<int>(ubig_value.size() - 1); i++) {
             if (ubig_value[i] != that.ubig_value[i]) {
                 return false;
             }
