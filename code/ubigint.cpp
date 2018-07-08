@@ -36,9 +36,9 @@ ubigint::ubigint (const string& that)  {
 ubigint ubigint::operator+ (const ubigint& that) const {
     ubigint result;
     int iter_size = ubig_value.size();
-    unsigned char digit1 = 0;
-    unsigned char digit2 = 0;
-    unsigned char carry = 0;
+    unsigned char digit1 = '0';
+    unsigned char digit2 = '0';
+    unsigned char carry = '0';
     if (ubig_value.size() < that.ubig_value.size()) {
         iter_size = that.ubig_value.size();
     } 
@@ -48,12 +48,12 @@ ubigint ubigint::operator+ (const ubigint& that) const {
     int corrected_result;
     for (int i = 0; i < iter_size; i++) {
         if (i > static_cast<int>(that.ubig_value.size() - 1)) {
-            digit1 = 0;
+            digit1 = '0';
         } else {
             digit1 = that.ubig_value[i];
         }
         if (i > static_cast<int>(ubig_value.size() - 1)) {
-            digit2 = 0;
+            digit2 = '0';
         } else {
             digit2 = ubig_value[i];
         }
