@@ -74,6 +74,7 @@ bigint bigint::operator- (const bigint& that) const {
             result = bigint(that.uvalue - uvalue, !that.is_negative);
         } else {
             if (uvalue == that.uvalue) {
+                cout << "Not else thing" << endl;
                 result = bigint(uvalue - that.uvalue, false);
             } else {
                 cout << "Else thing" << endl;
