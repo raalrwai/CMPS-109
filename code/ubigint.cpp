@@ -65,7 +65,8 @@ ubigint ubigint::operator+ (const ubigint& that) const {
             result.ubig_value.push_back(partial_result + '0');
             carry = 0;
         }
-        cout << (char) (digit1) << " + " << (char) (digit2) << " = " << (char) (partial_result + '0') << endl;
+        cout << (char) (digit1) << " + " << (char) (digit2) << " = " 
+        << (char) (partial_result + '0') << endl;
         result.ubig_value.push_back(partial_result + '0');  
     }
     return result;
@@ -93,7 +94,8 @@ ubigint ubigint::operator- (const ubigint& that) const {
             digit2 = that.ubig_value[i];
         }
         partial_result = (digit1-'0') - (digit2-'0');
-        //cout << (char) (digit1) << " - " << (char) (digit2) << " = " << (char) (partial_result + '0') << endl;
+        //cout << (char) (digit1) << " - " << (char) (digit2) << " = " 
+        //<< (char) (partial_result + '0') << endl;
         result.ubig_value.push_back(partial_result + '0');   
     }
     return result;
