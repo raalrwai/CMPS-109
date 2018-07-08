@@ -43,7 +43,7 @@ ubigint ubigint::operator+ (const ubigint& that) const {
         iter_size = that.ubig_value.size();
     } 
  
-    unsigned char partial_result;
+    //unsigned char partial_result;
     int int_partial;
     int corrected_result;
     for (int i = 0; i < iter_size; i++) {
@@ -80,11 +80,15 @@ ubigint ubigint::operator- (const ubigint& that) const {
     int iter_size = ubig_value.size();
     unsigned char digit1 = 0;
     unsigned char digit2 = 0;
+    unsigned char carry = 0;
     if (ubig_value.size() < that.ubig_value.size()) {
         iter_size = that.ubig_value.size();
     } 
 
-    unsigned char partial_result;
+    //unsigned char partial_result;
+    int int_partial;
+    int corrected_result;
+    cout << "Left digit: " << ubig_value << endl;
     for (int i = 0; i < iter_size; i++) {
         if (i > static_cast<int>(ubig_value.size() - 1)) {
             digit1 = 0;
@@ -96,7 +100,8 @@ ubigint ubigint::operator- (const ubigint& that) const {
         } else {
             digit2 = that.ubig_value[i];
         }
-        partial_result = (digit1-'0') - (digit2-'0');
+        int_partial = (static_cast<int>(digit1) - 48) + (static_cast<int>(digit2) - 48) + (static_cast<int>(carry));
+        //partial_result = (digit1-'0') - (digit2-'0');
         //cout << (char) (digit1) << " - " << (char) (digit2) << " = " 
         //<< (char) (partial_result + '0') << endl;
         result.ubig_value.push_back(partial_result + '0');   
