@@ -57,7 +57,7 @@ ubigint ubigint::operator+ (const ubigint& that) const {
         } else {
             digit2 = ubig_value[i];
         }
-        partial_result = (digit1-'0') + (digit2-'0') + (carry-'0');
+        partial_result = (digit1-'0') + (digit2-'0');
         //carry_result = (partial_result-'0') + (carry-'0');
         // if (partial_result > 9) {
         //     //cout << "Partial Result: " << 
