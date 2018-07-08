@@ -80,14 +80,14 @@ ubigint ubigint::operator- (const ubigint& that) const {
     int iter_size = ubig_value.size();
     unsigned char digit1 = 0;
     unsigned char digit2 = 0;
-    unsigned char carry = 0;
+    unsigned char borrow = 0;
     if (ubig_value.size() < that.ubig_value.size()) {
         iter_size = that.ubig_value.size();
     } 
 
     //unsigned char partial_result;
     int int_partial;
-    //int corrected_result;
+    int corrected_result;
     for (int i = 0; i < iter_size; i++) {
         if (i > static_cast<int>(ubig_value.size() - 1)) {
             digit1 = 0;
@@ -99,12 +99,22 @@ ubigint ubigint::operator- (const ubigint& that) const {
         } else {
             digit2 = that.ubig_value[i];
         }
-        cout << "Digit 1/Left: " << (char) digit1 << "Digit 2/Right: " << char (digit2) << endl;
-        int_partial = (static_cast<int>(digit1) - 48) + (static_cast<int>(digit2) - 48) + (static_cast<int>(carry));
+        int_partial = (static_cast<int>(digit1) - 48) - (static_cast<int>(digit2) - 48) - (static_cast<int>(borrow));
+        if ((static_cast<int>(digit1) - 48) < (static_cast<int>(digit2) - 48)) {
+            borrow = -1;
+            corrected_result = int_partial + 10;
+            result.ubig_value.push_back(corrected_result + '0');
+        } else {
+            result.ubig_value.push_back(int_partial + '0');
+            borrow = 0;
+        }
+
+        //cout << "Digit 1/Left: " << (char) digit1 << "Digit 2/Right: " << char (digit2) << endl;
+        
         //partial_result = (digit1-'0') - (digit2-'0');
         //cout << (char) (digit1) << " - " << (char) (digit2) << " = " 
         //<< (char) (partial_result + '0') << endl;
-        result.ubig_value.push_back(int_partial + '0');   
+        //result.ubig_value.push_back(int_partial + '0');   
     }
     return result;
 }
