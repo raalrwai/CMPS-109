@@ -44,9 +44,8 @@ ubigint ubigint::operator+ (const ubigint& that) const {
     } 
  
     unsigned char partial_result;
-    unsigned char carry_result;
     int int_partial;
-    //unsigned char corrected_result;
+    int corrected_result;
     for (int i = 0; i < iter_size; i++) {
         if (i > static_cast<int>(that.ubig_value.size() - 1)) {
             digit1 = 0;
@@ -58,34 +57,20 @@ ubigint ubigint::operator+ (const ubigint& that) const {
         } else {
             digit2 = ubig_value[i];
         }
-        int_partial = (static_cast<int>(digit1) - 48) + (static_cast<int>(digit2) - 48);
-        cout << int_partial << endl;
-        cout << "digit2: " << digit2 << endl;
-        cout << "char digit2: " << char (digit2) << endl;
-        //carry_result = (partial_result-'0') + (carry-'0');
-        // if (partial_result > 9) {
-        //     //cout << "Partial Result: " << 
-        //     //(char) (partial_result + '0') << endl; 
-        //     //cout << "Carry Result: " << (char) (carry_result + '0') 
-        //     //<< endl;
-        //     //corrected_result = (carry_result-'0') % 10;
-        //     //corrected_result = 18 % 10;
-        //     //cout << "Corrected Result: " << 
-        //     //(char) (corrected_result + '0') 
-        //     //<< endl;
-        //     //cout << "Corrected Result: " << 
-        //     //static_cast<char>(corrected_result + '0') << endl;
-        //     //result.ubig_value.push_back(corrected_result + '0');
-        //     carry = 1;
-        // } else {
-        //     result.ubig_value.push_back(partial_result + '0');
-        //     carry = 0;
-        // }
-        cout << "Partial Result: " << (char) (partial_result + '0') << endl;
+        int_partial = (static_cast<int>(digit1) - 48) + (static_cast<int>(digit2) - 48) + (static_cast<int>(carry) - 48);
+        if (int_partial > 9) {
+            carry = 1;
+            corrected_result = int_partial % 10;
+            result.ubig_value.push_back(corrected_result + '0');
+        } else {
+            result.ubig_value.push_back(int_partial + '0');
+            carry = 0;
+        }
+        //cout << "Partial Result: " << (char) (partial_result + '0') << endl;
         //cout << "Carry Result: " << (char) (carry_result + '0') << endl;
         //cout << (char) (digit1) << " + " << (char) (digit2) << " = " 
         //<< (char) (partial_result + '0') << endl;
-        result.ubig_value.push_back(partial_result);
+        //result.ubig_value.push_back(partial_result);
         //result.ubig_value.push_back(partial_result + '0');  
     }
     return result;
