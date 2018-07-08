@@ -70,13 +70,7 @@ ubigint ubigint::operator+ (const ubigint& that) const {
         }
         if (i == (iter_size - 1) and (carry == 1)) {
             result.ubig_value.push_back(carry + '0');
-        }
-        //cout << "Partial Result: " << (char) (partial_result + '0') << endl;
-        //cout << "Carry Result: " << (char) (carry_result + '0') << endl;
-        //cout << (char) (digit1) << " + " << (char) (digit2) << " = " 
-        //<< (char) (partial_result + '0') << endl;
-        //result.ubig_value.push_back(partial_result);
-        //result.ubig_value.push_back(partial_result + '0');  
+        } 
     }
     return result;
 }
