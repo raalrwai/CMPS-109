@@ -58,7 +58,7 @@ ubigint ubigint::operator+ (const ubigint& that) const {
         }
         partial_result = (digit1-'0') + (digit2-'0') + carry;
         if (partial_result > 9) {
-            corrected_result = partial_result % 10
+            corrected_result = partial_result % 10;
             result.ubig_value.push_back(corrected_result + '0');
             carry = 1;
         } else {
