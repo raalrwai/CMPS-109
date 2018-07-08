@@ -57,8 +57,8 @@ ubigint ubigint::operator+ (const ubigint& that) const {
         } else {
             digit2 = ubig_value[i];
         }
-        partial_result = (digit1-'0') + (digit2-'0');
-        carry_result = (partial_result-'0') + (carry-'0');
+        partial_result = (digit1-'0') + (digit2-'0') + (carry-'0');
+        //carry_result = (partial_result-'0') + (carry-'0');
         // if (partial_result > 9) {
         //     //cout << "Partial Result: " << 
         //     //(char) (partial_result + '0') << endl; 
@@ -78,7 +78,7 @@ ubigint ubigint::operator+ (const ubigint& that) const {
         //     carry = 0;
         // }
         cout << "Partial Result: " << (char) (partial_result + '0') << endl;
-        cout << "Carry Result: " << (char) (carry_result + '0') << endl;
+        //cout << "Carry Result: " << (char) (carry_result + '0') << endl;
         //cout << (char) (digit1) << " + " << (char) (digit2) << " = " 
         //<< (char) (partial_result + '0') << endl;
         result.ubig_value.push_back(partial_result);
