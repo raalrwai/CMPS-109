@@ -48,17 +48,30 @@ bigint bigint::operator+ (const bigint& that) const {
 }
 
 bigint bigint::operator- (const bigint& that) const {
+    // bigint result;
+    // if (that.is_negative == is_negative) {
+    //     if (that.uvalue > uvalue) {
+    //         result = bigint(that.uvalue - uvalue, that.is_negative);
+    //     } else {
+    //         result = bigint(uvalue - that.uvalue, is_negative);
+    //     }
+    // } else {
+    //     result = bigint(uvalue + that.uvalue, is_negative);
+    // }
+    // //cout << "Result: " << result << endl;
+    // return result;
+
     bigint result;
-    if (that.is_negative == is_negative) {
+    if (that.is_negative != is_negative) {
         if (that.uvalue > uvalue) {
-            result = bigint(that.uvalue - uvalue, that.is_negative);
+            result = bigint(that.uvalue + uvalue, that.is_negative);
         } else {
-            result = bigint(uvalue - that.uvalue, is_negative);
+            result = bigint(that.uvalue + uvalue, is_negative);
         }
     } else {
-        result = bigint(uvalue + that.uvalue, is_negative);
+        result = bigint(that.uvalue - uvalue, is_negative);
     }
-    //cout << "Result: " << result << endl;
+
     return result;
 }
 
