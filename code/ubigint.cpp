@@ -149,7 +149,8 @@ ubigint ubigint::operator* (const ubigint& that) const {
             cout << '* ' << int_partial;
         }
     }
-  return ubigint (ubig_value[0] * that.ubig_value[0]);
+    result.ubig_value.push_back(int_partial + '0');
+    return result;
 }
 
 void ubigint::multiply_by_2() {
