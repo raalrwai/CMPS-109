@@ -139,7 +139,7 @@ ubigint ubigint::operator- (const ubigint& that) const {
 
 ubigint ubigint::operator* (const ubigint& that) const {
     ubigint result;
-    cout << "in operator*"
+    cout << "in operator*" << endl;
     unsigned char carry;
     int int_partial;
     for (int i = 0; i < static_cast<int>(ubig_value.size() - 1); i++) {
