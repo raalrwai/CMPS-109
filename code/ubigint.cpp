@@ -9,6 +9,7 @@
 #include <stdexcept>
 #include <sstream>
 #include <cmath>
+#include <algorithm>
 using namespace std;
 
 #include "ubigint.h"
