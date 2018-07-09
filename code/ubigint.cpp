@@ -122,34 +122,7 @@ ubigint ubigint::operator- (const ubigint& that) const {
 }
 
 ubigint ubigint::operator* (const ubigint& that) const {
-    //return ubig_value[0] * that.ubig_value[0];
-    int size = ubig_value.size();
-    int thatSize = that.ubig_value.size();
-
-    ubigint rev = *this;
-    ubigint that_rev = that;
-    reverse(rev.ubig_value.begin(), rev.ubig_value.end());
-    reverse(that_rev.ubig_value.begin(), that_rev.ubig_value.end());
-    ubigint product;
-    for(int i = 0; i < size + thatSize; i++){
-        product.ubig_value.push_back(static_cast<udigit_t>(0));
-    }
-    udigit_t carry;
-    for(int i = 0; i < size; i++){
-        carry = 0;
-        for(int j = 0; j < thatSize; j++){
-            udigit_t  prod = product.ubig_value.at(i + j) + 
-            rev.ubig_value.at(i)*that_rev.ubig_value.at(j) + carry;
-            product.ubig_value[i + j] = prod%10;
-            carry = prod/10;
-        }
-        product.ubig_value[i + thatSize] = carry;
-    }
-    while(product.ubig_value.back() == 0){
-        product.ubig_value.pop_back();
-    }
-    reverse(product.ubig_value.begin(), product.ubig_value.end());
-    return product;
+    return ubig_value[0] * that.ubig_value[0];
 }
 
 void ubigint::multiply_by_2() {
