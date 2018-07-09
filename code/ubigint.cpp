@@ -142,6 +142,7 @@ ubigint ubigint::operator* (const ubigint& that) const {
     cout << "in operator*" << endl;
     int carry;
     int product = 0;
+    int partial_product = 0;
     int int_partial;
     int d;
     for (int i = 0; i < static_cast<int>(ubig_value.size() - 1); i++) {
@@ -153,10 +154,18 @@ ubigint ubigint::operator* (const ubigint& that) const {
             cout << "Product " << product << endl;
             carry = d / 10;
             cout << "Carry " << carry << endl;
+            partial_product += product;
         }
     }
     result.ubig_value.push_back(int_partial + '0');
     return result;
+
+    int int_partial;
+    for (int i = 0; i < static_cast<int>(ubig_value.size() - 1); i++) {
+        for (int j = 0; j < static_cast<int>(that.ubig_value.size() - 1); j++) {
+            int_partial = (static_cast<int>(ubig_value[i]) - 48) * (static_cast<int>(that.ubig_value[j]) - 48);
+        }
+    }
 }
 
 void ubigint::multiply_by_2() {
