@@ -146,7 +146,7 @@ ubigint ubigint::operator* (const ubigint& that) const {
         carry = '0';
         for (int j = 0; j < static_cast<int>(that.ubig_value.size() - 1); j++) {
             int_partial = ubig_value[i] * that.ubig_value[i];
-            cout << '* ' << (char) int_partial;
+            cout << '* ' << int_partial;
         }
     }
   return ubigint (ubig_value[0] * that.ubig_value[0]);
