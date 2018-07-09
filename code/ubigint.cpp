@@ -201,27 +201,7 @@ quo_rem udivide (const ubigint& dividend, ubigint divisor) {
 }
 
 ubigint ubigint::operator/ (const ubigint& that) const {
-   ubigint::quo_rem ubigint::divide (const ubigint& that) const {
-   static const ubigint z = 0;
-   if (that == z) throw domain_error ("ubigint::divide: by 0");
-   ubigint power = 1;
-   ubigint divisor = that; 
-   ubigint quotient = 0;
-   ubigint remainder = *this; 
-   while (divisor < remainder) {
-      divisor.multiply_by_2();
-      power.multiply_by_2();
-   }
-   while (power > z) {
-      if (divisor <= remainder) {
-         remainder = remainder - divisor;
-         quotient = quotient + power;
-      }
-      divisor.divide_by_2();
-      power.divide_by_2();
-   }
-   return {quotient, remainder};
-}
+  return udivide (*this, that).quotient;
 }
 
 ubigint ubigint::operator% (const ubigint& that) const {
