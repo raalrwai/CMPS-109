@@ -36,94 +36,124 @@ ubigint::ubigint (const string& that)  {
 }
 
 ubigint ubigint::operator+ (const ubigint& that) const {
-    ubigint result;
-    int iter_size = ubig_value.size();
-    unsigned char digit1 = '0';
-    unsigned char digit2 = '0';
-    unsigned char carry = '0';
-    if (ubig_value.size() < that.ubig_value.size()) {
-        iter_size = that.ubig_value.size();
-    } 
- 
-    int int_partial;
-    int corrected_result;
-    for (int i = 0; i < iter_size; i++) {
-        if (i > static_cast<int>(that.ubig_value.size() - 1)) {
-            digit1 = '0';
-        } else {
-            digit1 = that.ubig_value[i];
-        }
-        if (i > static_cast<int>(ubig_value.size() - 1)) {
-            digit2 = '0';
-        } else {
-            digit2 = ubig_value[i];
-        }
-        int_partial = (static_cast<int>(digit1) - 48) + 
-            (static_cast<int>(digit2) - 48) 
-            + (static_cast<int>(carry) - 48);
-        if (int_partial > 9) {
-            carry = '1';
-            corrected_result = int_partial % 10;
-            result.ubig_value.push_back(corrected_result + '0');
-        } else {
-            result.ubig_value.push_back(int_partial + '0');
-            carry = '0';
-        }
-        if (i == (iter_size - 1) and (carry == '1')) {
-            result.ubig_value.push_back(carry);
-        } 
+  ubigint result;
+  int iter_size = ubig_value.size();
+  unsigned char digit1 = '0';
+  unsigned char digit2 = '0';
+  unsigned char carry = '0';
+  if (ubig_value.size() < that.ubig_value.size()) {
+    iter_size = that.ubig_value.size();
+  } 
+
+  int int_partial;
+  int corrected_result;
+  for (int i = 0; i < iter_size; i++) {
+    if (i > static_cast<int>(that.ubig_value.size() - 1)) {
+      digit1 = '0';
+    } else {
+      digit1 = that.ubig_value[i];
     }
-    while (result.ubig_value.size() > 1 and 
-        ((static_cast<int>(result.ubig_value.back()) - 48) == 0)) {
-        result.ubig_value.pop_back();
+    if (i > static_cast<int>(ubig_value.size() - 1)) {
+      digit2 = '0';
+    } else {
+      digit2 = ubig_value[i];
+    }
+    int_partial = (static_cast<int>(digit1) - 48) + 
+      (static_cast<int>(digit2) - 48) 
+      + (static_cast<int>(carry) - 48);
+    if (int_partial > 9) {
+      carry = '1';
+      corrected_result = int_partial % 10;
+      result.ubig_value.push_back(corrected_result + '0');
+    } else {
+      result.ubig_value.push_back(int_partial + '0');
+      carry = '0';
+    }
+    if (i == (iter_size - 1) and (carry == '1')) {
+      result.ubig_value.push_back(carry);
     } 
-    return result;
+  }
+  while (result.ubig_value.size() > 1 and 
+      ((static_cast<int>(result.ubig_value.back()) - 48) == 0)) {
+    result.ubig_value.pop_back();
+  } 
+  return result;
 }
 
 ubigint ubigint::operator- (const ubigint& that) const {
-    ubigint result;
-    int iter_size = ubig_value.size();
-    unsigned char digit1 = '0';
-    unsigned char digit2 = '0';
-    unsigned char borrow = '0';
-    if (ubig_value.size() < that.ubig_value.size()) {
-        iter_size = that.ubig_value.size();
-    } 
+  ubigint result;
+  int iter_size = ubig_value.size();
+  unsigned char digit1 = '0';
+  unsigned char digit2 = '0';
+  unsigned char borrow = '0';
+  if (ubig_value.size() < that.ubig_value.size()) {
+    iter_size = that.ubig_value.size();
+  } 
 
-    int int_partial;
-    int corrected_result;
-    for (int i = 0; i < iter_size; i++) {
-        if (i > static_cast<int>(ubig_value.size() - 1)) {
-            digit1 = '0';
-        } else {
-            digit1 = ubig_value[i];
-        }
-        if (i > static_cast<int>(that.ubig_value.size() - 1)) {
-            digit2 = '0';
-        } else {
-            digit2 = that.ubig_value[i];
-        }
-        int_partial = (static_cast<int>(digit1) - 48) - 
-        (static_cast<int>(digit2) - 48) - 
-        (static_cast<int>(borrow) - 48);
-        if (digit1 < digit2) {
-            corrected_result = int_partial + 10;
-            result.ubig_value.push_back(corrected_result + '0');
-        } else {
-            result.ubig_value.push_back(int_partial + '0');
-            borrow = '0';
-        }
+  int int_partial;
+  int corrected_result;
+  for (int i = 0; i < iter_size; i++) {
+    if (i > static_cast<int>(ubig_value.size() - 1)) {
+      digit1 = '0';
+    } else {
+      digit1 = ubig_value[i];
     }
-    while (result.ubig_value.size() > 1 and 
-        ((static_cast<int>(result.ubig_value.back()) - 48) == 0)) {
-        result.ubig_value.pop_back();
-    } 
-    return result;
+    if (i > static_cast<int>(that.ubig_value.size() - 1)) {
+      digit2 = '0';
+    } else {
+      digit2 = that.ubig_value[i];
+    }
+    int_partial = (static_cast<int>(digit1) - 48) - 
+      (static_cast<int>(digit2) - 48) - 
+      (static_cast<int>(borrow) - 48);
+    if (digit1 < digit2) {
+      corrected_result = int_partial + 10;
+      result.ubig_value.push_back(corrected_result + '0');
+    } else {
+      result.ubig_value.push_back(int_partial + '0');
+      borrow = '0';
+    }
+  }
+  while (result.ubig_value.size() > 1 and 
+      ((static_cast<int>(result.ubig_value.back()) - 48) == 0)) {
+    result.ubig_value.pop_back();
+  } 
+  return result;
 }
 
 ubigint ubigint::operator* (const ubigint& that) const {
-    return ubig_value[0] * that.ubig_value[0];
+  int size = ubig_value.size();
+  int thatSize = that.ubig_value.size();
+
+  ubigint rev = *this;
+  ubigint that_rev = that;
+  reverse(rev.ubig_value.begin(), rev.ubig_value.end());
+  reverse(that_rev.ubig_value.begin(), that_rev.ubig_value.end());
+  ubigint product;
+  for(int i = 0; i < size + thatSize; i++){
+    product.ubig_value.push_back(static_cast<udigit_t>(0 + '0'));
+  }
+  udigit_t carry;
+  for(int i = 0; i < size; i++){
+    carry = 0;
+    for(int j = 0; j < thatSize; j++){
+      udigit_t  prod = product.ubig_value.at(i + j) + 
+      rev.ubig_value.at(i)*that_rev.ubig_value.at(j) + carry;
+      product.ubig_value[i + j] = prod%10 + '0';
+      carry = prod/10;
+    }
+    product.ubig_value[i + thatSize] = carry + '0';
+  }
+  while(product.ubig_value.back() == 0 ){
+
+    product.ubig_value.pop_back();
+  }
+  reverse(product.ubig_value.begin(), product.ubig_value.end());
+  return product;
 }
+
+
+
 
 void ubigint::multiply_by_2() {
   ubig_value[0] *= 2;
@@ -166,45 +196,45 @@ ubigint ubigint::operator% (const ubigint& that) const {
 }
 
 bool ubigint::operator== (const ubigint& that) const {
-    if (ubig_value.size() != that.ubig_value.size()) {
+  if (ubig_value.size() != that.ubig_value.size()) {
+    return false;
+  } else {
+    for (int i = 0; 
+        i < static_cast<int>(ubig_value.size() - 1); 
+        i++) {
+      if (ubig_value[i] != that.ubig_value[i]) {
         return false;
-    } else {
-        for (int i = 0; 
-            i < static_cast<int>(ubig_value.size() - 1); 
-            i++) {
-            if (ubig_value[i] != that.ubig_value[i]) {
-                return false;
-            }
-        }
+      }
     }
-    return true;
+  }
+  return true;
 }
 
 bool ubigint::operator< (const ubigint& that) const {
-    if (ubig_value.size() > that.ubig_value.size()) {
+  if (ubig_value.size() > that.ubig_value.size()) {
+    return false;
+  } else if (ubig_value.size() == that.ubig_value.size()){
+    for (int i = 0; 
+        i < static_cast<int>(ubig_value.size() - 1); 
+        i++) {
+      if (ubig_value[i] > that.ubig_value[i]) { 
         return false;
-    } else if (ubig_value.size() == that.ubig_value.size()){
-        for (int i = 0; 
-            i < static_cast<int>(ubig_value.size() - 1); 
-            i++) {
-            if (ubig_value[i] > that.ubig_value[i]) { 
-                return false;
-            }
-        }
+      }
     }
-    return true;
+  }
+  return true;
 }
 
 ostream& operator<< (ostream& out, const ubigint& that) { 
-    if(that.ubig_value.size() > 0){
-        for(int i = that.ubig_value.size()-1; i >= 0; i--){
-            if (
-              (that.ubig_value.size() - i)%70 == 0 and i != 0){ 
-                out << "\\" << endl;
-            }
-            out << (static_cast<char>(that.ubig_value.at(i)));
-        }
+  if(that.ubig_value.size() > 0){
+    for(int i = that.ubig_value.size()-1; i >= 0; i--){
+      if (
+          (that.ubig_value.size() - i)%70 == 0 and i != 0){ 
+        out << "\\" << endl;
+      }
+      out << (static_cast<char>(that.ubig_value.at(i)));
     }
-    return out; 
+  }
+  return out; 
 }
 

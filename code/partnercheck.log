@@ -1,0 +1,8 @@
+partnercheck: ./PARTNER: format OK:
+username = cthurmon
+passwd   = *
+uid      = 7442
+gid      = 100
+gecos    = Connor Wolf Thurmond
+home     = /afs/cats.ucsc.edu/users/d/cthurmon
+shell    = /bin/bash
