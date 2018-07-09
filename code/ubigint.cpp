@@ -72,7 +72,8 @@ ubigint ubigint::operator+ (const ubigint& that) const {
             result.ubig_value.push_back(carry);
         } 
     }
-    while (result.ubig_value.size() > 1 and ((static_cast<int>(result.ubig_value.back()) - 48) == 0)) {
+    while (result.ubig_value.size() > 1 and 
+        ((static_cast<int>(result.ubig_value.back()) - 48) == 0)) {
         result.ubig_value.pop_back();
     } 
     return result;
@@ -101,7 +102,9 @@ ubigint ubigint::operator- (const ubigint& that) const {
         } else {
             digit2 = that.ubig_value[i];
         }
-        int_partial = (static_cast<int>(digit1) - 48) - (static_cast<int>(digit2) - 48) - (static_cast<int>(borrow) - 48);
+        int_partial = (static_cast<int>(digit1) - 48) - 
+        (static_cast<int>(digit2) - 48) - 
+        (static_cast<int>(borrow) - 48);
         if (digit1 < digit2) {
             corrected_result = int_partial + 10;
             result.ubig_value.push_back(corrected_result + '0');
