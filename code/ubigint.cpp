@@ -1,5 +1,6 @@
 // $Id: ubigint.cpp,v 1.14 2016-06-23 17:21:26-07 - - $
 //#define DEBUG
+// Connor Thurmond (cthurmon) Rami Alrwais (raalrwai)
 
 #include <cctype>
 #include <cstdlib>

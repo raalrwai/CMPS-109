@@ -1,5 +1,5 @@
 // $Id: bigint.cpp,v 1.76 2016-06-14 16:34:24-07 - - $
-
+// Connor Thurmond (cthurmon) Rami Alrwais (raalrwai)
 #include <cstdlib>
 #include <exception>
 #include <stack>

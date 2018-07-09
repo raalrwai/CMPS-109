@@ -1,4 +1,5 @@
 // $Id: libfns.cpp,v 1.4 2015-07-03 14:46:41-07 - - $
+// Connor Thurmond (cthurmon) Rami Alrwais (raalrwai)
 
 #include "libfns.h"
 

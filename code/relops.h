@@ -1,4 +1,5 @@
 // $Id: relops.h,v 1.2 2016-06-13 13:47:33-07 - - $
+// Connor Thurmond (cthurmon) Rami Alrwais (raalrwai)
 
 //
 // Assuming that for any given type T, there are operators

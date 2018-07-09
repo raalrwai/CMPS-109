@@ -1,4 +1,5 @@
 // $Id: debug.cpp,v 1.10 2018-01-25 14:05:16-08 - - $
+// Connor Thurmond (cthurmon) Rami Alrwais (raalrwai)
 
 #include <climits>
 #include <iostream>

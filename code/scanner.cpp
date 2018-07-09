@@ -1,4 +1,5 @@
 // $Id: scanner.cpp,v 1.19 2016-06-23 17:19:42-07 - - $
+// Connor Thurmond (cthurmon) Rami Alrwais (raalrwai)
 
 #include <cassert>
 #include <iostream>

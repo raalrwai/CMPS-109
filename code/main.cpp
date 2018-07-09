@@ -1,4 +1,5 @@
 // $Id: main.cpp,v 1.54 2016-06-14 18:19:17-07 - - $
+// Connor Thurmond (cthurmon) Rami Alrwais (raalrwai)
 
 #include <cassert>
 #include <deque>
