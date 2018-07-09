@@ -31,7 +31,7 @@ void do_arith (bigint_stack& stack, const char oper) {
     switch (oper) {
         case '+': result = left + right; break;
         case '-': result = left - right; break;
-        case '*': result = left * right; break;
+        case '*': do_*; break;
         case '/': result = left / right; break;
         case '%': result = left % right; break;
         case '^': result = pow (left, right); break;
@@ -55,6 +55,10 @@ void do_dup (bigint_stack& stack, const char) {
 
 void do_printall (bigint_stack& stack, const char) {
     for (const auto& elem: stack) cout << elem << endl;
+}
+
+void do_* () {
+  cout << "* not implemented";
 }
 
 void do_print (bigint_stack& stack, const char) {
