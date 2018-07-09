@@ -127,7 +127,7 @@ ubigint ubigint::operator* (const ubigint& that) const {
     int thatSize = that.ubig_value.size();
 
     ubigint rev = *this;
-    ubigint that_rev = that
+    ubigint that_rev = that;
     reverse(rev.ubig_value.begin(), rev.ubig_value.end());
     reverse(that_rev.ubig_value.begin(), that_rev.ubig_value.end());
     ubigint product;
