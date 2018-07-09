@@ -52,29 +52,15 @@ bigint bigint::operator+ (const bigint& that) const {
 }
 
 bigint bigint::operator- (const bigint& that) const {
-    // bigint result;
-    // if (that.is_negative == is_negative) {
-    //     if (that.uvalue > uvalue) {
-    //         result = bigint(that.uvalue - uvalue, that.is_negative);
-    //     } else {
-    //         result = bigint(uvalue - that.uvalue, is_negative);
-    //     }
-    // } else {
-    //     result = bigint(uvalue + that.uvalue, is_negative);
-    // }
-    // //cout << "Result: " << result << endl;
-    // return result;
-
     bigint result;
     if (that.is_negative != is_negative) {
-        if (uvalue < that.uvalue) { // that.uvalue > uvalue
+        if (uvalue < that.uvalue) { 
             result = bigint(that.uvalue + uvalue, that.is_negative);
         } else {
             result = bigint(that.uvalue + uvalue, is_negative);
         }
     } else {
-        if (uvalue < that.uvalue) { // that.uvalue > uvalue
-            //cout << that.uvalue << " is the bigger number." << endl;
+        if (uvalue < that.uvalue) { 
             result = bigint(that.uvalue - uvalue, !that.is_negative);
         } else {
             if (uvalue == that.uvalue) {
@@ -82,8 +68,6 @@ bigint bigint::operator- (const bigint& that) const {
             } else {
                 result = bigint(uvalue - that.uvalue, that.is_negative);
             }
-            //result = bigint(uvalue - that.uvalue, that.is_negative);
-            //cout << uvalue << " is the bigger number." << endl;
         }
     }
     return result;
@@ -115,9 +99,6 @@ bool bigint::operator< (const bigint& that) const {
 }
 
 ostream& operator<< (ostream& out, const bigint& that) {
-    // out << "bigint(" << (that.is_negative ? "-" : "+");
-    // out << "," << that.uvalue << ")";
-    // vector<int> to_print;
     out << (that.is_negative ? "-" : "");
     out << that.uvalue;
     return out;
