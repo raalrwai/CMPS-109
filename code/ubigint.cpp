@@ -116,10 +116,7 @@ ubigint ubigint::operator- (const ubigint& that) const {
 }
 
 ubigint ubigint::operator* (const ubigint& that) const {
-    ubigint result;
-    int int_partial = that.ubig_value;
-    result.ubig_value.push_back(int_partial + '0');
-    return result;
+    return ubig_value[0] * that.ubig_value[0];
 }
 
 void ubigint::multiply_by_2() {
