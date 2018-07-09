@@ -131,7 +131,7 @@ ubigint ubigint::operator* (const ubigint& that) const {
   reverse(that_rev.ubig_value.begin(), that_rev.ubig_value.end());
   ubigint product;
   for(int i = 0; i < size + thatSize; i++){
-    product.ubig_value.push_back(static_cast<udigit_t>(0 + '0'));
+    product.ubig_value.push_back(static_cast<udigit_t>(0));
   }
   udigit_t carry;
   for(int i = 0; i < size; i++){
@@ -147,7 +147,7 @@ ubigint ubigint::operator* (const ubigint& that) const {
   while(product.ubig_value.back() == 0 ){
 
     product.ubig_value.pop_back();
-  }
+  } cout << "product" << product << endl;
   reverse(product.ubig_value.begin(), product.ubig_value.end());
   return product;
 }
