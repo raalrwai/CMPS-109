@@ -140,14 +140,18 @@ ubigint ubigint::operator- (const ubigint& that) const {
 ubigint ubigint::operator* (const ubigint& that) const {
     ubigint result;
     cout << "in operator*" << endl;
-    unsigned char carry;
+    int carry;
+    int product = 0;
     int int_partial;
     for (int i = 0; i < static_cast<int>(ubig_value.size() - 1); i++) {
         carry = '0';
         for (int j = 0; j < static_cast<int>(that.ubig_value.size() - 1); j++) {
             int_partial = (static_cast<int>(ubig_value[i]) - 48) * (static_cast<int>(that.ubig_value[j]) - 48);
-            cout << ubig_value[i] << " * " << that.ubig_value[j] << " = " << int_partial << endl;
-            cout << "* " << int_partial << " *" << endl;
+            d = product + int_partial + carry;
+            product = d % 10;
+            cout << "Product " << product << endl;
+            carry = d / 10;
+            cout << "Carry " << carry << endl;
         }
     }
     result.ubig_value.push_back(int_partial + '0');
