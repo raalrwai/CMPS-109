@@ -160,12 +160,12 @@ ubigint ubigint::operator* (const ubigint& that) const {
     result.ubig_value.push_back(int_partial + '0');
     return result;
 
-    int int_partial;
-    for (int i = 0; i < static_cast<int>(ubig_value.size() - 1); i++) {
-        for (int j = 0; j < static_cast<int>(that.ubig_value.size() - 1); j++) {
-            int_partial = (static_cast<int>(ubig_value[i]) - 48) * (static_cast<int>(that.ubig_value[j]) - 48);
-        }
-    }
+    // int int_partial;
+    // for (int i = 0; i < static_cast<int>(ubig_value.size() - 1); i++) {
+    //     for (int j = 0; j < static_cast<int>(that.ubig_value.size() - 1); j++) {
+    //         int_partial = (static_cast<int>(ubig_value[i]) - 48) * (static_cast<int>(that.ubig_value[j]) - 48);
+    //     }
+    // }
 }
 
 void ubigint::multiply_by_2() {
