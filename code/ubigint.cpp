@@ -143,6 +143,7 @@ ubigint ubigint::operator* (const ubigint& that) const {
     int carry;
     int product = 0;
     int int_partial;
+    int d;
     for (int i = 0; i < static_cast<int>(ubig_value.size() - 1); i++) {
         carry = '0';
         for (int j = 0; j < static_cast<int>(that.ubig_value.size() - 1); j++) {
