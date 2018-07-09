@@ -151,9 +151,9 @@ ubigint ubigint::operator* (const ubigint& that) const {
             int_partial = (static_cast<int>(ubig_value[i]) - 48) * (static_cast<int>(that.ubig_value[j]) - 48);
             d = product + int_partial + carry;
             product = d % 10;
-            cout << "Product " << product << endl;
+            //cout << "Product " << product << endl;
             carry = d / 10;
-            cout << "Carry " << carry << endl;
+            //cout << "Carry " << carry << endl;
             partial_product += product;
         }
     }
