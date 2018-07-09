@@ -113,7 +113,8 @@ ubigint ubigint::operator- (const ubigint& that) const {
             borrow = '0';
         }
     }
-    while (result.ubig_value.size() > 1 and ((static_cast<int>(result.ubig_value.back()) - 48) == 0)) {
+    while (result.ubig_value.size() > 1 and 
+        ((static_cast<int>(result.ubig_value.back()) - 48) == 0)) {
         result.ubig_value.pop_back();
     } 
     return result;
@@ -167,7 +168,9 @@ bool ubigint::operator== (const ubigint& that) const {
     if (ubig_value.size() != that.ubig_value.size()) {
         return false;
     } else {
-        for (int i = 0; i < static_cast<int>(ubig_value.size() - 1); i++) {
+        for (int i = 0; 
+            i < static_cast<int>(ubig_value.size() - 1); 
+            i++) {
             if (ubig_value[i] != that.ubig_value[i]) {
                 return false;
             }
