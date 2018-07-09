@@ -138,6 +138,16 @@ ubigint ubigint::operator- (const ubigint& that) const {
 }
 
 ubigint ubigint::operator* (const ubigint& that) const {
+    ubigint result;
+    unsigned char carry;
+    int int_partial;
+    for (int i = 0; i < static_cast<int>(ubig_value.size() - 1); i++) {
+        carry = '0';
+        for (int j = 0; j < static_cast<int>(that.ubig_value.size() - 1); j++) {
+            int_partial = i * j;
+            cout << '* ' << int_partial;
+        }
+    }
   return ubigint (ubig_value[0] * that.ubig_value[0]);
 }
 
