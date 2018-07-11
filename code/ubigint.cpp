@@ -150,7 +150,7 @@ ubigint ubigint::operator* (const ubigint& that) const {
   //    udigit_t  prod = product.ubig_value.at(i + j) + 
   //    rev.ubig_value.at(i)*that_rev.ubig_value.at(j) + carry;
             product.ubig_value[i + j] = partial_product%10 + '0';
-            carry = floor(ramis_product/10);
+            carry = floor(partial_product/10);
             c_carry = carry + '0';
     //  cout << rev.ubig_value.at(i) << " * " << that_rev.ubig_value.at(j) <<" = "
       //  << ramis_product << endl;
