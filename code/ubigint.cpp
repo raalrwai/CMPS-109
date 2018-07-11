@@ -160,6 +160,7 @@ ubigint ubigint::operator* (const ubigint& that) const {
 
 void ubigint::multiply_by_2() {
 	int size = ubig_value.size();
+    cout << "Look for this" << endl;
     int partial_product = 0;
     int carry = 0;
     cout << "Original: ";
