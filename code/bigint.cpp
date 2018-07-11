@@ -74,13 +74,13 @@ bigint bigint::operator- (const bigint& that) const {
 }
 
 bigint bigint::operator* (const bigint& that) const {
-   bigint result = uvalue * that.uvalue;
-   if (that.is_negative == is_negative) {
-    result.is_negative = !that.is_negative
-   } else {
-    result.is_negative = that.is_negative
-   }
-   return result;
+    bigint result = uvalue * that.uvalue;
+    if (that.is_negative == is_negative) {
+        result.is_negative = !that.is_negative;
+    } else {
+        result.is_negative = that.is_negative
+    }
+    return result;
 }
 
 bigint bigint::operator/ (const bigint& that) const {
