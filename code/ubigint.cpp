@@ -159,14 +159,30 @@ ubigint ubigint::operator* (const ubigint& that) const {
  
 
 void ubigint::multiply_by_2() {
-  ubigint two = ubigint(2);
-  ubigint temp = ubigint();
-  temp = ubig_value * 2;
-  ubig_value = temp;
+	int size = ubig_value.size();
+    int partial_product = 0;
+    int carry = 0;
+    for (int i = 0; i < size; i++) {
+        partial_product = ((static_cast<int>(ubig_value[i]) - 48) + carry) * 2;
+        if (partial_product > 10) {
+            carry = partial_product/10;
+            ubig_value.at(i) = (partial_product%10) + '0';
+        }
+    }
 }
 
 void ubigint::divide_by_2() {
-  ubig_value[0] /= 2;
+    //ubig_value[0] /= 2;
+    int partial_divide = 0;
+    int carry = 0;
+    int size = ubig_value.size();
+    for (int i = 0; i < size; i++) {
+        partial_divide = ((static_cast<int>(ubig_value[i]) - 48) + carry) / 2;
+        if (((static_cast<int>(ubig_value[i]) - 48) % 2) != 0) {
+            carry = 5;
+        }
+        ubig_value.at(i) = partial_divide + '0';
+    }
 }
 
 
