@@ -125,11 +125,6 @@ ubigint ubigint::operator- (const ubigint& that) const {
 ubigint ubigint::operator* (const ubigint& that) const {
   int size = ubig_value.size();
   int thatSize = that.ubig_value.size();
-
-  //ubigint rev = *this;
-  //ubigint that_rev = that;
-  // reverse(rev.ubig_value.begin(), rev.ubig_value.end());
-  // reverse(that_rev.ubig_value.begin(), that_rev.ubig_value.end());
   int partial_product;
   ubigint product;
   for(int i = 0; i < size + thatSize; i++){
@@ -147,27 +142,17 @@ ubigint ubigint::operator* (const ubigint& that) const {
             partial_product = static_cast<int>(product.ubig_value.at(i + j) - 48) + static_cast<int>(ubig_value.at(i) - 48) *
             static_cast<int>(that.ubig_value.at(j) - 48) +
             static_cast<int>(carry); 
-  //    udigit_t  prod = product.ubig_value.at(i + j) + 
-  //    rev.ubig_value.at(i)*that_rev.ubig_value.at(j) + carry;
             product.ubig_value[i + j] = partial_product%10 + '0';
             carry = floor(partial_product/10);
             c_carry = carry + '0';
-    //  cout << rev.ubig_value.at(i) << " * " << that_rev.ubig_value.at(j) <<" = "
-      //  << ramis_product << endl;
         }
         product.ubig_value[i + thatSize] = c_carry;
     }
-    // cout << "product" << ramis_product << endl;
-  //while(product.ubig_value.back() == 0 ){
-    //product.ubig_value.pop_back();
     while (product.ubig_value.size() > 1 and 
         ((static_cast<int>(product.ubig_value.back()) - 48) == 0)) {
             product.ubig_value.pop_back();             
     }  
-
- // cout << "product" << product << endl;
- // reverse(product.ubig_value.begin(), product.ubig_value.end());
-  return product;
+    return product;
 }
 
 
