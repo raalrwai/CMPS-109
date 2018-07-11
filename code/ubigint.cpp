@@ -232,13 +232,13 @@ ostream& operator<< (ostream& out, const ubigint& that) {
     if(that.ubig_value.size() > 0){
         int end_pos = that.ubig_value.size() - 1;
         for(int i = end_pos; i >= 0; i--){
-            if (((end_pos - i)%70 == 0) and (i != that.ubig_value.size())){
+            if (((end_pos - i)%69 == 0) and (i != end_pos)){
                 out << "\\" << endl;
             } else {
                 out << that.ubig_value.at(i);
             }
             //out << (static_cast<char>(that.ubig_value.at(i)));
-            //out << that.ubig_value.at(i);
+            out << that.ubig_value.at(i);
         }
     }
     return out; 
