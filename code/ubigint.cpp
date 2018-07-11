@@ -159,7 +159,10 @@ ubigint ubigint::operator* (const ubigint& that) const {
  
 
 void ubigint::multiply_by_2() {
-  ubig_value[0] *= 2;
+  ubigint two = ubigint(2);
+  ubigint temp = ubigint();
+  temp = ubig_value * 2;
+  ubig_value = temp;
 }
 
 void ubigint::divide_by_2() {
