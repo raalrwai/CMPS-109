@@ -231,7 +231,7 @@ bool ubigint::operator< (const ubigint& that) const {
 ostream& operator<< (ostream& out, const ubigint& that) {
     if(that.ubig_value.size() > 0){
         for(int i = that.ubig_value.size() - 1; i >= 0; i--){
-            if (((that.ubig_value.size() - 1 - i)%69 == 0) and (i != 0)){
+            if (((that.ubig_value.size() - 1 - i)%69 == 0) and (i != that.ubig_value.size() - 1)){
                 out << "\\" << endl;
             } else {
                 out << that.ubig_value.at(i);
