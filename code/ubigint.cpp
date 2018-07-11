@@ -108,10 +108,11 @@ ubigint ubigint::operator- (const ubigint& that) const {
       (static_cast<int>(borrow) - 48);
     if (digit1 < digit2) {
       corrected_result = int_partial + 10;
+      borrow = '1';
       result.ubig_value.push_back(corrected_result + '0');
     } else {
       result.ubig_value.push_back(int_partial + '0');
-      borrow = '0';
+       borrow = '0'; 
     }
   }
   while (result.ubig_value.size() > 1 and 
@@ -127,33 +128,45 @@ ubigint ubigint::operator* (const ubigint& that) const {
 
   ubigint rev = *this;
   ubigint that_rev = that;
-  reverse(rev.ubig_value.begin(), rev.ubig_value.end());
-  reverse(that_rev.ubig_value.begin(), that_rev.ubig_value.end());
+ // reverse(rev.ubig_value.begin(), rev.ubig_value.end());
+ // reverse(that_rev.ubig_value.begin(), that_rev.ubig_value.end());
+  int ramis_product;
   ubigint product;
   for(int i = 0; i < size + thatSize; i++){
-    product.ubig_value.push_back(static_cast<udigit_t>(0));
+    product.ubig_value.push_back(static_cast<udigit_t>(0)+ '0');
   }
-  udigit_t carry;
+  udigit_t c_carry;
+  int carry;
   for(int i = 0; i < size; i++){
     carry = 0;
-    for(int j = 0; j < thatSize; j++){
-      udigit_t  prod = product.ubig_value.at(i + j) + 
-      rev.ubig_value.at(i)*that_rev.ubig_value.at(j) + carry;
-      product.ubig_value[i + j] = prod%10 + '0';
-      carry = prod/10;
-    }
-    product.ubig_value[i + thatSize] = carry + '0';
-  }
-  while(product.ubig_value.back() == 0 ){
+     c_carry = '0';
 
+    
+    for(int j = 0; j < thatSize; j++){
+   ramis_product = static_cast<int>(product.ubig_value.at(i + j) - 48) + static_cast<int>(rev.ubig_value.at(i) - 48) *
+      static_cast<int>(that_rev.ubig_value.at(j)-48) +
+        static_cast<int>(carry); 
+  //    udigit_t  prod = product.ubig_value.at(i + j) + 
+  //    rev.ubig_value.at(i)*that_rev.ubig_value.at(j) + carry;
+      product.ubig_value[i + j] = ramis_product%10 + '0';
+      carry = ramis_product/10;
+      c_carry = carry + '0';
+    //  cout << rev.ubig_value.at(i) << " * " << that_rev.ubig_value.at(j) <<" = "
+      //  << ramis_product << endl;
+    }
+       
+    product.ubig_value[i + thatSize] = c_carry;
+  }// cout << "product" << ramis_product << endl;
+  while(product.ubig_value.back() == 0 ){
     product.ubig_value.pop_back();
-  } cout << "product" << product << endl;
-  reverse(product.ubig_value.begin(), product.ubig_value.end());
+  } 
+ // cout << "product" << product << endl;
+ // reverse(product.ubig_value.begin(), product.ubig_value.end());
   return product;
 }
 
 
-
+ 
 
 void ubigint::multiply_by_2() {
   ubig_value[0] *= 2;

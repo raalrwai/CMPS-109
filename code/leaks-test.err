@@ -1,14 +1,160 @@
-==11255== Memcheck, a memory error detector
-==11255== Copyright (C) 2002-2017, and GNU GPL'd, by Julian Seward et al.
-==11255== Using Valgrind-3.13.0 and LibVEX; rerun with -h for copyright info
-==11255== Command: ./ydc
-==11255== 
-==11255== 
-==11255== HEAP SUMMARY:
-==11255==     in use at exit: 0 bytes in 0 blocks
-==11255==   total heap usage: 185 allocs, 185 frees, 6,745 bytes allocated
-==11255== 
-==11255== All heap blocks were freed -- no leaks are possible
-==11255== 
-==11255== For counts of detected and suppressed errors, rerun with: -v
-==11255== ERROR SUMMARY: 0 errors from 0 contexts (suppressed: 0 from 0)
+==13466== Memcheck, a memory error detector
+==13466== Copyright (C) 2002-2017, and GNU GPL'd, by Julian Seward et al.
+==13466== Using Valgrind-3.13.0 and LibVEX; rerun with -h for copyright info
+==13466== Command: ./ydc
+==13466== 
+==13466== 
+==13466== Process terminating with default action of signal 2 (SIGINT)
+==13466==    at 0x40465F: udivide(ubigint const&, ubigint) (ubigint.cpp:176)
+==13466==    by 0x404888: ubigint::operator/(ubigint const&) const (ubigint.cpp:192)
+==13466==    by 0x408183: bigint::operator/(bigint const&) const (bigint.cpp:83)
+==13466==    by 0x40F163: do_arith(iterstack<bigint>&, char) (main.cpp:36)
+==13466==    by 0x40F9E5: main (main.cpp:144)
+==13466== 
+==13466== HEAP SUMMARY:
+==13466==     in use at exit: 1,104 bytes in 38 blocks
+==13466==   total heap usage: 176 allocs, 138 frees, 6,091 bytes allocated
+==13466== 
+==13466== 1 bytes in 1 blocks are still reachable in loss record 1 of 26
+==13466==    at 0x4C2A1E3: operator new(unsigned long) (vg_replace_malloc.c:334)
+==13466==    by 0x407383: __gnu_cxx::new_allocator<unsigned char>::allocate(unsigned long, void const*) (new_allocator.h:111)
+==13466==    by 0x406FA2: std::allocator_traits<std::allocator<unsigned char> >::allocate(std::allocator<unsigned char>&, unsigned long) (alloc_traits.h:436)
+==13466==    by 0x40676F: std::_Vector_base<unsigned char, std::allocator<unsigned char> >::_M_allocate(unsigned long) (stl_vector.h:172)
+==13466==    by 0x4063DA: void std::vector<unsigned char, std::allocator<unsigned char> >::_M_realloc_insert<unsigned char>(__gnu_cxx::__normal_iterator<unsigned char*, std::vector<unsigned char, std::allocator<unsigned char> > >, unsigned char&&) (vector.tcc:406)
+==13466==    by 0x40599F: unsigned char& std::vector<unsigned char, std::allocator<unsigned char> >::emplace_back<unsigned char>(unsigned char&&) (vector.tcc:105)
+==13466==    by 0x4050B1: std::vector<unsigned char, std::allocator<unsigned char> >::push_back(unsigned char&&) (stl_vector.h:954)
+==13466==    by 0x403C7E: ubigint::ubigint(unsigned long) (ubigint.cpp:26)
+==13466==    by 0x4045BE: udivide(ubigint const&, ubigint) (ubigint.cpp:171)
+==13466==    by 0x404888: ubigint::operator/(ubigint const&) const (ubigint.cpp:192)
+==13466==    by 0x408183: bigint::operator/(bigint const&) const (bigint.cpp:83)
+==13466==    by 0x40F163: do_arith(iterstack<bigint>&, char) (main.cpp:36)
+==13466== 
+==13466== 1 bytes in 1 blocks are still reachable in loss record 2 of 26
+==13466==    at 0x4C2A1E3: operator new(unsigned long) (vg_replace_malloc.c:334)
+==13466==    by 0x407383: __gnu_cxx::new_allocator<unsigned char>::allocate(unsigned long, void const*) (new_allocator.h:111)
+==13466==    by 0x406FA2: std::allocator_traits<std::allocator<unsigned char> >::allocate(std::allocator<unsigned char>&, unsigned long) (alloc_traits.h:436)
+==13466==    by 0x40676F: std::_Vector_base<unsigned char, std::allocator<unsigned char> >::_M_allocate(unsigned long) (stl_vector.h:172)
+==13466==    by 0x4063DA: void std::vector<unsigned char, std::allocator<unsigned char> >::_M_realloc_insert<unsigned char>(__gnu_cxx::__normal_iterator<unsigned char*, std::vector<unsigned char, std::allocator<unsigned char> > >, unsigned char&&) (vector.tcc:406)
+==13466==    by 0x40599F: unsigned char& std::vector<unsigned char, std::allocator<unsigned char> >::emplace_back<unsigned char>(unsigned char&&) (vector.tcc:105)
+==13466==    by 0x4050B1: std::vector<unsigned char, std::allocator<unsigned char> >::push_back(unsigned char&&) (stl_vector.h:954)
+==13466==    by 0x403C7E: ubigint::ubigint(unsigned long) (ubigint.cpp:26)
+==13466==    by 0x404618: udivide(ubigint const&, ubigint) (ubigint.cpp:173)
+==13466==    by 0x404888: ubigint::operator/(ubigint const&) const (ubigint.cpp:192)
+==13466==    by 0x408183: bigint::operator/(bigint const&) const (bigint.cpp:83)
+==13466==    by 0x40F163: do_arith(iterstack<bigint>&, char) (main.cpp:36)
+==13466== 
+==13466== 1 bytes in 1 blocks are still reachable in loss record 3 of 26
+==13466==    at 0x4C2A1E3: operator new(unsigned long) (vg_replace_malloc.c:334)
+==13466==    by 0x407383: __gnu_cxx::new_allocator<unsigned char>::allocate(unsigned long, void const*) (new_allocator.h:111)
+==13466==    by 0x406FA2: std::allocator_traits<std::allocator<unsigned char> >::allocate(std::allocator<unsigned char>&, unsigned long) (alloc_traits.h:436)
+==13466==    by 0x40676F: std::_Vector_base<unsigned char, std::allocator<unsigned char> >::_M_allocate(unsigned long) (stl_vector.h:172)
+==13466==    by 0x4063DA: void std::vector<unsigned char, std::allocator<unsigned char> >::_M_realloc_insert<unsigned char>(__gnu_cxx::__normal_iterator<unsigned char*, std::vector<unsigned char, std::allocator<unsigned char> > >, unsigned char&&) (vector.tcc:406)
+==13466==    by 0x40599F: unsigned char& std::vector<unsigned char, std::allocator<unsigned char> >::emplace_back<unsigned char>(unsigned char&&) (vector.tcc:105)
+==13466==    by 0x4050B1: std::vector<unsigned char, std::allocator<unsigned char> >::push_back(unsigned char&&) (stl_vector.h:954)
+==13466==    by 0x403C7E: ubigint::ubigint(unsigned long) (ubigint.cpp:26)
+==13466==    by 0x40462C: udivide(ubigint const&, ubigint) (ubigint.cpp:174)
+==13466==    by 0x404888: ubigint::operator/(ubigint const&) const (ubigint.cpp:192)
+==13466==    by 0x408183: bigint::operator/(bigint const&) const (bigint.cpp:83)
+==13466==    by 0x40F163: do_arith(iterstack<bigint>&, char) (main.cpp:36)
+==13466== 
+==13466== 5 bytes in 1 blocks are still reachable in loss record 4 of 26
+==13466==    at 0x4C2A1E3: operator new(unsigned long) (vg_replace_malloc.c:334)
+==13466==    by 0x407383: __gnu_cxx::new_allocator<unsigned char>::allocate(unsigned long, void const*) (new_allocator.h:111)
+==13466==    by 0x406FA2: std::allocator_traits<std::allocator<unsigned char> >::allocate(std::allocator<unsigned char>&, unsigned long) (alloc_traits.h:436)
+==13466==    by 0x40676F: std::_Vector_base<unsigned char, std::allocator<unsigned char> >::_M_allocate(unsigned long) (stl_vector.h:172)
+==13466==    by 0x406972: std::_Vector_base<unsigned char, std::allocator<unsigned char> >::_M_create_storage(unsigned long) (stl_vector.h:187)
+==13466==    by 0x405E76: std::_Vector_base<unsigned char, std::allocator<unsigned char> >::_Vector_base(unsigned long, std::allocator<unsigned char> const&) (stl_vector.h:138)
+==13466==    by 0x40539D: std::vector<unsigned char, std::allocator<unsigned char> >::vector(std::vector<unsigned char, std::allocator<unsigned char> > const&) (stl_vector.h:328)
+==13466==    by 0x404DD4: ubigint::ubigint(ubigint const&) (ubigint.h:16)
+==13466==    by 0x4083BC: bigint::bigint(bigint const&) (bigint.h:17)
+==13466==    by 0x40EF3F: do_arith(iterstack<bigint>&, char) (main.cpp:25)
+==13466==    by 0x40F9E5: main (main.cpp:144)
+==13466== 
+==13466== 5 bytes in 1 blocks are still reachable in loss record 5 of 26
+==13466==    at 0x4C2A1E3: operator new(unsigned long) (vg_replace_malloc.c:334)
+==13466==    by 0x407383: __gnu_cxx::new_allocator<unsigned char>::allocate(unsigned long, void const*) (new_allocator.h:111)
+==13466==    by 0x406FA2: std::allocator_traits<std::allocator<unsigned char> >::allocate(std::allocator<unsigned char>&, unsigned long) (alloc_traits.h:436)
+==13466==    by 0x40676F: std::_Vector_base<unsigned char, std::allocator<unsigned char> >::_M_allocate(unsigned long) (stl_vector.h:172)
+==13466==    by 0x406972: std::_Vector_base<unsigned char, std::allocator<unsigned char> >::_M_create_storage(unsigned long) (stl_vector.h:187)
+==13466==    by 0x405E76: std::_Vector_base<unsigned char, std::allocator<unsigned char> >::_Vector_base(unsigned long, std::allocator<unsigned char> const&) (stl_vector.h:138)
+==13466==    by 0x40539D: std::vector<unsigned char, std::allocator<unsigned char> >::vector(std::vector<unsigned char, std::allocator<unsigned char> > const&) (stl_vector.h:328)
+==13466==    by 0x404DD4: ubigint::ubigint(ubigint const&) (ubigint.h:16)
+==13466==    by 0x404871: ubigint::operator/(ubigint const&) const (ubigint.cpp:192)
+==13466==    by 0x408183: bigint::operator/(bigint const&) const (bigint.cpp:83)
+==13466==    by 0x40F163: do_arith(iterstack<bigint>&, char) (main.cpp:36)
+==13466==    by 0x40F9E5: main (main.cpp:144)
+==13466== 
+==13466== 7 bytes in 1 blocks are still reachable in loss record 6 of 26
+==13466==    at 0x4C2A1E3: operator new(unsigned long) (vg_replace_malloc.c:334)
+==13466==    by 0x407383: __gnu_cxx::new_allocator<unsigned char>::allocate(unsigned long, void const*) (new_allocator.h:111)
+==13466==    by 0x406FA2: std::allocator_traits<std::allocator<unsigned char> >::allocate(std::allocator<unsigned char>&, unsigned long) (alloc_traits.h:436)
+==13466==    by 0x40676F: std::_Vector_base<unsigned char, std::allocator<unsigned char> >::_M_allocate(unsigned long) (stl_vector.h:172)
+==13466==    by 0x406972: std::_Vector_base<unsigned char, std::allocator<unsigned char> >::_M_create_storage(unsigned long) (stl_vector.h:187)
+==13466==    by 0x405E76: std::_Vector_base<unsigned char, std::allocator<unsigned char> >::_Vector_base(unsigned long, std::allocator<unsigned char> const&) (stl_vector.h:138)
+==13466==    by 0x40539D: std::vector<unsigned char, std::allocator<unsigned char> >::vector(std::vector<unsigned char, std::allocator<unsigned char> > const&) (stl_vector.h:328)
+==13466==    by 0x404DD4: ubigint::ubigint(ubigint const&) (ubigint.h:16)
+==13466==    by 0x4083BC: bigint::bigint(bigint const&) (bigint.h:17)
+==13466==    by 0x40EFCA: do_arith(iterstack<bigint>&, char) (main.cpp:28)
+==13466==    by 0x40F9E5: main (main.cpp:144)
+==13466== 
+==13466== 7 bytes in 1 blocks are still reachable in loss record 7 of 26
+==13466==    at 0x4C2A1E3: operator new(unsigned long) (vg_replace_malloc.c:334)
+==13466==    by 0x407383: __gnu_cxx::new_allocator<unsigned char>::allocate(unsigned long, void const*) (new_allocator.h:111)
+==13466==    by 0x406FA2: std::allocator_traits<std::allocator<unsigned char> >::allocate(std::allocator<unsigned char>&, unsigned long) (alloc_traits.h:436)
+==13466==    by 0x40676F: std::_Vector_base<unsigned char, std::allocator<unsigned char> >::_M_allocate(unsigned long) (stl_vector.h:172)
+==13466==    by 0x406972: std::_Vector_base<unsigned char, std::allocator<unsigned char> >::_M_create_storage(unsigned long) (stl_vector.h:187)
+==13466==    by 0x405E76: std::_Vector_base<unsigned char, std::allocator<unsigned char> >::_Vector_base(unsigned long, std::allocator<unsigned char> const&) (stl_vector.h:138)
+==13466==    by 0x40539D: std::vector<unsigned char, std::allocator<unsigned char> >::vector(std::vector<unsigned char, std::allocator<unsigned char> > const&) (stl_vector.h:328)
+==13466==    by 0x404DD4: ubigint::ubigint(ubigint const&) (ubigint.h:16)
+==13466==    by 0x404645: udivide(ubigint const&, ubigint) (ubigint.cpp:175)
+==13466==    by 0x404888: ubigint::operator/(ubigint const&) const (ubigint.cpp:192)
+==13466==    by 0x408183: bigint::operator/(bigint const&) const (bigint.cpp:83)
+==13466==    by 0x40F163: do_arith(iterstack<bigint>&, char) (main.cpp:36)
+==13466== 
+==13466== 26 bytes in 1 blocks are still reachable in loss record 8 of 26
+==13466==    at 0x4C2A1E3: operator new(unsigned long) (vg_replace_malloc.c:334)
+==13466==    by 0x40744F: __gnu_cxx::new_allocator<char>::allocate(unsigned long, void const*) (new_allocator.h:111)
+==13466==    by 0x40723B: std::string::_Rep::_S_create(unsigned long, unsigned long, std::allocator<char> const&) (basic_string.tcc:1057)
+==13466==    by 0x40B3EC: char* std::string::_S_construct<char const*>(char const*, char const*, std::allocator<char> const&, std::forward_iterator_tag) (basic_string.tcc:578)
+==13466==    by 0x40B01B: char* std::string::_S_construct_aux<char const*>(char const*, char const*, std::allocator<char> const&, std::__false_type) (basic_string.h:5033)
+==13466==    by 0x40AE29: char* std::string::_S_construct<char const*>(char const*, char const*, std::allocator<char> const&) (basic_string.h:5054)
+==13466==    by 0x410697: std::basic_string<char, std::char_traits<char>, std::allocator<char> >::basic_string(char const*, unsigned long, std::allocator<char> const&) (basic_string.tcc:657)
+==13466==    by 0x4102DB: std::literals::string_literals::operator"" s(char const*, unsigned long) (basic_string.h:6663)
+==13466==    by 0x40FBEA: __static_initialization_and_destruction_0(int, int) (main.cpp:77)
+==13466==    by 0x410180: _GLOBAL__sub_I__Z8do_arithR9iterstackI6bigintEc (main.cpp:158)
+==13466==    by 0x41808C: __libc_csu_init (in /afs/cats.ucsc.edu/users/i/raalrwai/cmps109/pa1/asg1cmps109/code/ydc)
+==13466==    by 0x56773D4: (below main) (libc-start.c:233)
+==13466== 
+==13466== 26 bytes in 1 blocks are still reachable in loss record 9 of 26
+==13466==    at 0x4C2A1E3: operator new(unsigned long) (vg_replace_malloc.c:334)
+==13466==    by 0x40744F: __gnu_cxx::new_allocator<char>::allocate(unsigned long, void const*) (new_allocator.h:111)
+==13466==    by 0x40723B: std::string::_Rep::_S_create(unsigned long, unsigned long, std::allocator<char> const&) (basic_string.tcc:1057)
+==13466==    by 0x40B3EC: char* std::string::_S_construct<char const*>(char const*, char const*, std::allocator<char> const&, std::forward_iterator_tag) (basic_string.tcc:578)
+==13466==    by 0x40B01B: char* std::string::_S_construct_aux<char const*>(char const*, char const*, std::allocator<char> const&, std::__false_type) (basic_string.h:5033)
+==13466==    by 0x40AE29: char* std::string::_S_construct<char const*>(char const*, char const*, std::allocator<char> const&) (basic_string.h:5054)
+==13466==    by 0x410697: std::basic_string<char, std::char_traits<char>, std::allocator<char> >::basic_string(char const*, unsigned long, std::allocator<char> const&) (basic_string.tcc:657)
+==13466==    by 0x4102DB: std::literals::string_literals::operator"" s(char const*, unsigned long) (basic_string.h:6663)
+==13466==    by 0x40FC2E: __static_initialization_and_destruction_0(int, int) (main.cpp:77)
+==13466==    by 0x410180: _GLOBAL__sub_I__Z8do_arithR9iterstackI6bigintEc (main.cpp:158)
+==13466==    by 0x41808C: __libc_csu_init (in /afs/cats.ucsc.edu/users/i/raalrwai/cmps109/pa1/asg1cmps109/code/ydc)
+==13466==    by 0x56773D4: (below main) (libc-start.c:233)
+==13466== 
+==13466== 26 bytes in 1 blocks are still reachable in loss record 10 of 26
+==13466==    at 0x4C2A1E3: operator new(unsigned long) (vg_replace_malloc.c:334)
+==13466==    by 0x40744F: __gnu_cxx::new_allocator<char>::allocate(unsigned long, void const*) (new_allocator.h:111)
+==13466==    by 0x40723B: std::string::_Rep::_S_create(unsigned long, unsigned long, std::allocator<char> const&) (basic_string.tcc:1057)
+==13466==    by 0x40B3EC: char* std::string::_S_construct<char const*>(char const*, char const*, std::allocator<char> const&, std::forward_iterator_tag) (basic_string.tcc:578)
+==13466==    by 0x40B01B: char* std::string::_S_construct_aux<char const*>(char const*, char const*, std::allocator<char> const&, std::__false_type) (basic_string.h:5033)
+==13466==    by 0x40AE29: char* std::string::_S_construct<char const*>(char const*, char const*, std::allocator<char> const&) (basic_string.h:5054)
+==13466==    by 0x410697: std::basic_string<char, std::char_traits<char>, std::allocator<char> >::basic_string(char const*, unsigned long, std::allocator<char> const&) (basic_string.tcc:657)
+==13466==    by 0x4102DB: std::literals::string_literals::operator"" s(char const*, unsigned long) (basic_string.h:6663)
+==13466==    by 0x40FC76: __static_initialization_and_destruction_0(int, int) (main.cpp:77)
+==13466==    by 0x410180: _GLOBAL__sub_I__Z8do_arithR9iterstackI6bigintEc (main.cpp:158)
+==13466==    by 0x41808C: __libc_csu_init (in /afs/cats.ucsc.edu/users/i/raalrwai/cmps109/pa1/asg1cmps109/code/ydc)
+==13466==    by 0x56773D4: (below main) (libc-start.c:233)
+==13466== 
+==13466== 26 bytes in 1 blocks are still reachable in loss record 11 of 26
+==13466==    at 0x4C2A1E3: operator new(unsigned long) (vg_replace_malloc.c:334)
+==13466==    by 0x40744F: __gnu_cxx::new_allocator<char>::allocate(unsigned long, void const*) (new_allocator.h:111)
+==13466==    by 0x40723B: std::string::_Rep::_S_create(unsigned long, unsigned long, std::allocator<char> const&) (basic_string.tcc:1057)
+==13466==    by 0x40B3EC: char* std::string::_S_construct<char const*>(char const*, char const*, std::allocator<char
