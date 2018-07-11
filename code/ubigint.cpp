@@ -228,10 +228,13 @@ bool ubigint::operator< (const ubigint& that) const {
   return true;
 }
 
-ostream& operator<< (ostream& out, const ubigint& that) { 
+ostream& operator<< (ostream& out, const ubigint& that) {
+    cout << "that.ubig_value.size() = " << that.ubig_value.size() << endl; 
     if(that.ubig_value.size() > 0){
         for(int i = that.ubig_value.size(); i >= 0; i--){
-            if ((that.ubig_value.size() - i)%69 == 0 and i != 0){ 
+            cout << "i = " << i << endl;
+            if ((that.ubig_value.size() - i)%69 == 0 and i != 0){
+                cout << that.ubig_value.size() << " - " << i << " = " << (that.ubig_value.size() - i) << endl; 
                 out << "\\" << endl;
             }
             out << (static_cast<char>(that.ubig_value.at(i)));
