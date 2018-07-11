@@ -126,44 +126,44 @@ ubigint ubigint::operator* (const ubigint& that) const {
   int size = ubig_value.size();
   int thatSize = that.ubig_value.size();
 
-  ubigint rev = *this;
-  ubigint that_rev = that;
- // reverse(rev.ubig_value.begin(), rev.ubig_value.end());
- // reverse(that_rev.ubig_value.begin(), that_rev.ubig_value.end());
-  int ramis_product;
+  //ubigint rev = *this;
+  //ubigint that_rev = that;
+  // reverse(rev.ubig_value.begin(), rev.ubig_value.end());
+  // reverse(that_rev.ubig_value.begin(), that_rev.ubig_value.end());
+  int partial_product;
   ubigint product;
   for(int i = 0; i < size + thatSize; i++){
     product.ubig_value.push_back(static_cast<udigit_t>(0)+ '0');
   }
+
   udigit_t c_carry;
   int carry;
-  for(int i = 0; i < size; i++){
-    carry = 0;
-     c_carry = '0';
 
-    
-    for(int j = 0; j < thatSize; j++){
-   ramis_product = static_cast<int>(product.ubig_value.at(i + j) - 48) + static_cast<int>(rev.ubig_value.at(i) - 48) *
-      static_cast<int>(that_rev.ubig_value.at(j)-48) +
-        static_cast<int>(carry); 
+    for(int i = 0; i < size; i++){
+        carry = 0;
+        c_carry = '0';
+
+        for(int j = 0; j < thatSize; j++){
+            partial_product = static_cast<int>(product.ubig_value.at(i + j) - 48) + static_cast<int>(rev.ubig_value.at(i) - 48) *
+            static_cast<int>(that_rev.ubig_value.at(j) - 48) +
+            static_cast<int>(carry); 
   //    udigit_t  prod = product.ubig_value.at(i + j) + 
   //    rev.ubig_value.at(i)*that_rev.ubig_value.at(j) + carry;
-      product.ubig_value[i + j] = ramis_product%10 + '0';
-      carry = ramis_product/10;
-      c_carry = carry + '0';
+            product.ubig_value[i + j] = partial_product%10 + '0';
+            carry = floor(ramis_product/10);
+            c_carry = carry + '0';
     //  cout << rev.ubig_value.at(i) << " * " << that_rev.ubig_value.at(j) <<" = "
       //  << ramis_product << endl;
+        }
+        product.ubig_value[i + thatSize] = c_carry;
     }
-       
-    product.ubig_value[i + thatSize] = c_carry;
-  }// cout << "product" << ramis_product << endl;
+    // cout << "product" << ramis_product << endl;
   //while(product.ubig_value.back() == 0 ){
     //product.ubig_value.pop_back();
-     while (product.ubig_value.size() > 1 and 
-         ((static_cast<int>(product.ubig_value.back()) - 48) == 0)) {
-               product.ubig_value.pop_back();
-                   
-     }  
+    while (product.ubig_value.size() > 1 and 
+        ((static_cast<int>(product.ubig_value.back()) - 48) == 0)) {
+            product.ubig_value.pop_back();             
+    }  
 
  // cout << "product" << product << endl;
  // reverse(product.ubig_value.begin(), product.ubig_value.end());
