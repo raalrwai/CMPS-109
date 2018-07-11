@@ -162,6 +162,11 @@ void ubigint::multiply_by_2() {
 	int size = ubig_value.size();
     int partial_product = 0;
     int carry = 0;
+    cout << "Original: ";
+    for (int i = 0; i < size; i++) {
+        cout << ubig_value.at(i);
+    }
+    cout << endl;
     for (int i = 0; i < size; i++) {
         partial_product = ((static_cast<int>(ubig_value[i]) - 48) + carry) * 2;
         if (partial_product > 10) {
@@ -169,6 +174,11 @@ void ubigint::multiply_by_2() {
             ubig_value.at(i) = (partial_product%10) + '0';
         }
     }
+    cout << "Multiplied by 2: ";
+    for (int i = 0; i < size; i++) {
+        cout << ubig_value.at(i);
+    }
+    cout << endl;
 }
 
 void ubigint::divide_by_2() {
