@@ -234,9 +234,9 @@ ostream& operator<< (ostream& out, const ubigint& that) {
         for(int i = end_pos; i >= 0; i--){
             if (((end_pos - i)%69 == 0) and (i != end_pos)){
                 out << "\\" << endl;
-            } else {
-                out << that.ubig_value.at(i);
-            }
+            } //else {
+                //out << that.ubig_value.at(i);
+            //}
             //out << (static_cast<char>(that.ubig_value.at(i)));
             out << that.ubig_value.at(i);
         }
