@@ -157,9 +157,14 @@ ubigint ubigint::operator* (const ubigint& that) const {
        
     product.ubig_value[i + thatSize] = c_carry;
   }// cout << "product" << ramis_product << endl;
-  while(product.ubig_value.back() == 0 ){
-    product.ubig_value.pop_back();
-  } 
+  //while(product.ubig_value.back() == 0 ){
+    //product.ubig_value.pop_back();
+     while (product.ubig_value.size() > 1 and 
+         ((static_cast<int>(product.ubig_value.back()) - 48) == 0)) {
+               product.ubig_value.pop_back();
+                   
+     }  
+
  // cout << "product" << product << endl;
  // reverse(product.ubig_value.begin(), product.ubig_value.end());
   return product;
