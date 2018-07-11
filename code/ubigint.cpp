@@ -144,8 +144,8 @@ ubigint ubigint::operator* (const ubigint& that) const {
         c_carry = '0';
 
         for(int j = 0; j < thatSize; j++){
-            partial_product = static_cast<int>(product.ubig_value.at(i + j) - 48) + static_cast<int>(rev.ubig_value.at(i) - 48) *
-            static_cast<int>(that_rev.ubig_value.at(j) - 48) +
+            partial_product = static_cast<int>(product.ubig_value.at(i + j) - 48) + static_cast<int>(this.ubig_value.at(i) - 48) *
+            static_cast<int>(that.ubig_value.at(j) - 48) +
             static_cast<int>(carry); 
   //    udigit_t  prod = product.ubig_value.at(i + j) + 
   //    rev.ubig_value.at(i)*that_rev.ubig_value.at(j) + carry;
