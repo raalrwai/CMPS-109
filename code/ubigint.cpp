@@ -247,6 +247,7 @@ quo_rem udivide (const ubigint& dividend, ubigint divisor) {
   //   divisor.divide_by_2();
   //   power_of_2.divide_by_2();
   // }
+    cout << "In udivide" << endl;
     for (int i = 0; i < divisor.ubig_value.size(); i++) {
         cout << divisor.ubig_value.at(i);
     }
