@@ -172,9 +172,10 @@ void ubigint::multiply_by_2() {
     for (int i = 0; i < size; i++) {
         carry = 0;
         c_carry = '0';
-        partial_product = static_cast<int>(product.ubig_value.at(i + 1) - 48) 
-            + static_cast<int>(ubig_value.at(i) - 48) *
-            2 + static_cast<int>(carry); 
+        partial_product = 
+          static_cast<int>(product.ubig_value.at(i + 1) - 48) 
+          + static_cast<int>(ubig_value.at(i) - 48) *
+          2 + static_cast<int>(carry); 
         product.ubig_value[i] = partial_product%10 + '0';
         carry = floor(partial_product/10);
         c_carry = carry + '0';
