@@ -174,7 +174,7 @@ void ubigint::multiply_by_2() {
             carry = partial_product/10;
             cout << "Carry: " << carry << endl;
             cout << "Digit: " << (partial_product%10) << endl;
-            product.at(i) = (partial_product%10) + '0';
+            product.ubig_value.at(i) = (partial_product%10) + '0';
         }
     }
     cout << "Original: ";
