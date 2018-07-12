@@ -220,6 +220,7 @@ void ubigint::divide_by_2() {
     udigit_t temp;
     int int_digit;
     int int_temp;
+    cout << "Look here" << endl;
 
     cout << "Original: ";
     for (int i = 0; i < static_cast<int>(ubig_value.size()); i++) {
