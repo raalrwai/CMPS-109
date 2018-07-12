@@ -183,34 +183,6 @@ void ubigint::multiply_by_2() {
             product.ubig_value.pop_back();             
     }  
     ubig_value = product.ubig_value;
-	// int size = ubig_value.size();
- //    ubigint product;
- //    for(int i = 0; i < size + 1; i++){
- //        product.ubig_value.push_back(static_cast<udigit_t>(0)+ '0');
- //    }
- //    cout << "tkx" << endl;
- //    int partial_product = 0;
- //    int carry = 0;
- //    for (int i = 0; i < size; i++) {
- //        partial_product = ((static_cast<int>(ubig_value[i]) - 48) * 2) + carry;
- //        cout << "PP: " << partial_product << endl;
- //        if (partial_product > 10) {
- //            carry = floor(partial_product/10);
- //            cout << "Carry: " << carry << endl;
- //            cout << "Digit: " << (partial_product%10) << endl;
- //            product.ubig_value.at(i) = (partial_product%10) + '0';
- //        }
- //    }
- //    cout << "Original: ";
- //    for (int i = 0; i < size; i++) {
- //        cout << ubig_value.at(i);
- //    }
- //    cout << endl;
- //    cout << "Multiplied by 2: ";
- //    for (int i = 0; i < size + 1; i++) {
- //        cout << product.ubig_value.at(i);
- //    }
- //    cout << endl;
 }
 
 void ubigint::divide_by_2() {
@@ -268,14 +240,14 @@ quo_rem udivide (const ubigint& dividend, ubigint divisor) {
         divisor.multiply_by_2();
         power_of_2.multiply_by_2();
     }
-    while (power_of_2 > zero) {
-        if (divisor <= remainder) {
-            remainder = remainder - divisor;
-            quotient = quotient + power_of_2;
-        }
-        divisor.divide_by_2();
-        power_of_2.divide_by_2();
-    }
+    // while (power_of_2 > zero) {
+    //     if (divisor <= remainder) {
+    //         remainder = remainder - divisor;
+    //         quotient = quotient + power_of_2;
+    //     }
+    //     divisor.divide_by_2();
+    //     power_of_2.divide_by_2();
+    // }
     return {.quotient = quotient, .remainder = remainder};
 }
 
@@ -303,9 +275,7 @@ bool ubigint::operator== (const ubigint& that) const {
 }
 
 bool ubigint::operator< (const ubigint& that) const {
-    //cout << "ubig: " << ubig_value[0] << "that.ubig: " << that.ubig_value[0];
-
-    if (ubig_value.size() < that.ubig_value.size()) { // change here
+    if (ubig_value.size() > that.ubig_value.size()) {
         cout << "Size false" << endl;
         return false;
     } else if (ubig_value.size() == that.ubig_value.size()){
