@@ -168,7 +168,7 @@ void ubigint::multiply_by_2() {
     int partial_product = 0;
     int carry = 0;
     for (int i = 0; i < size; i++) {
-        partial_product = ((static_cast<int>(ubig_value[i]) - 48) - carry) * 2;
+        partial_product = ((static_cast<int>(ubig_value[i]) - 48) + carry) * 2;
         cout << "PP: " << partial_product << endl;
         if (partial_product > 10) {
             carry = partial_product/10;
