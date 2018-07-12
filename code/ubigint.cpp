@@ -220,7 +220,6 @@ void ubigint::divide_by_2() {
     udigit_t temp;
     int int_digit;
     int int_temp;
-    cout << "Look here" << endl;
 
     cout << "Original: ";
     for (int i = 0; i < static_cast<int>(ubig_value.size()); i++) {
@@ -306,7 +305,7 @@ bool ubigint::operator== (const ubigint& that) const {
 bool ubigint::operator< (const ubigint& that) const {
     //cout << "ubig: " << ubig_value[0] << "that.ubig: " << that.ubig_value[0];
 
-    if (ubig_value.size() > that.ubig_value.size()) {
+    if (ubig_value.size() < that.ubig_value.size()) { // change here
         cout << "Size false" << endl;
         return false;
     } else if (ubig_value.size() == that.ubig_value.size()){
