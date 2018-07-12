@@ -1,1 +1,1 @@
-cp {PARTNER README Makefile bigint.cpp bigint.h debug.cpp debug.h iterstack.h libfns.cpp libfns.h main.cpp relops.h scanner.cpp scanner.h ubigint.cpp ubigint.h util.cpp util.h} test_submit_dir 
+cp { PARTNER README Makefile bigint.cpp bigint.h debug.cpp debug.h iterstack.h libfns.cpp libfns.h main.cpp relops.h scanner.cpp scanner.h ubigint.cpp ubigint.h util.cpp util.h } test_submit_dir 
