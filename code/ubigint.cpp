@@ -183,6 +183,7 @@ void ubigint::multiply_by_2() {
         c_carry = carry + '0';
         product.ubig_value[i + 1] = c_carry;    
     }
+    product.ubig_value[size + 1] = c_carry; 
     while (product.ubig_value.size() > 1 and 
         ((static_cast<int>(product.ubig_value.back()) - 48) == 0)) {
             product.ubig_value.pop_back();             
