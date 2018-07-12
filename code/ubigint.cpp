@@ -162,7 +162,7 @@ void ubigint::multiply_by_2() {
     int size = ubig_value.size();
     int partial_product;
     ubigint product;
-    cout << "Multiplied by 2 18:11" << endl;
+    cout << "Multiplied by 2 18:15" << endl;
     cout << "Original: ";
     for (int i = 0; i < size; i++) {
         cout << ubig_value.at(i);
