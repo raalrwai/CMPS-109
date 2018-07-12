@@ -162,6 +162,11 @@ void ubigint::multiply_by_2() {
     int size = ubig_value.size();
     int partial_product;
     ubigint product;
+    cout << "Original: ";
+    for (int i = 0; i < size; i++) {
+        cout << ubig_value.at(i);
+    }
+    cout << endl;
     for(int i = 0; i < size + 1; i++){
         product.ubig_value.push_back(static_cast<udigit_t>(0)+ '0');
     }
@@ -182,6 +187,11 @@ void ubigint::multiply_by_2() {
             product.ubig_value.pop_back();             
     }  
     ubig_value = product.ubig_value;
+    cout << "Multiplied: ";
+    for (int i = 0; i < size; i++) {
+        cout << ubig_value.at(i);
+    }
+    cout << endl;
 	// int size = ubig_value.size();
  //    ubigint product;
  //    for(int i = 0; i < size + 1; i++){
@@ -214,9 +224,9 @@ void ubigint::multiply_by_2() {
 
 void ubigint::divide_by_2() {
     //ubig_value[0] /= 2;
-    int partial_divide = 0;
-    int carry = 0;
     int size = ubig_value.size();
+    int partial_divide = 0;
+    ubigint divide;
     for (int i = 0; i < size; i++) {
         partial_divide = ((static_cast<int>(ubig_value[i]) - 48) + carry) / 2;
         if (((static_cast<int>(ubig_value[i]) - 48) % 2) != 0) {
@@ -229,35 +239,24 @@ void ubigint::divide_by_2() {
 
 struct quo_rem { ubigint quotient; ubigint remainder; };
 quo_rem udivide (const ubigint& dividend, ubigint divisor) {
-  // Note: divisor is modified so pass by value (copy).
-  // ubigint zero {0};
-  // if (divisor == zero) throw domain_error ("udivide by zero");
-  // ubigint power_of_2 {1};
-  // ubigint quotient {0};
-  // ubigint remainder {dividend}; // left operand, dividend
-  // while (divisor < remainder) {
-  //   divisor.multiply_by_2();
-  //   power_of_2.multiply_by_2();
-  // }
-  // while (power_of_2 > zero) {
-  //   if (divisor <= remainder) {
-  //     remainder = remainder - divisor;
-  //     quotient = quotient + power_of_2;
-  //   }
-  //   divisor.divide_by_2();
-  //   power_of_2.divide_by_2();
-  // }
-    cout << "In udivide" << endl;
-    for (int i = 0; i < divisor.ubig_value.size(); i++) {
-        cout << divisor.ubig_value.at(i);
+  Note: divisor is modified so pass by value (copy).
+  ubigint zero {0};
+  if (divisor == zero) throw domain_error ("udivide by zero");
+  ubigint power_of_2 {1};
+  ubigint quotient {0};
+  ubigint remainder {dividend}; // left operand, dividend
+  while (divisor < remainder) {
+    divisor.multiply_by_2();
+    power_of_2.multiply_by_2();
+  }
+  while (power_of_2 > zero) {
+    if (divisor <= remainder) {
+      remainder = remainder - divisor;
+      quotient = quotient + power_of_2;
     }
-    divisor.multiply_by_2;
-    for (int i = 0; i < divisor.ubig_value.size(); i++) {
-        cout << divisor.ubig_value.at(i);
-    }
-    ubigint quotient {0};
-    ubigint remainder {0};  
-    return {.quotient = quotient, .remainder = remainder};
+    divisor.divide_by_2();
+    power_of_2.divide_by_2();
+  }
 }
 
 ubigint ubigint::operator/ (const ubigint& that) const {
