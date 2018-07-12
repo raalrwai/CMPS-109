@@ -221,6 +221,12 @@ void ubigint::divide_by_2() {
     int int_digit;
     int int_temp;
 
+    cout << "Original: ";
+    for (int i = 0; i < size; i++) {
+        cout << ubig_value.at(i);
+    }
+    cout << endl;
+
     for (int i = 0; i < ubig_value.size(); i++) {
         digit = ubig_value[i];
         int_digit = static_cast<int>(digit);
@@ -235,6 +241,12 @@ void ubigint::divide_by_2() {
         int_digit = int_digit / 2;
         ubig_value.at(i) = int_digit + '0';
     }
+
+    cout << "New: ";
+    for (int i = 0; i < size; i++) {
+        cout << ubig_value.at(i);
+    }
+    cout << endl;
     
 }
 
