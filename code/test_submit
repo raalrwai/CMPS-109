@@ -1,1 +1,18 @@
-cp { PARTNER README Makefile bigint.cpp bigint.h debug.cpp debug.h iterstack.h libfns.cpp libfns.h main.cpp relops.h scanner.cpp scanner.h ubigint.cpp ubigint.h util.cpp util.h } test_submit_dir 
+cp PARTNER test_submit_dir/PARTNER
+cp README test_submit_dir/README
+cp Makefile test_submit_dir/Makefile
+cp bigint.cpp test_submit_dir/bigint.cpp
+cp bigint.h test_submit_dir/bigint.h
+cp debug.cpp test_submit_dir/debug.cpp
+cp debug.h test_submit_dir/debug.h
+cp iterstack.h test_submit_dir/iterstack.h
+cp libfns.cpp test_submit_dir/libfns.cpp
+cp libfns.h test_submit_dir/libfns.h
+cp main.cpp test_submit_dir/main.cpp
+cp relops.h test_submit_dir/relops.h
+cp scanner.cpp test_submit_dir/scanner.cpp
+cp scanner.h test_submit_dir/scanner.h
+cp ubigint.cpp test_submit_dir/ubigint.cpp
+cp ubigint.h test_submit_dir/ubigint.h
+cp util.cpp test_submit_dir/util.cpp
+cp util.h test_submit_dir/util.h
