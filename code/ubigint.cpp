@@ -162,20 +162,9 @@ void ubigint::multiply_by_2() {
     int size = ubig_value.size();
     int partial_product;
     ubigint product;
-    cout << "Multiplied by 2 18:19" << endl;
-    cout << "Original: ";
-    for (int i = 0; i < size; i++) {
-        cout << ubig_value.at(i);
-    }
-    cout << endl;
     for(int i = 0; i < size + 1; i++){
         product.ubig_value.push_back(static_cast<udigit_t>(0)+ '0');
     }
-    cout << "0: ";
-    for (int i = 0; i < size + 1; i++) {
-        cout << product.ubig_value.at(i);
-    }
-    cout << endl;
     udigit_t c_carry;
     int carry;
     for (int i = 0; i < size; i++) {
@@ -194,12 +183,6 @@ void ubigint::multiply_by_2() {
             product.ubig_value.pop_back();             
     }  
     ubig_value = product.ubig_value;
-    cout << "Multiplied: ";
-    size = ubig_value.size();
-    for (int i = 0; i < size; i++) {
-        cout << ubig_value.at(i);
-    }
-    cout << endl;
 	// int size = ubig_value.size();
  //    ubigint product;
  //    for(int i = 0; i < size + 1; i++){
@@ -233,16 +216,25 @@ void ubigint::multiply_by_2() {
 void ubigint::divide_by_2() {
     //ubig_value[0] /= 2;
     int size = ubig_value.size();
-    int partial_divide = 0;
+    int partial_divide;
+    ubigint c_carry;
     int carry = 0;
     ubigint divide;
+    for(int i = 0; i < size + 1; i++){
+        product.ubig_value.push_back(static_cast<udigit_t>(0)+ '0');
+    }
     for (int i = 0; i < size; i++) {
-        partial_divide = ((static_cast<int>(ubig_value[i]) - 48) + carry) / 2;
+        partial_divide = (((static_cast<int>(ubig_value[i]) - 48)) / 2) + carry;
         if (((static_cast<int>(ubig_value[i]) - 48) % 2) != 0) {
             carry = 5;
+            c_carry = carry + '0';
         }
-        ubig_value.at(i) = partial_divide + '0';
+        divide.ubig_value = partial_divide + '0';
     }
+    while (divide.ubig_value.size() > 1 and 
+        ((static_cast<int>(product.ubig_value.back()) - 48) == 0)) {
+            divide.ubig_value.pop_back();             
+    }  
 }
 
 
