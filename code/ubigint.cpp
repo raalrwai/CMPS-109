@@ -226,6 +226,7 @@ void ubigint::divide_by_2() {
     //ubig_value[0] /= 2;
     int size = ubig_value.size();
     int partial_divide = 0;
+    int carry = 0;
     ubigint divide;
     for (int i = 0; i < size; i++) {
         partial_divide = ((static_cast<int>(ubig_value[i]) - 48) + carry) / 2;
