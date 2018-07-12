@@ -171,6 +171,10 @@ void ubigint::multiply_by_2() {
     for(int i = 0; i < size + 1; i++){
         product.ubig_value.push_back(static_cast<udigit_t>(0)+ '0');
     }
+    cout << "0: ";
+    for (int i = 0; i < size; i++) {
+        cout << product.ubig_value.at(i);
+    }
     udigit_t c_carry;
     int carry;
     for (int i = 0; i < size; i++) {
