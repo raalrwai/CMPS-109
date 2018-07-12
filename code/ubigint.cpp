@@ -36,12 +36,6 @@ ubigint::ubigint (const string& that)  {
 }
 
 ubigint ubigint::operator+ (const ubigint& that) const {
-
-  if (ubig_value < that.ubig_value) {
-    cout << "ubig less than that.ubig";
-  }  else {
-    cout << "that.ubig less than or equal to ubig";
-  }
   ubigint result;
   int iter_size = ubig_value.size();
   unsigned char digit1 = '0';
@@ -310,19 +304,18 @@ bool ubigint::operator== (const ubigint& that) const {
 }
 
 bool ubigint::operator< (const ubigint& that) const {
-    cout << "ubig: " << ubig_value[0] << "that.ubig: " << that.ubig_value[0];
-  if (ubig_value.size() > that.ubig_value.size()) {
-    return false;
-  } else if (ubig_value.size() == that.ubig_value.size()){
-    for (int i = 0; 
-        i < static_cast<int>(ubig_value.size() - 1); 
-        i++) {
-      if (ubig_value[i] > that.ubig_value[i]) { 
+    //cout << "ubig: " << ubig_value[0] << "that.ubig: " << that.ubig_value[0];
+    if (ubig_value.size() > that.ubig_value.size()) {
         return false;
-      }
-    }
-  }
-  return true;
+    } else if (ubig_value.size() == that.ubig_value.size()){
+            for (int i = static_cast<int>(ubig_value.size() - 1); i > 0; 
+                i--) {
+                    if (ubig_value[i] > that.ubig_value[i]) { 
+                        return false;
+                    }
+                }
+    }        
+    return true;
 }
 
 ostream& operator<< (ostream& out, const ubigint& that) {
