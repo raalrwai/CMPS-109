@@ -242,6 +242,11 @@ void ubigint::divide_by_2() {
         ubig_value.at(i) = int_digit + '0';
     }
 
+    while (ubig_value.size() > 1 and 
+        ((static_cast<int>(ubig_value.back()) - 48) == 0)) {
+            ubig_value.pop_back();             
+    }  
+
     cout << "New: ";
     for (int i = 0; i < static_cast<int>(ubig_value.size()); i++) {
         cout << ubig_value.at(i);
