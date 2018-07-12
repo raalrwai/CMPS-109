@@ -160,14 +160,13 @@ ubigint ubigint::operator* (const ubigint& that) const {
 
 void ubigint::multiply_by_2() {
 	int size = ubig_value.size();
-    cout << "ikj" << endl;
+    ubigint product;
+    for(int i = 0; i < size + 1; i++){
+        product.ubig_value.push_back(static_cast<udigit_t>(0)+ '0');
+    }
+    cout << "tks" << endl;
     int partial_product = 0;
     int carry = 0;
-    cout << "Original: ";
-    for (int i = 0; i < size; i++) {
-        cout << ubig_value.at(i);
-    }
-    cout << endl;
     for (int i = 0; i < size; i++) {
         partial_product = ((static_cast<int>(ubig_value[i]) - 48) - carry) * 2;
         cout << "PP: " << partial_product << endl;
@@ -175,12 +174,17 @@ void ubigint::multiply_by_2() {
             carry = partial_product/10;
             cout << "Carry: " << carry << endl;
             cout << "Digit: " << (partial_product%10) << endl;
-            ubig_value.at(i) = (partial_product%10) + '0';
+            product.at(i) = (partial_product%10) + '0';
         }
     }
-    cout << "Multiplied by 2: ";
+    cout << "Original: ";
     for (int i = 0; i < size; i++) {
         cout << ubig_value.at(i);
+    }
+    cout << endl;
+    cout << "Multiplied by 2: ";
+    for (int i = 0; i < size + 1; i++) {
+        cout << product.at(i);
     }
     cout << endl;
 }
