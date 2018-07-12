@@ -172,7 +172,7 @@ void ubigint::multiply_by_2() {
         product.ubig_value.push_back(static_cast<udigit_t>(0)+ '0');
     }
     cout << "0: ";
-    for (int i = 0; i < size; i++) {
+    for (int i = 0; i < size + 1; i++) {
         cout << product.ubig_value.at(i);
     }
     cout << endl;
