@@ -139,9 +139,10 @@ ubigint ubigint::operator* (const ubigint& that) const {
         c_carry = '0';
 
         for(int j = 0; j < thatSize; j++){
-            partial_product = static_cast<int>(product.ubig_value.at(i + j) - 48) + static_cast<int>(ubig_value.at(i) - 48) *
-            static_cast<int>(that.ubig_value.at(j) - 48) +
-            static_cast<int>(carry); 
+            partial_product = static_cast<int>(product.ubig_value.at(i + j) - 48) + 
+                static_cast<int>(ubig_value.at(i) - 48) *
+                static_cast<int>(that.ubig_value.at(j) - 48) +
+                static_cast<int>(carry); 
             product.ubig_value[i + j] = partial_product%10 + '0';
             carry = floor(partial_product/10);
             c_carry = carry + '0';
@@ -170,7 +171,8 @@ void ubigint::multiply_by_2() {
     for (int i = 0; i < size; i++) {
         carry = 0;
         c_carry = '0';
-        partial_product = static_cast<int>(product.ubig_value.at(i + 1) - 48) + static_cast<int>(ubig_value.at(i) - 48) *
+        partial_product = static_cast<int>(product.ubig_value.at(i + 1) - 48) + 
+            static_cast<int>(ubig_value.at(i) - 48) *
             2 + static_cast<int>(carry); 
         product.ubig_value[i] = partial_product%10 + '0';
         carry = floor(partial_product/10);
@@ -266,8 +268,8 @@ bool ubigint::operator< (const ubigint& that) const {
     if (ubig_value.size() > that.ubig_value.size()) {
         return false;
     } else if (ubig_value.size() == that.ubig_value.size()){
-            for (int i = static_cast<int>(ubig_value.size() - 1); i > 0; 
-                i--) {
+            for (int i = static_cast<int>(ubig_value.size() - 1); 
+                i > 0; i--) {
                     if (ubig_value[i] > that.ubig_value[i]) { 
                         return false;
                     }
