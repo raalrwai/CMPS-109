@@ -222,7 +222,7 @@ void ubigint::divide_by_2() {
     int int_temp;
 
     cout << "Original: ";
-    for (int i = 0; i < size; i++) {
+    for (int i = 0; i < ubig_value.size; i++) {
         cout << ubig_value.at(i);
     }
     cout << endl;
@@ -243,7 +243,7 @@ void ubigint::divide_by_2() {
     }
 
     cout << "New: ";
-    for (int i = 0; i < size; i++) {
+    for (int i = 0; i < ubig_value.size; i++) {
         cout << ubig_value.at(i);
     }
     cout << endl;
