@@ -12,14 +12,13 @@ two pieces with each partner working on a different piece.
 
 Connor Thurmond spent 4 hours working alone.
 Rami Alrwais spent 4 hours working alone.
-We spent 20 hours working together.
-Connor Thurmond spent 10 hours driving.
-Rami Alrwais spent 10 hours driving.
+We spent 30 hours working together.
+Connor Thurmond spent 15 hours driving.
+Rami Alrwais spent 15 hours driving.
 
 Please grade the work submitted by cthurmon@ucsc.edu
 and not the work submitted by raalrwai@ucsc.edu.
 
-We would like to note that when mk.tests is run, it takes a long time. 
-It does run however. Please let it run for around 5 minutes before deciding
-that it does not work. We are able to pass test0, test1, and test2. We got
-really close on test3, but couldn't quite get it right.
+We commented out some of the division code to avoid
+the infinite loop. We were unable to pass test5 and 
+test6. All other tests should pass.
