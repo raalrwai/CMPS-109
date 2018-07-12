@@ -228,7 +228,9 @@ void ubigint::divide_by_2() {
             temp = ubig_value[i - 1];
             int_temp = static_cast<int>(temp);
             int_temp += 5;
-            ubig_value.at(i - 1) = int_temp + '0';
+            if (i >= 1) {
+                ubig_value.at(i - 1) = int_temp + '0';
+            } 
         }
         int_digit = int_digit / 2;
         ubig_value.at(i) = int_digit + '0';
