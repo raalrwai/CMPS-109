@@ -220,8 +220,8 @@ void ubigint::divide_by_2() {
     ubigint c_carry;
     int carry = 0;
     ubigint divide;
-    for(int i = 0; i < size + 1; i++){
-        product.ubig_value.push_back(static_cast<udigit_t>(0)+ '0');
+    for(int i = 0; i < size; i++){
+        divide.ubig_value.push_back(static_cast<udigit_t>(0)+ '0');
     }
     for (int i = 0; i < size; i++) {
         partial_divide = (((static_cast<int>(ubig_value[i]) - 48)) / 2) + carry;
