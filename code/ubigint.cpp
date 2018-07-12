@@ -222,12 +222,12 @@ void ubigint::divide_by_2() {
     int int_temp;
 
     cout << "Original: ";
-    for (int i = 0; i < ubig_value.size; i++) {
+    for (int i = 0; i < static_cast<int>(ubig_value.size()); i++) {
         cout << ubig_value.at(i);
     }
     cout << endl;
 
-    for (int i = 0; i < ubig_value.size(); i++) {
+    for (int i = 0; static_cast<int>(ubig_value.size()); i++) {
         digit = ubig_value[i];
         int_digit = static_cast<int>(digit);
         if ((int_digit % 2) != 0) {
@@ -243,7 +243,7 @@ void ubigint::divide_by_2() {
     }
 
     cout << "New: ";
-    for (int i = 0; i < ubig_value.size; i++) {
+    for (int i = 0; i < static_cast<int>(ubig_value.size()); i++) {
         cout << ubig_value.at(i);
     }
     cout << endl;
