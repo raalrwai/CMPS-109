@@ -256,7 +256,7 @@ quo_rem udivide (const ubigint& dividend, ubigint divisor) {
         cout << divisor.ubig_value.at(i);
     }
     ubigint quotient {0};
-    ubigint remainder {0}  
+    ubigint remainder {0};  
     return {.quotient = quotient, .remainder = remainder};
 }
 
