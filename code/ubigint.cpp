@@ -305,12 +305,15 @@ bool ubigint::operator== (const ubigint& that) const {
 
 bool ubigint::operator< (const ubigint& that) const {
     //cout << "ubig: " << ubig_value[0] << "that.ubig: " << that.ubig_value[0];
+
     if (ubig_value.size() > that.ubig_value.size()) {
+        cout << "Size false" << endl;
         return false;
     } else if (ubig_value.size() == that.ubig_value.size()){
             for (int i = static_cast<int>(ubig_value.size() - 1); i > 0; 
                 i--) {
                     if (ubig_value[i] > that.ubig_value[i]) { 
+                        cout << "value false" << endl;
                         return false;
                     }
                 }
