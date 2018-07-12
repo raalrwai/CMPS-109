@@ -36,6 +36,12 @@ ubigint::ubigint (const string& that)  {
 }
 
 ubigint ubigint::operator+ (const ubigint& that) const {
+
+  if (ubig_value < that.ubig_value) {
+    cout << "ubig less than that.ubig";
+  }  else {
+    cout << "that.ubig less than or equal to ubig";
+  }
   ubigint result;
   int iter_size = ubig_value.size();
   unsigned char digit1 = '0';
@@ -304,6 +310,7 @@ bool ubigint::operator== (const ubigint& that) const {
 }
 
 bool ubigint::operator< (const ubigint& that) const {
+    cout << "ubig: " << ubig_value[0] << "that.ubig: " << that.ubig_value[0];
   if (ubig_value.size() > that.ubig_value.size()) {
     return false;
   } else if (ubig_value.size() == that.ubig_value.size()){
