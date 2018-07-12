@@ -184,7 +184,7 @@ void ubigint::multiply_by_2() {
     cout << endl;
     cout << "Multiplied by 2: ";
     for (int i = 0; i < size + 1; i++) {
-        cout << product.at(i);
+        cout << product.ubig_value.at(i);
     }
     cout << endl;
 }
