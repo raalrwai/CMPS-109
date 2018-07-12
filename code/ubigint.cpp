@@ -229,7 +229,7 @@ void ubigint::divide_by_2() {
             carry = 5;
             c_carry = carry + '0';
         }
-        divide.ubig_value = partial_divide + '0';
+        divide.ubig_value[i] = partial_divide + '0';
     }
     while (divide.ubig_value.size() > 1 and 
         ((static_cast<int>(divide.ubig_value.back()) - 48) == 0)) {
