@@ -223,16 +223,16 @@ void ubigint::divide_by_2() {
 
     cout << "Original: ";
     for (int i = 0; i < static_cast<int>(ubig_value.size()); i++) {
-        cout << ubig_value.at(i);
+        cout << static_cast<int>(ubig_value.at(i) - 48);
     }
     cout << endl;
 
     for (int i = 0; i < static_cast<int>(ubig_value.size()); i++) {
         digit = ubig_value[i];
-        int_digit = static_cast<int>(digit);
+        int_digit = static_cast<int>(digit - 48);
         if ((int_digit % 2) != 0) {
             temp = ubig_value[i - 1];
-            int_temp = static_cast<int>(temp);
+            int_temp = static_cast<int>(temp - 48);
             int_temp += 5;
             if (i >= 1) {
                 ubig_value.at(i - 1) = int_temp + '0';
