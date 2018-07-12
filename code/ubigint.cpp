@@ -257,6 +257,7 @@ quo_rem udivide (const ubigint& dividend, ubigint divisor) {
         divisor.divide_by_2();
         power_of_2.divide_by_2();
     }
+    return {.quotient = quotient, .remainder = remainder};
 }
 
 ubigint ubigint::operator/ (const ubigint& that) const {
