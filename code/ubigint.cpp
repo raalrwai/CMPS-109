@@ -215,26 +215,25 @@ void ubigint::multiply_by_2() {
 
 void ubigint::divide_by_2() {
     //ubig_value[0] /= 2;
-    int size = ubig_value.size();
-    int partial_divide;
-    ubigint c_carry;
-    int carry = 0;
     ubigint divide;
-    for(int i = 0; i < size; i++){
-        divide.ubig_value.push_back(static_cast<udigit_t>(0)+ '0');
-    }
-    for (int i = 0; i < size; i++) {
-        partial_divide = (((static_cast<int>(ubig_value[i]) - 48)) / 2) + carry;
-        if (((static_cast<int>(ubig_value[i]) - 48) % 2) != 0) {
-            carry = 5;
-            c_carry = carry + '0';
+    udigit_t digit;
+    udigit_t temp;
+    int int_digit;
+    int int_temp;
+
+    for (int i = 0; i < ubig_value.size(); i++) {
+        digit = ubig_value[i];
+        int_digit = static_cast<int>(digit);
+        if ((int_digit % 2) != 0) {
+            temp = ubig_value[i - 1]
+            int_temp = static_cast<int>(temp);
+            int_temp += 5;
+            ubig_value.at(i - 1) = int_temp + '0';
         }
-        divide.ubig_value[i] = partial_divide + '0';
+        int_digit = int_digit / 2;
+        ubig_value.at(i) = int_digit + '0';
     }
-    while (divide.ubig_value.size() > 1 and 
-        ((static_cast<int>(divide.ubig_value.back()) - 48) == 0)) {
-            divide.ubig_value.pop_back();             
-    }  
+    
 }
 
 
