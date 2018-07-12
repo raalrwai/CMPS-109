@@ -159,34 +159,58 @@ ubigint ubigint::operator* (const ubigint& that) const {
  
 
 void ubigint::multiply_by_2() {
-	int size = ubig_value.size();
+    int size = ubig_value.size();
+    int partial_product;
     ubigint product;
     for(int i = 0; i < size + 1; i++){
         product.ubig_value.push_back(static_cast<udigit_t>(0)+ '0');
     }
-    cout << "tkx" << endl;
-    int partial_product = 0;
-    int carry = 0;
+    udigit_t c_carry;
+    int carry;
     for (int i = 0; i < size; i++) {
-        partial_product = ((static_cast<int>(ubig_value[i]) - 48) * 2) + carry;
-        cout << "PP: " << partial_product << endl;
-        if (partial_product > 10) {
-            carry = partial_product/10;
-            cout << "Carry: " << carry << endl;
-            cout << "Digit: " << (partial_product%10) << endl;
-            product.ubig_value.at(i) = (partial_product%10) + '0';
-        }
+        carry = 0;
+        c_carry = '0';
+        partial_product = static_cast<int>(product.ubig_value.at(i + 1) - 48) + static_cast<int>(ubig_value.at(i) - 48) *
+            static_cast<int>(that.ubig_value.at(1) - 48) +
+            static_cast<int>(carry); 
+        product.ubig_value[i + 1] = partial_product%10 + '0';
+        carry = floor(partial_product/10);
+        c_carry = carry + '0';
+        product.ubig_value[i + 1] = c_carry;    
     }
-    cout << "Original: ";
-    for (int i = 0; i < size; i++) {
-        cout << ubig_value.at(i);
-    }
-    cout << endl;
-    cout << "Multiplied by 2: ";
-    for (int i = 0; i < size + 1; i++) {
-        cout << product.ubig_value.at(i);
-    }
-    cout << endl;
+    while (product.ubig_value.size() > 1 and 
+        ((static_cast<int>(product.ubig_value.back()) - 48) == 0)) {
+            product.ubig_value.pop_back();             
+    }  
+    ubig_value = product.ubig_value;
+	// int size = ubig_value.size();
+ //    ubigint product;
+ //    for(int i = 0; i < size + 1; i++){
+ //        product.ubig_value.push_back(static_cast<udigit_t>(0)+ '0');
+ //    }
+ //    cout << "tkx" << endl;
+ //    int partial_product = 0;
+ //    int carry = 0;
+ //    for (int i = 0; i < size; i++) {
+ //        partial_product = ((static_cast<int>(ubig_value[i]) - 48) * 2) + carry;
+ //        cout << "PP: " << partial_product << endl;
+ //        if (partial_product > 10) {
+ //            carry = floor(partial_product/10);
+ //            cout << "Carry: " << carry << endl;
+ //            cout << "Digit: " << (partial_product%10) << endl;
+ //            product.ubig_value.at(i) = (partial_product%10) + '0';
+ //        }
+ //    }
+ //    cout << "Original: ";
+ //    for (int i = 0; i < size; i++) {
+ //        cout << ubig_value.at(i);
+ //    }
+ //    cout << endl;
+ //    cout << "Multiplied by 2: ";
+ //    for (int i = 0; i < size + 1; i++) {
+ //        cout << product.ubig_value.at(i);
+ //    }
+ //    cout << endl;
 }
 
 void ubigint::divide_by_2() {
