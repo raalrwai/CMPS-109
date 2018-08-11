@@ -1,0 +1,83 @@
+#!/bin/sh
+
+# Checksource run for all the files
+echo Running checksource on all files...
+echo
+
+checksource debug.cpp
+checksource debug.h
+checksource listmap.h
+checksource listmap.tcc
+checksource main.cpp
+checksource Makefile
+checksource README
+checksource PARTNER
+checksource util.cpp
+checksource util.h
+checksource util.tcc
+checksource xless.h
+checksource xpair.h
+
+# cpplint.py.perl run
+echo Running cpplint.py.perl on relevant files...
+echo
+
+cpplint.py.perl debug.cpp
+cpplint.py.perl debug.h
+cpplint.py.perl listmap.h
+cpplint.py.perl listmap.tcc
+cpplint.py.perl main.cpp
+cpplint.py.perl util.cpp
+cpplint.py.perl util.h
+cpplint.py.perl util.tcc
+cpplint.py.perl xless.h
+cpplint.py.perl xpair.h
+
+# Removing the test_directory if it exists
+echo Trying to remove test_directory...
+echo
+
+rm -rf test_directory
+
+# Creating a new empty test_directory
+echo Creating a new empty test_directory...
+echo
+
+mkdir test_directory
+
+# Copying all relevant files to test_directory
+echo Copying relevant files to test_directory...
+echo
+
+cp debug.cpp test_directory/debug.cpp
+cp debug.h test_directory/debug.h
+cp listmap.h test_directory/listmap.h
+cp listmap.tcc test_directory/listmap.tcc
+cp main.cpp test_directory/main.cpp
+cp Makefile test_directory/Makefile
+cp README test_directory/README
+cp PARTNER test_directory/PARTNER
+cp util.cpp test_directory/util.cpp
+cp util.h test_directory/util.h
+cp util.tcc test_directory/util.tcc
+cp xless.h test_directory/xless.h
+cp xpair.h test_directory/xpair.h
+
+# Copying test scripts into test_directory
+echo Copying test files to test_directory...
+echo
+
+cp -r /afs/cats.ucsc.edu/courses/cmps109-wm/Assignments/asg3-listmap-templates/.score/* ./test_directory
+
+# Change into test directory
+echo Changing directory to test_directory...
+echo
+
+cd test_directory
+
+# Run the tests
+echo Building and testing...
+echo
+
+mk.build
+mk.tests

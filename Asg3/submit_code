@@ -1,0 +1,49 @@
+#!/bin/sh
+
+# Checksource run for all the files
+echo Running checksource on all files...
+echo
+
+checksource debug.cpp
+checksource debug.h
+checksource listmap.h
+checksource listmap.tcc
+checksource main.cpp
+checksource Makefile
+checksource README
+checksource PARTNER
+checksource util.cpp
+checksource util.h
+checksource util.tcc
+checksource xless.h
+checksource xpair.h
+
+# cpplint.py.perl run
+echo Running cpplint.py.perl on relevant files...
+echo
+
+cpplint.py.perl debug.cpp
+cpplint.py.perl debug.h
+cpplint.py.perl listmap.h
+cpplint.py.perl listmap.tcc
+cpplint.py.perl main.cpp
+cpplint.py.perl util.cpp
+cpplint.py.perl util.h
+cpplint.py.perl util.tcc
+cpplint.py.perl xless.h
+cpplint.py.perl xpair.h
+
+# Partnercheck run
+echo Running partnercheck...
+echo
+
+partnercheck
+
+# submit
+echo Submitting files...
+echo
+
+submit cmps109-wm.u18 asg3 debug.cpp debug.h listmap.h listmap.tcc \
+main.cpp Makefile README PARTNER util.cpp util.h util.tcc xless.h \
+xpair.h
+

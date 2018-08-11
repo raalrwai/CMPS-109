@@ -1,0 +1,13 @@
+seg_fault_file: 1: this = that
+this = that
+seg_fault_file: 2: a = a
+a = a
+seg_fault_file: 3: b = b
+b = b
+seg_fault_file: 4: A = A
+A = A
+seg_fault_file: 5: Z = Z
+Z = Z
+seg_fault_file: 6: k = k
+k = k
+seg_fault_file: 7: 
