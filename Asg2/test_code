@@ -1,0 +1,31 @@
+#!/bin/sh
+
+# Removing the test_directory if it exists
+rm -rf test_directory
+
+# Creating a new test_directory
+mkdir test_directory
+
+# Copy all code over to test directory
+cp Makefile test_directory/Makefile
+cp README test_directory/README
+cp PARTNER test_directory/PARTNER
+cp commands.cpp test_directory/commands.cpp
+cp commands.h test_directory/commands.h
+cp debug.cpp test_directory/debug.cpp
+cp debug.h test_directory/debug.h
+cp file_sys.cpp test_directory/file_sys.cpp
+cp file_sys.h test_directory/file_sys.h
+cp main.cpp test_directory/main.cpp
+cp util.cpp test_directory/util.cpp
+cp util.h test_directory/util.h
+
+# Copy test scripts into test_directory
+cp -r /afs/cats.ucsc.edu/courses/cmps109-wm/Assignments/asg2-shell-fnptrs-oop/.score/* ./test_directory
+
+# Change into test directory
+cd test_directory
+
+# Run the tests
+mk.build
+mk.tests

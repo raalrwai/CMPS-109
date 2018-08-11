@@ -1,0 +1,22 @@
+#!/bin/sh
+
+# Checksource run for all files
+checksource Makefile
+checksource README
+checksource PARTNER
+checksource commands.cpp
+checksource commands.h
+checksource debug.cpp
+checksource debug.h
+checksource file_sys.cpp
+checksource file_sys.h
+checksource main.cpp
+checksource util.cpp
+checksource util.h
+
+# Partnercheck run
+partnercheck
+
+# submit 
+submit cmps109-wm.u18 asg2 Makefile README PARTNER commands.cpp commands.h debug.cpp debug.h \
+file_sys.cpp file_sys.h main.cpp util.cpp util.h
