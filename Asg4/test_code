@@ -1,0 +1,49 @@
+#!/bin/sh
+
+# Checksource run for all the files
+echo Running checksource on all files...
+echo
+
+checksource cix.cpp
+checksource cixd.cpp
+checksource logstream.h
+checksource Makefile
+checksource protocol.cpp
+checksource protocol.h
+checksource README
+checksource sockets.cpp
+checksource sockets.h
+checksource PARTNER
+
+# cpplint.py.perl run
+echo Running cpplint.py.perl on relevant files...
+echo
+
+cpplint.py.perl cix.cpp
+cpplint.py.perl cixd.cpp
+cpplint.py.perl logstream.h
+cpplint.py.perl protocol.cpp
+cpplint.py.perl protocol.h
+cpplint.py.perl sockets.cpp
+cpplint.py.perl sockets.h
+
+# Partnercheck run
+echo Running partnercheck...
+echo
+
+partnercheck
+
+# Making code
+echo Making code...
+echo
+
+make clean
+make
+
+# Copying to test_directory
+echo Copying into test directory...
+echo
+
+cp cixd test_directory/remote
+cp cix test_directory/local1
+cp cix test_directory/local2
