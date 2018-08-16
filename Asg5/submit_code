@@ -1,0 +1,34 @@
+#!/bin/sh
+
+# Checksource run for all the files
+echo Running checksource on all files...
+echo
+
+checksource chessboard.cpp
+checksource circles.cpp
+checksource rainbow.cpp
+checksource Makefile
+checksource README
+checksource PARTNER
+
+# cpplint.py.perl run
+echo Running cpplint.py.perl on relevant files...
+echo
+
+cpplint.py.perl chessboard.cpp
+cpplint.py.perl circles.cpp
+cpplint.py.perl rainbow.cpp
+
+
+# Partnercheck run
+echo Running partnercheck...
+echo
+
+partnercheck
+
+# submit
+echo Submitting files...
+echo
+
+submit cmps109-wm.u18 asg5 PARTNER README chessboard.cpp rainbow.cpp \
+circles.cpp Makefile
